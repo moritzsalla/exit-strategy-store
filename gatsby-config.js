@@ -41,7 +41,7 @@ module.exports = {
         apiVersion: "2020-04",
         verbose: true,
         paginationSize: 250,
-        includeCollections: ["shop", "content"],
+        includeCollections: ["shop"],
       },
     },
   ],
