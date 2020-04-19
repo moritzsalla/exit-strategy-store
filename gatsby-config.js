@@ -55,7 +55,7 @@ module.exports = {
         // Set the API version you want to use. For a list of available API versions,
         // see: https://help.shopify.com/en/api/storefront-api/reference/queryroot
         // Defaults to 2019-07
-        apiVersion: "2020-01",
+        apiVersion: "2020-04",
 
         // Set verbose to true to display a verbose output on `npm run develop`
         // or `npm run build`. This prints which nodes are being fetched and how
