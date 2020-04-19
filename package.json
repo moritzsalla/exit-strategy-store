@@ -1,26 +1,35 @@
 {
   "name": "exit-strategy",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "We are Forgetful Number, a collective of 38 photography students of the Royal Academy of Art, The Hague.",
   "version": "0.1.0",
   "author": "Moritz Salla <moritz.salla@hotmail.de>",
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "dotenv": "^8.2.0",
     "gatsby": "^2.20.25",
     "gatsby-image": "^2.3.4",
+    "gatsby-plugin-emotion": "^4.2.2",
     "gatsby-plugin-manifest": "^2.3.5",
     "gatsby-plugin-offline": "^3.1.4",
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sharp": "^2.5.6",
     "gatsby-source-filesystem": "^2.2.4",
     "gatsby-source-shopify": "^3.1.4",
+    "gatsby-transformer-remark": "^2.7.3",
     "gatsby-transformer-sharp": "^2.4.6",
+    "gsap": "^3.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0"
+    "react-helmet": "^6.0.0",
+    "reset-css": "^5.0.1",
+    "three": "^0.115.0"
   },
   "devDependencies": {
+    "gatsby-plugin-sass": "^2.2.3",
+    "node-sass": "^4.13.1",
     "prettier": "2.0.4"
   },
   "keywords": [
