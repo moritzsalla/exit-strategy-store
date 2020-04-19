@@ -5,16 +5,15 @@
   "version": "0.1.0",
   "author": "Moritz Salla <moritz.salla@hotmail.de>",
   "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
+    "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
     "gatsby": "^2.20.25",
     "gatsby-image": "^2.3.4",
-    "gatsby-plugin-emotion": "^4.2.2",
     "gatsby-plugin-manifest": "^2.3.5",
     "gatsby-plugin-offline": "^3.1.4",
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sharp": "^2.5.6",
+    "gatsby-plugin-styled-components": "^3.2.3",
     "gatsby-source-filesystem": "^2.2.4",
     "gatsby-source-shopify": "^3.1.4",
     "gatsby-transformer-remark": "^2.7.3",
@@ -26,6 +25,8 @@
     "react-gsap": "^1.2.0",
     "react-helmet": "^6.0.0",
     "reset-css": "^5.0.1",
+    "shopify-buy": "^2.9.3",
+    "styled-components": "^5.1.0",
     "three": "^0.115.0"
   },
   "devDependencies": {
