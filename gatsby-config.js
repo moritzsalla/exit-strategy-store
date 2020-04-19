@@ -1,14 +1,14 @@
-const dotenv = require("dotenv")
+const dotenv = require("dotenv").config()
 
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config()
-}
+// if (process.env.NODE_ENV !== "production") {
+//   dotenv.config()
+// }
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Exit Strategy`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@exitstrategy`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
