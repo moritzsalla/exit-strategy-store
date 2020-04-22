@@ -1,9 +1,3 @@
-const dotenv = require("dotenv").config()
-
-// if (process.env.NODE_ENV !== "production") {
-//   dotenv.config()
-// }
-
 module.exports = {
   siteMetadata: {
     title: `Exit Strategy`,
@@ -53,8 +47,8 @@ module.exports = {
     {
       resolve: "gatsby-source-shopify",
       options: {
-        shopName: process.env.SHOPIFY_STORE_NAME,
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        shopName: "exit-strategy-print-sale",
+        accessToken: "2ec6c4ead91caa561ec8cb053c9941b5",
         apiVersion: "2020-04",
         verbose: true,
         paginationSize: 250,
