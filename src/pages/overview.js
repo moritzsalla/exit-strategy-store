@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
+import Layout from "../layouts/default"
 import SEO from "../components/seo"
 
 const List = styled.ul`
@@ -19,13 +19,16 @@ const SecondPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Page two" />{" "}
+      <SEO title="Artist" />
+
+      <h1>Page 2</h1>
+
       <List>
         {product.map(i => (
           <Vendor key={i}>{i.node.vendor}</Vendor>
         ))}
       </List>
-      <Link to="/">Go back to the homepage</Link>
+      <Link to="/">Take me home</Link>
     </Layout>
   )
 }

@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== "production") {
 module.exports = {
   siteMetadata: {
     title: `Exit Strategy`,
+    siteUrl: `https://exitstrategies.store`,
     description: `We are Forgetful Number, a collective of 38 photography students of the Royal Academy of Art, The Hague.`,
     author: `@exitstrategy`,
   },
@@ -22,6 +23,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-transformer-remark`,
