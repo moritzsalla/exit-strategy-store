@@ -1,21 +1,31 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import SEO from "../components/SEO"
+import Layout from "../layouts/default"
+import Img from "gatsby-image"
 
 export default function Template({ data }) {
-  const { title, vendor, description } = data.shopifyProduct
+  const product = data.shopifyProduct
 
   return (
     <>
-      <SEO title={title} />
+      <Layout>
+        <SEO title={product.title} />
 
-      <h1>{title}</h1>
+        {product.images.map(image => (
+          <Img
+            fluid={image.localFile.childImageSharp.fluid}
+            key={image.id}
+            alt={product.title}
+          />
+        ))}
 
-      <h2>{vendor}</h2>
+        <h1>{product.title}</h1>
 
-      <h3>{description}</h3>
+        <h2>{product.vendor}</h2>
 
-      <Link to="/"> Home</Link>
+        <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
+      </Layout>
     </>
   )
 }
@@ -25,7 +35,16 @@ export const query = graphql`
     shopifyProduct(handle: { eq: $handle }) {
       title
       vendor
-      description
+      descriptionHtml
+      images {
+        localFile {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
     }
   }
 `

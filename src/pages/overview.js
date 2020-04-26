@@ -10,25 +10,28 @@ const List = styled.ul`
   padding: 1rem;
 `
 
-const Vendor = styled.li`
+const Item = styled.li`
   padding: 1rem;
 `
 
 const SecondPage = ({ data }) => {
-  const product = data.allShopifyProduct.edges
+  const products = data.allShopifyProduct.edges
 
   return (
     <Layout>
       <SEO title="Artist" />
 
-      <h1>Page 2</h1>
+      <h1>Overview</h1>
 
       <List>
-        {product.map(i => (
-          <Vendor key={i}>{i.node.vendor}</Vendor>
+        {products.map(product => (
+          <Item key={product.node.vendor}>
+            {product.node.vendor}&emsp;
+            {product.node.title}&emsp; €
+            {product.node.priceRange.maxVariantPrice.amount}
+          </Item>
         ))}
       </List>
-      <Link to="/">Take me home</Link>
     </Layout>
   )
 }
@@ -39,6 +42,12 @@ export const query = graphql`
       edges {
         node {
           vendor
+          title
+          priceRange {
+            maxVariantPrice {
+              amount
+            }
+          }
         }
       }
     }

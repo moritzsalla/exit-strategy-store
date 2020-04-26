@@ -3,24 +3,16 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 // import "reset-css"
-
+import Nav from "../components/nav"
+import Footer from "../components/footer"
 import "./default.scss"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
+      <Nav />
       <main>{children}</main>
-      <footer>© {new Date().getFullYear()} Forgetful Number</footer>
+      <Footer />
     </>
   )
 }

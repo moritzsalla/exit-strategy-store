@@ -6,22 +6,24 @@ import Layout from "../layouts/default"
 import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
-  const posts = data.allShopifyProduct.edges
+  const products = data.allShopifyProduct.edges
 
   return (
     <Layout>
       <SEO title="Home" />
       <h1>Home</h1>
-      <hr />
-      {posts.map((post, i) => (
-        <Link to={post.node.handle} key={i}>
-          {/* {post.node.title} */}
-          {/* <Img fluid={post.node.images.localFile.childImageSharp.fluid}></Img> */}
+
+      {products.map(product => (
+        <Link to={product.node.handle} key={product.node.id}>
+          {product.node.title}
+
+          {/* <Img
+            fluid={product.node.image.localFile.childImageSharp.fluid}
+            key={product.node.image.id}
+            alt={product.node.title}
+          /> */}
         </Link>
       ))}
-      <hr />
-      <Link to="/gallery/">Gallery</Link>
-      <Link to="/overview/">Overview</Link>
     </Layout>
   )
 }
@@ -33,11 +35,12 @@ export const query = graphql`
         node {
           title
           handle
+          id
           images {
             localFile {
               childImageSharp {
-                fluid {
-                  src
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
