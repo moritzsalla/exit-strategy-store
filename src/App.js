@@ -1,7 +1,27 @@
 import React from 'react';
-import './App.css';
 import { Helmet } from 'react-helmet';
 import Image from './images/thumbnail.jpg';
+import styled from 'styled-components';
+
+import Thumbnail from './images/thumbnail.jpg';
+import Favicon from './images/thumbnail.jpg';
+
+import 'reset-css';
+
+const Wrapper = styled.main`
+  padding: 1rem;
+`;
+
+const Title = styled.h1`
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+`;
+
+const Text = styled.p`
+  font-size: 1rem;
+`;
 
 function App() {
   return (
@@ -33,11 +53,16 @@ function App() {
           content="Forgetful Number presents Exit Strategies: a photography collective composed of the photography graduates at the Royal Academy of Art in The Hague. "
         />
         <meta property="twitter:image" content={Image} />
+        <link rel="shortcut icon" href={Favicon} />
       </Helmet>
 
-      <h1>
-        There's nothing here yet. Please check back within a couple of days!
-      </h1>
+      <Wrapper>
+        <img src={Thumbnail} height="200" width="auto" alt="logo"></img>
+        <Title>Exit Strategies</Title>
+        <Text>
+          There's nothing here yet. Please check back within a couple of days!
+        </Text>
+      </Wrapper>
     </div>
   );
 }
