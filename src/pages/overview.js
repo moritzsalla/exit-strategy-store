@@ -5,23 +5,22 @@ import styled from "styled-components"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 
-const List = styled.ul`
-  outline: 1px solid black;
-  padding: 1rem;
-`
+const List = styled.ul``
 
-const Item = styled.li`
-  padding: 1rem;
-`
+const Item = styled.li``
 
 const SecondPage = ({ data }) => {
   const products = data.allShopifyProduct.edges
 
   return (
     <Layout>
-      <SEO title="Artist" />
+      <SEO title="Overview" />
+
+      <hr />
 
       <h1>Overview</h1>
+
+      <hr />
 
       <List>
         {products.map(product => (
@@ -32,6 +31,8 @@ const SecondPage = ({ data }) => {
           </Item>
         ))}
       </List>
+
+      <hr />
     </Layout>
   )
 }

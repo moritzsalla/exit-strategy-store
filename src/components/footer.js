@@ -1,9 +1,19 @@
 import React from "react"
 // import { Link } from "gatsby"
+import styled from "styled-components"
+
+const Copyright = styled.span`
+  font-family: "Suisse";
+  margin: 0;
+  padding: 0;
+`
 
 const Footer = () => (
   <nav>
-    <footer>&copy; {new Date().getFullYear()} Forgetful Number</footer>
+    <footer>
+      <Copyright>&copy;</Copyright>
+      {new Date().getFullYear()} Forgetful Number
+    </footer>
   </nav>
 )
 

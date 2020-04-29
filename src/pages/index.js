@@ -11,7 +11,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Home</h1>
 
       {products.map(product => (
         <Link to={product.node.handle} key={product.node.id}>

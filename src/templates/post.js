@@ -10,7 +10,7 @@ export default function Template({ data }) {
   return (
     <>
       <Layout>
-        <SEO title={product.title} />
+        <SEO title={product.vendor} />
 
         {product.images.map(image => (
           <Img
