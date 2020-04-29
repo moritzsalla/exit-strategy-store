@@ -1,0 +1,19 @@
+{
+  "name": "exitstrategystore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "echo \"Serving\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moritzsalla/exitStrategyStore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moritzsalla/exitStrategyStore/issues"
+  },
+  "homepage": "https://github.com/moritzsalla/exitStrategyStore#readme"
+}
