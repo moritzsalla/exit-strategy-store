@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-pages-overview-js","path":"/overview/","result":{"data":{"allShopifyProduct":{"edges":[{"node":{"vendor":"Mark Rothko","title":"Untitled (1961)","priceRange":{"maxVariantPrice":{"amount":"30.0"}}}},{"node":{"vendor":"Leonardo da Vinci","title":"Mona Lisa","priceRange":{"maxVariantPrice":{"amount":"2000.0"}}}}]}},"pageContext":{}}}
