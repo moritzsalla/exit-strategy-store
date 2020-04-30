@@ -25,27 +25,22 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
-    {
-      resolve: "gatsby-plugin-sentry",
-      options: {
-        dsn: process.env.SENTRY_DSN_URL,
-        // environment: process.env.NODE_ENV,
-        enabled: (() =>
-          ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-sentry",
+    //   options: {
+    //     dsn: process.env.SENTRY_DSN_URL,
+    //     // environment: process.env.NODE_ENV,
+    //     enabled: (() =>
+    //       ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        // CommonMark mode (default: true)
         commonmark: true,
-        // Footnotes mode (default: true)
         footnotes: true,
-        // Pedantic mode (default: true)
         pedantic: true,
-        // GitHub Flavored Markdown mode (default: true)
         gfm: true,
-        // Plugins configs
         plugins: [],
       },
     },
@@ -58,14 +53,14 @@ module.exports = {
         background_color: `white`,
         theme_color: `white`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     {
       resolve: "gatsby-source-shopify",
       options: {
-        shopName: process.env.SHOPIFY_SHOP_NAME,
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        shopName: "exit-strategy-print-sale",
+        accessToken: "2ec6c4ead91caa561ec8cb053c9941b5",
         apiVersion: "2020-04",
         verbose: true,
         paginationSize: 250,
