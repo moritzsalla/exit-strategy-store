@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Logo = styled.h1`
   padding: 0;
-  margin: 0;
+  margin: 1rem;
 `
 
 const Nav = () => (

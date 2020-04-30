@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Copyright = styled.span`
   font-family: "Suisse";
-  margin: 0;
+  margin: 1rem;
   padding: 0;
 `
 
