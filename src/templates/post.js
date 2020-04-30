@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import SEO from "../components/SEO"
+import SEO from "../components/seo"
 import Layout from "../layouts/default"
 import Img from "gatsby-image"
 
