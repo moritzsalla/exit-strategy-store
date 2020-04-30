@@ -28,9 +28,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sentry",
       options: {
-        dsn: "YOUR_SENTRY_DSN_URL",
-        // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
-        environment: process.env.NODE_ENV,
+        dsn: process.env.SENTRY_DSN_URL,
+        // environment: process.env.NODE_ENV,
         enabled: (() =>
           ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
       },
@@ -65,8 +64,8 @@ module.exports = {
     {
       resolve: "gatsby-source-shopify",
       options: {
-        shopName: "exit-strategy-print-sale",
-        accessToken: "2ec6c4ead91caa561ec8cb053c9941b5",
+        shopName: process.env.SHOPIFY_SHOP_NAME,
+        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
         apiVersion: "2020-04",
         verbose: true,
         paginationSize: 250,

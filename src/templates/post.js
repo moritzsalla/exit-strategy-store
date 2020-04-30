@@ -21,7 +21,6 @@ export default function Template({ data }) {
         ))}
 
         <h1>{product.title}</h1>
-
         <h2>{product.vendor}</h2>
 
         <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
