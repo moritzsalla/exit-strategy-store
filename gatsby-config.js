@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== "production") {
 
 module.exports = {
   siteMetadata: {
-    title: `Exit Strategy`,
+    title: `Exit Strategies`,
     siteUrl: `https://exitstrategies.store`,
     description: `We are Forgetful Number, a collective of 38 photography students of the Royal Academy of Art, The Hague.`,
     author: `@exitstrategy`,
@@ -31,15 +31,7 @@ module.exports = {
         trackingId: "UA-116740197-2",
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-sentry",
-    //   options: {
-    //     dsn: process.env.SENTRY_DSN_URL,
-    //     // environment: process.env.NODE_ENV,
-    //     enabled: (() =>
-    //       ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
     //   },
-    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -59,18 +51,7 @@ module.exports = {
         background_color: `white`,
         theme_color: `white`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
-      },
-    },
-    {
-      resolve: "gatsby-source-shopify",
-      options: {
-        shopName: "exit-strategy-print-sale",
-        accessToken: "2ec6c4ead91caa561ec8cb053c9941b5",
-        apiVersion: "2020-04",
-        verbose: true,
-        paginationSize: 250,
-        includeCollections: ["shop", "content"],
+        icon: `src/images/favicon.jpg`,
       },
     },
   ],
