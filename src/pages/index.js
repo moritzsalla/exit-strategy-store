@@ -11,6 +11,7 @@ const IndexPage = ({ data }) => {
         fixed={data.file.childImageSharp.fixed}
         style={{ marginBottom: "1rem" }}
         alt="logo"
+        draggable={false}
       />
       <h1>Exit Strategies</h1>
       <br />
@@ -29,7 +30,11 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fixed(width: 125, height: 125) {
+        fixed(
+          width: 125
+          height: 125
+          traceSVG: { color: "black", blackOnWhite: true }
+        ) {
           ...GatsbyImageSharpFixed_withWebp_tracedSVG
         }
       }
