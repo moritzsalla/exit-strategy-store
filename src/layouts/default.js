@@ -36,7 +36,10 @@ const Layout = ({ children }) => {
           property="og:description"
           content="Forgetful Number presents Exit Strategies: a photography collective composed of the 40 photography graduates at the Royal Academy of Art in The Hague."
         />
-        <meta property="og:image" content="images/social-media.jpg" />
+        <meta
+          property="og:image"
+          content="https://exitstrategies.store/images/social-media.jpg"
+        />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://exitstrategies.store/" />
@@ -45,7 +48,10 @@ const Layout = ({ children }) => {
           property="twitter:description"
           content="Forgetful Number presents Exit Strategies: a photography collective composed of the 40 photography graduates at the Royal Academy of Art in The Hague."
         />
-        <meta property="twitter:image" content="images/social-media.jpg"></meta>
+        <meta
+          property="twitter:image"
+          content="https://exitstrategies.store/images/social-media.jpg"
+        ></meta>
       </Helmet>
       <main>{children}</main>
     </>
