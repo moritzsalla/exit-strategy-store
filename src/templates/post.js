@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../layouts/default"
 import Img from "gatsby-image"
+import BuyButton from "../components/buyButton"
+import { Title, Subtitle } from "../components/type"
 
 export default function Template({ data }) {
   const product = data.shopifyProduct
@@ -11,7 +13,6 @@ export default function Template({ data }) {
     <>
       <Layout>
         <SEO title={product.vendor} />
-
         {product.images.map(image => (
           <Img
             fluid={image.localFile.childImageSharp.fluid}
@@ -19,11 +20,10 @@ export default function Template({ data }) {
             alt={product.title}
           />
         ))}
-
-        <h1>{product.title}</h1>
-        <h2>{product.vendor}</h2>
-
+        <Title>{product.title}</Title>
+        <Subtitle>{product.vendor}</Subtitle>
         <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
+        <BuyButton />
       </Layout>
     </>
   )
