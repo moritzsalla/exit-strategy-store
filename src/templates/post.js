@@ -1,31 +1,51 @@
 import React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
+
 import SEO from "../components/seo"
 import Layout from "../layouts/default"
 import Img from "gatsby-image"
-import BuyButton from "../components/buyButton"
-import { Title, Subtitle } from "../components/type"
+import TextPannel from "../components/post/textPannel"
+
+const Wrapper = styled.section`
+  width: 100%;
+  display: flex;
+`
+
+const ImageWrapper = styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+`
 
 export default function Template({ data }) {
   const product = data.shopifyProduct
 
   return (
-    <>
-      <Layout>
-        <SEO title={product.vendor} />
-        {product.images.map(image => (
-          <Img
-            fluid={image.localFile.childImageSharp.fluid}
-            key={image.id}
-            alt={product.title}
-          />
-        ))}
-        <Title>{product.title}</Title>
-        <Subtitle>{product.vendor}</Subtitle>
-        <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
-        <BuyButton />
-      </Layout>
-    </>
+    <Layout>
+      <SEO title={product.vendor} />
+      <Wrapper>
+        <ImageWrapper>
+          {product.images.map(image => (
+            <Img
+              fixed={image.localFile.childImageSharp.fixed}
+              key={image.id}
+              alt={product.title}
+            />
+          ))}
+        </ImageWrapper>
+
+        <TextPannel
+          product={product.title}
+          vendor={product.vendor}
+          markup={product.descriptionHtml}
+          price={product.priceRange.maxVariantPrice.amount}
+          sizes={product.variants}
+          printType={product.productType}
+        />
+      </Wrapper>
+    </Layout>
   )
 }
 
@@ -35,11 +55,21 @@ export const query = graphql`
       title
       vendor
       descriptionHtml
+      productType
+      variants {
+        title
+      }
+      priceRange {
+        maxVariantPrice {
+          amount
+        }
+      }
+
       images {
         localFile {
           childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid_withWebp
+            fixed(width: 1000, traceSVG: { color: "orange" }) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
             }
           }
         }

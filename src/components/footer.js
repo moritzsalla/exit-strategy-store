@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Small } from "./type"
+import { Small, StyledLink } from "./type"
 import { Black, White, Orange } from "./variables"
 
 const StyledFooter = styled.footer`
@@ -8,25 +8,27 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: ${Black};
   color: white;
   user-select: none;
+
+  a::after {
+    content: "↗";
+  }
 `
 
 const FooterElement = styled(Small)`
   padding: 1rem;
-  color: ${White};
+  color: ${Black};
+  text-decoration: none;
 
   span {
     font-family: Suisse, sans-serif;
   }
 `
 
-const TopLink = styled(Small)`
-  color: ${White};
+const Top = styled(FooterElement)`
   &:hover {
     cursor: pointer;
-    color: ${Orange};
   }
 `
 
@@ -43,9 +45,35 @@ class Footer extends React.Component {
           {new Date().getFullYear()} Forgetful Number
         </FooterElement>
 
-        <TopLink as={FooterElement} onClick={() => this.scrollTop()}>
-          Top &uarr;
-        </TopLink>
+        {/* <FooterElement as={StyledLink} to="/">
+          Home
+        </FooterElement>
+        <FooterElement as={StyledLink} to="/about/">
+          About
+        </FooterElement>
+        <FooterElement as={StyledLink} to="/gallery/">
+          Gallery
+        </FooterElement>
+        <FooterElement as={StyledLink} to="/shipping/">
+          Shipping
+        </FooterElement>
+        <FooterElement as={StyledLink} to="/contact/">
+          Contact
+        </FooterElement> */}
+
+        <FooterElement as="a" href="https://www.instagram.com/forgetfulnumber/">
+          Instagram
+        </FooterElement>
+
+        <FooterElement as="a" href="https://www.facebook.com/forgetfulnumber/">
+          Facebook
+        </FooterElement>
+
+        <FooterElement as="a" href="mailto:info@forgetfulnumber.com">
+          Mail
+        </FooterElement>
+
+        <Top onClick={() => this.scrollTop()}>Top&uarr;</Top>
       </StyledFooter>
     )
   }

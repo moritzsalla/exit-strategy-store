@@ -1,45 +1,65 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Black, Orange } from "./variables"
+import { Black, Orange, White } from "./variables"
 
 export const StyledLink = styled(Link)`
   font-family: suisse;
-  text-transform: uppercase;
   color: black;
   text-decoration: none;
   color: ${Black};
 
   &:hover {
-    color: ${Orange};
+    color: ${Black};
     text-decoration: none;
   }
 `
 
 export const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 4rem;
+  line-height: 1;
   font-family: Suisse;
-  font-weight: 900;
+  font-weight: 500;
   text-transform: uppercase;
   color: ${Black};
 `
 
 export const Subtitle = styled.h2`
   font-size: 2rem;
-  font-family: suisse;
-  font-weight: 900;
-  text-transform: uppercase;
+  line-height: 1.25;
+  font-family: Suisse, sans-serif;
+  font-weight: 500;
   color: ${Black};
 `
 
 export const Paragraph = styled.p`
   font-family: suisse;
   color: ${Black};
+  font-weight: 500;
+  font-size: 1rem;
 `
 
-export const Small = styled.p`
-  font-weight: 400;
+export const Small = styled.span`
+  font-weight: 500;
   text-transform: uppercase;
-  size: 0.5rem;
+  font-size: 1rem;
   font-family: Suisse Mono, Suisse, monospace;
   color: ${Black};
+`
+
+export const Button = styled.button`
+  color: ${Black};
+  font-family: Suisse Mono, Suisse, monospace;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  background: none;
+  border: 0.1rem solid ${Black};
+  cursor: pointer;
+
+  &:hover {
+    color: ${White};
+    background: ${Black};
+  }
 `
