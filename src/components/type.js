@@ -15,11 +15,12 @@ export const StyledLink = styled(Link)`
 `
 
 export const Title = styled.h1`
-  font-size: 4rem;
+  font-size: 5rem;
+  letter-spacing: -0.3rem;
+
   line-height: 1;
   font-family: Suisse;
   font-weight: 500;
-  text-transform: uppercase;
   color: ${Black};
 `
 
@@ -36,6 +37,7 @@ export const Paragraph = styled.p`
   color: ${Black};
   font-weight: 500;
   font-size: 1rem;
+  line-height: 1.25;
 `
 
 export const Small = styled.span`

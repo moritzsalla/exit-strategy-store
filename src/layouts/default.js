@@ -60,8 +60,10 @@ const GlobalStyle = createGlobalStyle`
 }
 
 * {
-
   box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {

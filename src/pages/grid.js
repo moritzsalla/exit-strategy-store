@@ -87,19 +87,9 @@ export const query = graphql`
           title
           vendor
           productType
-
           priceRange {
             maxVariantPrice {
               amount
-            }
-          }
-          images {
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
             }
           }
         }
