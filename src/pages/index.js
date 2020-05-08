@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "gatsby-image"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
@@ -12,10 +12,10 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
 
-      {products.map(product => (
-        <Link to={product.node.handle}>
-          {product.node.images.map(image => (
-            <Image fixed={image.localFile.childImageSharp.fixed} />
+      {products.map((product, j) => (
+        <Link key={j} to={product.node.handle}>
+          {product.node.images.map((image, i) => (
+            <Image key={i} fixed={image.localFile.childImageSharp.fixed} />
           ))}
         </Link>
       ))}

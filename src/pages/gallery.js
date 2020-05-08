@@ -2,11 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Image from "gatsby-image"
-import { Link } from "gatsby"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { StyledLink, Small, Paragraph, Subtitle } from "../components/type"
+import { StyledLink, Small, Subtitle } from "../components/type"
 
 const List = styled.ul`
   display: grid;
@@ -29,10 +28,10 @@ const Gallery = ({ data }) => {
 
       <List>
         {products.map((product, i) => (
-          <Item>
+          <Item key={i}>
             <StyledLink to={product.node.handle}>
-              {product.node.images.map(image => (
-                <Image fixed={image.localFile.childImageSharp.fixed} />
+              {product.node.images.map((image, j) => (
+                <Image key={j} fixed={image.localFile.childImageSharp.fixed} />
               ))}
               <Subtitle>{product.node.title}</Subtitle>
               <Small>{product.node.vendor}</Small>

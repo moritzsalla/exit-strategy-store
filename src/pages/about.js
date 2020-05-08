@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { Title, Subtitle, Paragraph } from "../components/type"
+import { Paragraph } from "../components/type"
 
 const Wrapper = styled.section`
   display: flex;

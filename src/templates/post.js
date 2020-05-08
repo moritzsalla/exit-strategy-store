@@ -27,10 +27,10 @@ export default function Template({ data }) {
       <SEO title={product.vendor} />
       <Wrapper>
         <ImageWrapper>
-          {product.images.map(image => (
+          {product.images.map((image, i) => (
             <Img
               fixed={image.localFile.childImageSharp.fixed}
-              key={image.id}
+              key={i}
               alt={product.title}
             />
           ))}

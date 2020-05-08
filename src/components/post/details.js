@@ -15,8 +15,8 @@ const Details = props => (
 
     <Small>
       Size:
-      {props.sizes.map(i => (
-        <span key={i}>{i.title || `Not Specified`}</span>
+      {props.sizes.map((size, i) => (
+        <span key={i}>{size.title || `Not Specified`}</span>
       ))}
     </Small>
 

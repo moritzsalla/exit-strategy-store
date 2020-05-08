@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { StyledLink, Small } from "../components/type"
-import { Black, Orange, White } from "../components/variables"
+import { Black, White } from "../components/variables"
 
 const List = styled.ul`
   display: grid;

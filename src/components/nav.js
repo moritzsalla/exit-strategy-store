@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { StyledLink, Subtitle, Title } from "./type"
+import { StyledLink } from "./type"
 import { Black, White } from "./variables"
 
 const Header = styled.header`
