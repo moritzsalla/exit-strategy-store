@@ -25,6 +25,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
+    // {
+    //   resolve: `gatsby-plugin-layout`,
+    //   options: {
+    //     component: require.resolve(`./src/components/nav.js`),
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
