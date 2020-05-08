@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Black, Orange, White } from "./variables"
+import { Black, White } from "./variables"
 
 export const StyledLink = styled(Link)`
   font-family: suisse;

@@ -68,8 +68,8 @@ export const query = graphql`
       images {
         localFile {
           childImageSharp {
-            fixed(width: 1000, traceSVG: { color: "orange" }) {
-              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            fixed(width: 1000) {
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+
 import { Small } from "../type"
 
 const Wrapper = styled.div`

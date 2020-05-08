@@ -3,19 +3,48 @@ import styled from "styled-components"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { StyledLink } from "../components/type"
+import { Title, Subtitle, Paragraph, StyledLink } from "../components/type"
 
-const Section = styled.section``
-
-const ContactLink = styled(StyledLink)``
+const Section = styled.section`
+  margin: 1rem;
+`
 
 const Contact = () => {
   return (
     <Layout>
       <SEO title="Contact" />
       <Section>
-        <ContactLink href="#">Instagram</ContactLink>
-        <ContactLink href="mailto:info@forgetfulnumber.com">E–Mail</ContactLink>
+        <Title>Contact</Title>
+        <Subtitle>Contact or follow us here</Subtitle>
+
+        <Paragraph>
+          <ul>
+            <li>
+              <StyledLink
+                as="a"
+                href="https://www.instagram.com/forgetfulnumber/"
+              >
+                Instagram
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink
+                as="a"
+                href="https://www.facebook.com/forgetfulnumber/"
+              >
+                Facebook
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink as="a" href="mailto:info@forgetfulnumber.com">
+                E–Mail
+              </StyledLink>
+            </li>
+          </ul>
+          <br />
+          Forgetful Number is a collective of photography graduates at the Royal
+          Academy of Art (KABK) The Hague.
+        </Paragraph>
       </Section>
     </Layout>
   )

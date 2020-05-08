@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Small, StyledLink } from "./type"
-import { Black, White, Orange } from "./variables"
+import { Small } from "./type"
+import { Black } from "./variables"
 
 const StyledFooter = styled.footer`
   width: 100%;

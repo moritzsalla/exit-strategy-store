@@ -1,11 +1,9 @@
 import React from "react"
-
-import Layout from "../layouts/default"
-import SEO from "../components/seo"
 import Image from "gatsby-image"
 import { Link } from "gatsby"
 
-import { Title } from "../components/type"
+import Layout from "../layouts/default"
+import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   const products = data.allShopifyProduct.edges
@@ -32,14 +30,13 @@ export const query = graphql`
     allShopifyProduct {
       edges {
         node {
-          title
           handle
           images {
             localFile {
               id
               childImageSharp {
-                fixed(width: 1000, traceSVG: { color: "orange" }) {
-                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                fixed(width: 1000) {
+                  ...GatsbyImageSharpFixed_withWebp
                 }
               }
             }
