@@ -54,7 +54,7 @@ const Gallery = ({ data }) => {
 
 export const query = graphql`
   query {
-    allShopifyProduct {
+    allShopifyProduct(sort: { order: ASC, fields: title }) {
       edges {
         node {
           handle

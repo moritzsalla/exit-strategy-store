@@ -79,7 +79,7 @@ const Grid = ({ data }) => {
 
 export const query = graphql`
   query {
-    allShopifyProduct {
+    allShopifyProduct(sort: { order: ASC, fields: vendor }) {
       edges {
         node {
           handle
