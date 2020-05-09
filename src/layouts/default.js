@@ -60,6 +60,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 * {
+  user-select: none;
   box-sizing: border-box;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;

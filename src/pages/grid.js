@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { StyledLink, Small } from "../components/type"
-import { Black, White } from "../components/variables"
+import { Black, White, Orange } from "../components/variables"
 
 const List = styled.ul`
   display: grid;
@@ -19,18 +19,21 @@ const Item = styled(Small)`
   background: ${White};
 
   &:hover {
-    background: ${Black};
-    color: ${White};
+    background: ${Orange};
+    color: ${Black};
   }
 `
 
 const Head = styled(Item)`
   position: sticky;
   top: 0;
+  background: ${Black};
+  color: ${White};
+  // padding: 1rem;
 
   &:hover {
-    background: ${White};
-    color: ${Black};
+    background: ${Black};
+    color: ${White};
   }
 `
 

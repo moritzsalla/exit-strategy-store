@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Small } from "./type"
-import { Black } from "./variables"
+import { Black, White } from "./variables"
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
   align-items: center;
   color: white;
-  user-select: none;
+  background: ${Black};
 
   a::after {
     content: "↗";
@@ -17,8 +17,8 @@ const StyledFooter = styled.footer`
 `
 
 const FooterElement = styled(Small)`
-  padding: 1rem;
-  color: ${Black};
+  padding: 0.5rem 1rem;
+  color: ${White};
   text-decoration: none;
 
   span {
