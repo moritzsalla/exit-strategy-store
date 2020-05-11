@@ -1,9 +1,10 @@
-import React, { Suspense, useEffect } from "react"
+import React, { useEffect } from "react"
 import { Canvas, extend, useThree, invalidate } from "react-three-fiber"
-import Pillow from "./Pillow"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
 extend({ OrbitControls })
+
+const Pillow = React.lazy(() => import("./Pillow"))
 
 const CameraController = () => {
   const { camera, gl } = useThree()
@@ -21,6 +22,8 @@ const CameraController = () => {
 }
 
 const Scene = () => {
+  const isSSR = typeof window === "undefined"
+
   return (
     <Canvas
       camera={{
@@ -35,9 +38,11 @@ const Scene = () => {
       <ambientLight intensity={2} />
       <directionalLight intensity={8} />
 
-      <Suspense fallback={null}>
-        <Pillow position={[0, 0, 0]} />
-      </Suspense>
+      {!isSSR && (
+        <React.Suspense fallback={null}>
+          <Pillow position={[0, 0, 0]} />
+        </React.Suspense>
+      )}
     </Canvas>
   )
 }
