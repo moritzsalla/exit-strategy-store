@@ -28,7 +28,7 @@ const Scene = () => {
         near: 1,
         far: 1000,
       }}
-      pixelRatio={window.devicePixelRatio ? window.devicePixelRatio : 1}
+      pixelRatio={2}
     >
       <CameraController />
 
