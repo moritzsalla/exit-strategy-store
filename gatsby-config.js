@@ -24,6 +24,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://exitstrategies.store",
+        sitemap: "https://exitstrategies.store/sitemap.xml",
+        // policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     `gatsby-plugin-styled-components`,
     // {
     //   resolve: `gatsby-plugin-layout`,
