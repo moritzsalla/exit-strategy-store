@@ -2,7 +2,7 @@ import React from "react"
 import styles from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import Countdown from "react-countdown"
-import Scene from "./Scene"
+import Scene from "../components/scene"
 import Layout from "../layouts/default"
 
 const GlobalStyle = createGlobalStyle`

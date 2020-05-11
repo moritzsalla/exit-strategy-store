@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useRef } from "react"
 import { useFrame, useLoader } from "react-three-fiber"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
@@ -11,8 +11,6 @@ const Pillow = props => {
 
   return (
     <mesh {...props} ref={mesh} scale={[0.2, 0.2, 0.2]} rotation={[1.6, 0, 0]}>
-      {/* <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <meshStandardMaterial attach="material" color={"orange"} /> */}
       <primitive
         castShadow={true}
         receiveShadow={true}

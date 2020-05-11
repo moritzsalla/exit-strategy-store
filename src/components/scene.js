@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
-import { Canvas, extend, useThree, invalidate } from "react-three-fiber"
+import { Canvas, extend, useThree } from "react-three-fiber"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
 extend({ OrbitControls })
 
-const Pillow = React.lazy(() => import("./Pillow"))
+const Pillow = React.lazy(() => import("./pillow"))
 
 const CameraController = () => {
   const { camera, gl } = useThree()
