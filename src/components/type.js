@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Black, White } from "./variables"
+import { offsetBlack, Black, White } from "./variables"
 
 export const StyledLink = styled(Link)`
   font-family: suisse;
@@ -9,7 +9,6 @@ export const StyledLink = styled(Link)`
   color: ${Black};
 
   &:hover {
-    color: ${Black};
     text-decoration: none;
   }
 `
