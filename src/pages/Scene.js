@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from "react"
-import { Canvas, extend, useThree } from "react-three-fiber"
+import { Canvas, extend, useThree, invalidate } from "react-three-fiber"
 import Pillow from "./Pillow"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
@@ -10,10 +10,8 @@ const CameraController = () => {
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement)
 
-    //     controls.enableZoom = false
+    controls.enableZoom = false
     controls.enableKeys = false
-    //     controls.enableDamping = true
-    //     controls.dampingFactor = 0.01
 
     return () => {
       controls.dispose()
@@ -25,7 +23,6 @@ const CameraController = () => {
 const Scene = () => {
   return (
     <Canvas
-      // invalidateFrameloop
       camera={{
         fov: 10,
         near: 1,

@@ -9,20 +9,13 @@ const Pillow = props => {
 
   useFrame(() => (mesh.current.rotation.z += 0.004))
 
-  const aspect = window.innerWidth / window.innerHeight
-
   return (
-    <mesh
-      {...props}
-      ref={mesh}
-      scale={[0.1 * aspect, 0.1 * aspect, 0.1 * aspect]}
-      rotation={[1.7, 0, 0]}
-    >
+    <mesh {...props} ref={mesh} scale={[0.2, 0.2, 0.2]} rotation={[1.6, 0, 0]}>
       {/* <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
       <meshStandardMaterial attach="material" color={"orange"} /> */}
       <primitive
-        castShadow={false}
-        receiveShadow={false}
+        castShadow={true}
+        receiveShadow={true}
         object={gltf.scene}
         dispose={null}
       />
