@@ -24,12 +24,16 @@ const GlobalStyle = createGlobalStyle`
   canvas {
     min-height: 100vh;
     min-width: 100vw;
-  
+  }
+
+  @media (max-width: 768px) {
+   canvas {
+     transform: translateY(-40px);
+   } 
   }
 `
 
 const Wrapper = styled.div`
-  align-self: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,6 +47,7 @@ const Wrapper = styled.div`
 `
 
 const stickyLabel = styled.div`
+  transition: all 1s ease;
   font-feature-settings: "kern";
   font-feature-settings: "case";
   font-family: "Suisse", sans-serif;

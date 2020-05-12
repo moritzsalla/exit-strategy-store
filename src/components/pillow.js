@@ -23,9 +23,9 @@ const Pillow = props => {
       {...props}
       ref={mesh}
       scale={[
-        0.125 * aspectRatio.val,
-        0.125 * aspectRatio.val,
-        0.125 * aspectRatio.val,
+        0.1 * aspectRatio.val,
+        0.1 * aspectRatio.val,
+        0.1 * aspectRatio.val,
       ]}
       rotation={[1.6, 0, 0]}
     >
