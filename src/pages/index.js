@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Wrapper = styled.div`
+  align-self: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
