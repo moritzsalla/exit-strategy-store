@@ -30,23 +30,21 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const TitleWrapper = styles.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`
-
-const Title = styles.span`
-  font-family: "Suisse", sans-serif;
+const Label = styles.span`
+ font-family: "Suisse", sans-serif;
   font-size: 4rem;
   margin: 2rem;
   font-weight: 900;
   letter-spacing: 0.25rem;
-  text-transform: uppercase;
   color: #F87D00;
+`
+
+const Countdown = styles(Label)`
+ 
+`
+
+const Logo = styles(Label)`
+text-transform: uppercase;
 `
 
 const IndexPage = ({ data }) => {
@@ -54,17 +52,16 @@ const IndexPage = ({ data }) => {
     <Layout>
       <GlobalStyle />
       <Scene />
-      <TitleWrapper>
-        <Countdown
-          date="2020-05-21"
-          intervalDelay={0}
-          renderer={props => (
-            <Title>
-              {props.days}:{props.minutes}:{props.seconds}
-            </Title>
-          )}
-        />
-      </TitleWrapper>
+      <Logo />
+      <Countdown
+        date="2020-05-21"
+        intervalDelay={0}
+        renderer={props => (
+          <Title>
+            {props.days}:{props.minutes}:{props.seconds}
+          </Title>
+        )}
+      />
     </Layout>
   )
 }
