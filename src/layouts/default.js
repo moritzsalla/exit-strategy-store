@@ -18,40 +18,25 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Suisse";
   src: url("/fonts/SuisseIntl-Regular-WebXL.woff2") format("woff2"),
     url("/fonts/SuisseIntl-Regular-WebXL.woff") format("woff");
-  font-display: swap;
+  font-display: block;
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Suisse";
-  src: url("/fonts/SuisseIntl-Bold-WebXL.woff2") format("woff2"),
-    url("/fonts/SuisseIntl-Bold-WebXL.woff") format("woff");
-  font-display: swap;
+  src: url("/fonts/SuisseIntl-Black-WebXL.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-Black-WebXL.woff") format("woff");
+  font-display: block;
   font-weight: 900;
 }
 
 @font-face {
-  font-family: "Suisse Mono";
-  src: url("/fonts/SuisseIntlMono-Thin-WebXL.woff2") format("woff2"),
-    url("/fonts/SuisseIntlMono-Thin-WebXL.woff") format("woff");
-  font-display: swap;
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "Suisse Mono";
-  src: url("/fonts/SuisseIntlMono-Regular-WebXL.woff2") format("woff2"),
-    url("/fonts/SuisseIntlMono-Regular-WebXL.woff") format("woff");
-  font-display: swap;
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Suisse Mono";
-  src: url("/fonts/SuisseIntlMono-Bold-WebXL.woff2") format("woff2"),
-    url("/fonts/SuisseIntlMono-Bold-WebXL.woff") format("woff");
-  font-display: swap;
+  font-family: "Suisse";
+  src: url("/fonts/SuisseIntl-BlackItalic-WebXL.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-BlackItalic-WebXL.woff") format("woff");
+  font-display: block;
   font-weight: 900;
+  font-style: italic;
 }
 
 ::selection {
@@ -68,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html {
-  background: ${Black};
+  background: ${Orange};
 }
 
 body {

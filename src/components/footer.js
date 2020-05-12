@@ -1,24 +1,24 @@
 import React from "react"
 import styled from "styled-components"
 import { Small } from "./type"
-import { Black, White } from "./variables"
+import { Black, White, Orange } from "./variables"
 
 const StyledFooter = styled.footer`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
-  background: ${Black};
 
   a::after {
     content: "↗";
   }
 `
 
-const FooterElement = styled(Small)`
+const FooterElement = styled.span`
+  font-family: Suisse, sans-serif;
+  font-size: 1rem;
   padding: 0.5rem 1rem;
-  color: ${White};
+  color: ${Orange};
   text-decoration: none;
 
   span {

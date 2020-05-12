@@ -32,6 +32,7 @@ export default function Template({ data }) {
               fixed={image.localFile.childImageSharp.fixed}
               key={i}
               alt={product.title}
+              draggable={false}
             />
           ))}
         </ImageWrapper>

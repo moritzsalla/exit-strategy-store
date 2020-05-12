@@ -1,64 +1,59 @@
 import React from "react"
 import styled from "styled-components"
 import { StyledLink } from "./type"
-import { Black, White } from "./variables"
+import { Black, White, Orange } from "./variables"
 
 const Header = styled.header`
-  background: ${Black};
-  color: ${Black};
+  z-index: 100;
   display: flex;
+  font-weight: 900;
+  text-transform: uppercase;
   justify-content: space-between;
   align-items: center;
+  background: ${White};
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid ${Orange};
+  border-radius: 1rem;
 `
 
-const NavBar = styled.nav`
-  // display: grid;
-  // grid-template-columns: repeat(2, 1fr);
-  user-select: none;
+const Wrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 100;
 `
+
+const NavBar = styled.nav``
 
 const NavLink = styled(StyledLink)`
-  color: ${White};
-  margin: 1rem;
-  // outline: 1px solid red;
-  font-size: 1.5rem;
-
-  &:hover {
-    color: ${White};
-  }
+  color: ${Orange};
+  margin-right: 1rem;
 `
 
 const Logo = styled.h1`
-  padding: 0;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid ${White};
-  margin: 1rem;
-  color: ${White};
-  font-size: 2rem;
-
-  &:hover {
-    text-decoration: none;
-    color: ${White};
-  }
+  color: ${Orange};
 `
 
 const Nav = () => (
-  <Header>
-    <Logo as={StyledLink} to="/">
-      Exit Strategy
-    </Logo>
+  <Wrapper>
+    <Header>
+      <Logo as={StyledLink} to="/">
+        Exit Strategy
+      </Logo>
 
-    <NavBar>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/about/">About</NavLink>
-      <NavLink to="/gallery/">Gallery</NavLink>
-      <NavLink to="/grid/">Departure Board</NavLink>
-      <NavLink to="/shipping/">Shipping</NavLink>
-      <NavLink to="/contact/">Contact</NavLink>
-    </NavBar>
-  </Header>
+      <NavBar>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about/">About</NavLink>
+        <NavLink to="/gallery/">Gallery</NavLink>
+        <NavLink to="/grid/">Departure Board</NavLink>
+        <NavLink to="/shipping/">Shipping</NavLink>
+        <NavLink to="/contact/">Contact</NavLink>
+      </NavBar>
+    </Header>
+  </Wrapper>
 )
 
 export default Nav

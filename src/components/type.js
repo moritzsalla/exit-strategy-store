@@ -15,19 +15,17 @@ export const StyledLink = styled(Link)`
 
 export const Title = styled.h1`
   font-size: 5rem;
-  letter-spacing: -0.3rem;
-
   line-height: 1;
   font-family: Suisse;
-  font-weight: 500;
   color: ${Black};
+  font-weight: 900;
 `
 
 export const Subtitle = styled.h2`
   font-size: 2rem;
   line-height: 1.25;
   font-family: Suisse, sans-serif;
-  font-weight: 500;
+  font-weight: 900;
   color: ${Black};
 `
 
@@ -45,22 +43,4 @@ export const Small = styled.span`
   font-size: 1rem;
   font-family: Suisse Mono, Suisse, monospace;
   color: ${Black};
-`
-
-export const Button = styled.button`
-  color: ${Black};
-  font-family: Suisse Mono, Suisse, monospace;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  outline: none;
-  background: none;
-  border: 0.1rem solid ${Black};
-  cursor: pointer;
-
-  &:hover {
-    color: ${White};
-    background: ${Black};
-  }
 `

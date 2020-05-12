@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import BuyButton from "./buyButton"
+import BuyButton from "../buyButton"
 import { Title, Subtitle } from "../type"
 import Details from "./details"
 

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Image from "gatsby-image"
-
+import BuyButton from "../components/buyButton"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { StyledLink, Small, Subtitle } from "../components/type"
@@ -10,14 +10,21 @@ import { StyledLink, Small, Subtitle } from "../components/type"
 const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin: 0 2rem;
+  padding: 6rem 2rem;
 `
 
 const Item = styled.li`
-  display: inline-block;
-  margin: 4rem 0;
   text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  border: 1px solid grey;
+  margin: 1rem 0;
 `
+
+const Artist = styled(Subtitle)``
+
+const Price = styled(Small)``
 
 const Gallery = ({ data }) => {
   const products = data.allShopifyProduct.edges
@@ -31,11 +38,16 @@ const Gallery = ({ data }) => {
           <Item key={i}>
             <StyledLink to={product.node.handle}>
               {product.node.images.map((image, j) => (
-                <Image key={j} fixed={image.localFile.childImageSharp.fixed} />
+                <Image
+                  key={j}
+                  fixed={image.localFile.childImageSharp.fixed}
+                  draggable={false}
+                />
               ))}
-              <Subtitle>{product.node.title}</Subtitle>
-              <Small>{product.node.vendor}</Small>
+              <Artist>{product.node.vendor}</Artist>
+              <Small>€{product.node.priceRange.maxVariantPrice.amount}</Small>
             </StyledLink>
+            <BuyButton />
           </Item>
         ))}
       </List>
@@ -45,7 +57,7 @@ const Gallery = ({ data }) => {
 
 export const query = graphql`
   query {
-    allShopifyProduct(sort: { order: ASC, fields: title }) {
+    allShopifyProduct(sort: { order: ASC, fields: vendor }) {
       edges {
         node {
           handle
