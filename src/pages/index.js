@@ -58,6 +58,7 @@ const stickyLabel = styled.div`
   @media (max-width: 768px) {
     font-size: 4.5vw;
     margin: 3vh;
+    line-height: 1.25;
   }
 `
 
