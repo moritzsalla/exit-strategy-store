@@ -1,7 +1,7 @@
 import React from "react"
-import styles from "styled-components"
+import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
-import Countdown from "react-countdown"
+import Countdown, { zeroPad } from "react-countdown"
 import Scene from "../components/scene"
 import Layout from "../layouts/default"
 
@@ -10,41 +10,62 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Suisse";
     src: url("./fonts/SuisseIntl-Black-WebXL.woff2") format("woff2"),
         url("./fonts/SuisseIntl-Black-WebXL.woff") format("woff");
-    font-display: swap;
+    font-display: block;
   }
 
   html, body {
-    font-feature-settings: "kern";
-    font-feature-settings: "case";
     padding: 0;
     margin: 0;
     background: #F5F6F7;
     user-select: none;
-
-
+    overflow: hidden;
   }
 
   canvas {
     min-height: 100vh;
     min-width: 100vw;
+  
   }
 `
 
-const Label = styles.span`
- font-family: "Suisse", sans-serif;
-  font-size: 4rem;
-  margin: 2rem;
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  pointer-events: none;
+`
+
+const stickyLabel = styled.div`
+  font-feature-settings: "kern";
+  font-feature-settings: "case";
+  font-family: "Suisse", sans-serif;
+  font-size: 3vw;
+  margin: 2.5vw;
   font-weight: 900;
-  letter-spacing: 0.25rem;
-  color: #F87D00;
+  letter-spacing: 0.65vw;
+  color: #f87d00;
+  z-index: 100;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 4.5vw;
+    margin: 3vh;
+  }
 `
 
-const Countdown = styles(Label)`
- 
-`
+const Timer = styled(stickyLabel)``
 
-const Logo = styles(Label)`
-text-transform: uppercase;
+const Logo = styled(stickyLabel)`
+  display: flex;
+  justify-content: space-between;
 `
 
 const IndexPage = ({ data }) => {
@@ -52,16 +73,27 @@ const IndexPage = ({ data }) => {
     <Layout>
       <GlobalStyle />
       <Scene />
-      <Logo />
-      <Countdown
-        date="2020-05-21"
-        intervalDelay={0}
-        renderer={props => (
-          <Title>
-            {props.days}:{props.minutes}:{props.seconds}
-          </Title>
-        )}
-      />
+
+      <Wrapper>
+        <Logo>
+          KABK Photography
+          <br />
+          Graduation Print Sale
+          <br />
+          21—28 May
+        </Logo>
+        <Countdown
+          date="2020-05-21"
+          intervalDelay={0}
+          precision={3}
+          renderer={props => (
+            <Timer>
+              {zeroPad(props.days)}:{zeroPad(props.hours)}:
+              {zeroPad(props.minutes)}:{zeroPad(props.seconds)}
+            </Timer>
+          )}
+        />
+      </Wrapper>
     </Layout>
   )
 }
