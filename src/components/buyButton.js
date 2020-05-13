@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { offsetBlack, Black, White, Orange } from "./variables"
+import Client from "shopify-buy"
+import { Black, White, Orange, BorderRadius, StrokeWeight } from "./variables"
 
 export const Button = styled.button`
   color: ${Black};
@@ -9,10 +10,10 @@ export const Button = styled.button`
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  border-radius: 0.5rem;
+  border-radius: ${BorderRadius};
   outline: none;
   background: none;
-  border: 0.1rem solid ${Orange};
+  border: ${StrokeWeight} solid ${Orange};
   cursor: pointer;
 
   &:hover {
@@ -22,8 +23,34 @@ export const Button = styled.button`
 `
 
 class BuyButton extends React.Component {
+  constructor(props) {
+    super(props)
+    this.product = props.productId
+    this.client = Client.buildClient({
+      domain: "exit-strategy-print-sale.myshopify.com",
+      storefrontAccessToken: "2ec6c4ead91caa561ec8cb053c9941b5",
+    })
+  }
+
   purchase() {
-    alert("Thank you for your purchase")
+    const lineItemsToAdd = [
+      {
+        variantId: this.product,
+        quantity: 1,
+      },
+    ]
+
+    this.client.checkout.create().then(checkout => {
+      console.log("Checkout created")
+
+      this.client.checkout
+        .addLineItems(checkout, lineItemsToAdd, console.log("Added line items"))
+        .then(checkout => {
+          console.log(checkout.lineItems)
+        })
+    })
+
+    // window.location.href = '...';
   }
 
   render() {

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { StyledLink } from "./type"
-import { Black, White, Orange } from "./variables"
+import { Black, White, Orange, StrokeWeight, BorderRadius } from "./variables"
 
 const Header = styled.header`
   z-index: 100;
@@ -13,8 +13,9 @@ const Header = styled.header`
   background: ${White};
   padding: 1rem;
   margin: 1rem;
-  border: 1px solid ${Orange};
-  border-radius: 1rem;
+  border: ${StrokeWeight} solid ${Orange};
+  border-radius: ${BorderRadius};
+  font-size: 2rem;
 `
 
 const Wrapper = styled.div`

@@ -31,7 +31,7 @@
     "react-gsap": "^1.2.0",
     "react-helmet": "^6.0.0",
     "reset-css": "^5.0.1",
-    "shopify-buy": "^2.9.3",
+    "shopify-buy": "^2.10.0",
     "styled-components": "^5.1.0",
     "three": "^0.115.0"
   },

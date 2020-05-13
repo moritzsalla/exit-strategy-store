@@ -45,7 +45,7 @@ const TextPannel = props => (
       sizes={props.sizes}
       printType={props.printType}
     />
-    <BuyButton />
+    <BuyButton productId={props.productId} />
   </Wrapper>
 )
 

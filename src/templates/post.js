@@ -44,6 +44,7 @@ export default function Template({ data }) {
           price={product.priceRange.maxVariantPrice.amount}
           sizes={product.variants}
           printType={product.productType}
+          productId={product.variants[0].shopifyId}
         />
       </Wrapper>
     </Layout>
@@ -59,6 +60,7 @@ export const query = graphql`
       productType
       variants {
         title
+        shopifyId
       }
       priceRange {
         maxVariantPrice {

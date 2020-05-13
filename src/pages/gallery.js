@@ -36,7 +36,7 @@ const Gallery = ({ data }) => {
       <List>
         {products.map((product, i) => (
           <Item key={i}>
-            <StyledLink to={product.node.handle}>
+            <StyledLink to={`/${product.node.handle}`}>
               {product.node.images.map((image, j) => (
                 <Image
                   key={j}

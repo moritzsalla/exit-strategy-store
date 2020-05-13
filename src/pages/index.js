@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
 
       {products.map((product, j) => (
-        <Link key={j} to={product.node.handle}>
+        <Link key={j} to={`/${product.node.handle}`}>
           {product.node.images.map((image, i) => (
             <Image key={i} fixed={image.localFile.childImageSharp.fixed} />
           ))}

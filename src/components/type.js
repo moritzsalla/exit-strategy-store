@@ -7,6 +7,7 @@ export const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
   color: ${Black};
+  font-feature-settings: "kern";
 
   &:hover {
     text-decoration: none;
@@ -19,6 +20,9 @@ export const Title = styled.h1`
   font-family: Suisse;
   color: ${Black};
   font-weight: 900;
+  font-feature-settings: "kern";
+  text-transform: uppercase;
+  font-feature-settings: "kern";
 `
 
 export const Subtitle = styled.h2`
@@ -27,6 +31,8 @@ export const Subtitle = styled.h2`
   font-family: Suisse, sans-serif;
   font-weight: 900;
   color: ${Black};
+  text-transform: uppercase;
+  font-feature-settings: "kern";
 `
 
 export const Paragraph = styled.p`
@@ -35,6 +41,7 @@ export const Paragraph = styled.p`
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.25;
+  font-feature-settings: "kern";
 `
 
 export const Small = styled.span`
@@ -43,4 +50,5 @@ export const Small = styled.span`
   font-size: 1rem;
   font-family: Suisse Mono, Suisse, monospace;
   color: ${Black};
+  font-feature-settings: "kern";
 `
