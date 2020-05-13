@@ -16,12 +16,12 @@ const Link = styled.a`
   text-decoration: none;
 
   &::before {
-    content: "→ "
+    content: "→ ";
   }
 `
 
 const Wrapper = styled.section`
- padding: 4rem;
+  padding: 4rem;
 `
 
 const Contact = () => {
@@ -30,13 +30,10 @@ const Contact = () => {
       <SEO title="Contact" />
 
       <Wrapper>
-         <Title>Contact</Title>
+        <Title>Contact</Title>
         <ul>
           <li>
-            <Link
-              as="a"
-              href="https://www.instagram.com/forgetfulnumber/"
-            >
+            <Link as="a" href="https://www.instagram.com/forgetfulnumber/">
               Instagram
             </Link>
           </li>
@@ -51,8 +48,7 @@ const Contact = () => {
             </Link>
           </li>
         </ul>
-      
-        </Wrapper>
+      </Wrapper>
     </Layout>
   )
 }

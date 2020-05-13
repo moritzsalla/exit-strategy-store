@@ -1,15 +1,15 @@
-const dotenv = require("dotenv")
+const path = require("path")
 
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config()
-}
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
     title: `Exit Strategy`,
     siteUrl: `https://exitstrategies.store`,
     description: `We are Forgetful Number, a collective of 38 photography students of the Royal Academy of Art, The Hague.`,
-    author: `@exitstrategy`,
+    author: `@forgetfulnumber`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -29,31 +29,16 @@ module.exports = {
       options: {
         host: "https://exitstrategies.store",
         sitemap: "https://exitstrategies.store/sitemap.xml",
-        // policy: [{ userAgent: "*", allow: "/" }],
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     `gatsby-plugin-styled-components`,
-    // {
-    //   resolve: `gatsby-plugin-layout`,
-    //   options: {
-    //     component: require.resolve(`./src/components/nav.js`),
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-116740197-2",
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-sentry",
-    //   options: {
-    //     dsn: process.env.SENTRY_DSN_URL,
-    //     // environment: process.env.NODE_ENV,
-    //     enabled: (() =>
-    //       ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
-    //   },
-    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -79,12 +64,10 @@ module.exports = {
     {
       resolve: "gatsby-source-shopify",
       options: {
-        shopName: "exit-strategy-print-sale",
-        accessToken: "2ec6c4ead91caa561ec8cb053c9941b5",
+        shopName: process.env.SHOP_NAME,
+        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
         apiVersion: "2020-04",
         verbose: true,
-        paginationSize: 250,
-        includeCollections: ["shop", "content"],
       },
     },
   ],

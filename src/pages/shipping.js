@@ -16,9 +16,9 @@ const Shipping = () => {
       <SEO title="Shipping" />
 
       <Wrapper>
-      <Title>Shipping Costs</Title>
+        <Title>Shipping Costs</Title>
         <Paragraph>
-           <table>
+          <table>
             <tr>
               <th>Country</th>
               <th>Price/€</th>
@@ -36,19 +36,17 @@ const Shipping = () => {
               <td>29.30</td>
             </tr>
           </table>
-        <br />
-        Due to social distancing measures it is not possible to collect your
-        purchase in person.
-        <br />
-           <br />
-        Any other costs or charges such as customs or import duties, customs
-        clearance and handling may also apply during the shipment of your lot
-        and will be charged to you by the involved party at a later stage if
-        applicable.
-      </Paragraph>
-        
-    
-        </Wrapper>
+          <br />
+          Due to social distancing measures it is not possible to collect your
+          purchase in person.
+          <br />
+          <br />
+          Any other costs or charges such as customs or import duties, customs
+          clearance and handling may also apply during the shipment of your lot
+          and will be charged to you by the involved party at a later stage if
+          applicable.
+        </Paragraph>
+      </Wrapper>
     </Layout>
   )
 }

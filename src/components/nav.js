@@ -47,22 +47,23 @@ const Logo = styled.h1`
   span {
     font-size: 0.8rem;
     display: flex;
-    justify-content: flex-start;  
-    letter-spacing: 0.1rem;  
+    justify-content: flex-start;
+    letter-spacing: 0.1rem;
   }
 `
 
 const TagLine = styled.span`
   color: ${Orange};
- font-style: italic;
- letter-spacing: 0.25rem;
+  font-style: italic;
+  letter-spacing: 0.25rem;
 `
 
 const Nav = () => (
   <Wrapper>
     <Header>
       <Logo as={StyledLink} to="/about/">
-        Exit Strategy<br />
+        Exit Strategy
+        <br />
         <span>How to Graduate in an Emergency</span>
       </Logo>
 

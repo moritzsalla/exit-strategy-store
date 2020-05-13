@@ -51,7 +51,9 @@ const Gallery = ({ data }) => {
                 />
               ))}
               <Artist>{product.node.vendor}</Artist>
-              <Paragraph>€{product.node.priceRange.maxVariantPrice.amount}</Paragraph>
+              <Paragraph>
+                €{product.node.priceRange.maxVariantPrice.amount}
+              </Paragraph>
             </StyledLink>
             <BuyButton product={product} />
           </Item>

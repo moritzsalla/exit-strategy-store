@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {Title, Paragraph} from "../components/type"
+import { Title, Paragraph } from "../components/type"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
@@ -15,9 +15,12 @@ const About = () => {
       <SEO title="About" />
       <Wrapper>
         <Title>
-          We are EXIT&nbsp;STRATEGY<br />→ A collective of 40 graduating BA photography students, who are preparing their EXIT STRATEGIES to depart from the Royal Academy of Art in The Hague
+          We are EXIT&nbsp;STRATEGY
+          <br />→ A collective of 40 graduating BA photography students, who are
+          preparing their EXIT STRATEGIES to depart from the Royal Academy of
+          Art in The Hague
         </Title>
-        </Wrapper>
+      </Wrapper>
     </Layout>
   )
 }

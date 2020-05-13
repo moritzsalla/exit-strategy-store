@@ -71,7 +71,7 @@ td {
 `
 
 const Spacer = styled.div`
-padding-top: 6rem;
+  padding-top: 6rem;
   min-height: 100vh;
 `
 
