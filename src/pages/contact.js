@@ -13,10 +13,15 @@ const Link = styled.a`
   font-size: 4rem;
   font-style: italic;
   line-height: 1;
+  text-decoration: none;
+
+  &::before {
+    content: "→ "
+  }
 `
 
 const Wrapper = styled.section`
- padding: 0 4rem 4rem 4rem;
+ padding: 4rem;
 `
 
 const Contact = () => {

@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { Small } from "./type"
-import { Black, White, Orange } from "./variables"
+import { Orange, StrokeWeight } from "./variables"
 
 const StyledFooter = styled.footer`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* border-top: ${StrokeWeight} solid ${Orange}; */
 
   a::after {
     content: "↗";

@@ -9,6 +9,7 @@ import { White, Orange, StrokeWeight } from "../components/variables"
 
 const List = styled.ul`
   display: grid;
+  padding: 4rem 0;
 `
 
 const Item = styled(Paragraph)`

@@ -4,10 +4,9 @@ import Client from "shopify-buy"
 import { Black, White, Orange, BorderRadius, StrokeWeight } from "./variables"
 
 export const Button = styled.button`
-  color: ${Black};
-  font-family: Suisse Mono, Suisse, monospace;
   color: ${Orange};
   text-transform: uppercase;
+  font-weight: bold;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: ${BorderRadius};

@@ -57,24 +57,31 @@ html {
 body {
   background: ${White};
 }
+
+th {
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+}
+
+td {
+  padding-right: 2rem;
+}
 `
 
 const Spacer = styled.div`
-  height: 10rem;
-`
-
-const FooterGoDown = styled.div`
+padding-top: 6rem;
   min-height: 100vh;
 `
 
 const Layout = ({ children }) => {
   return (
     <>
-      <FooterGoDown>
-        <Spacer />
+      <Spacer>
         <Nav />
         <main>{children}</main>
-      </FooterGoDown>
+      </Spacer>
       <Footer />
       <GlobalStyle />
     </>
