@@ -26,11 +26,12 @@ const GlobalStyle = createGlobalStyle`
     min-width: 100vw;
   }
 
-  @media (max-width: 768px) {
+  /* COMPENSATE FOR WEBKIT BROWSER CENTER ALIGN OFFSET
+   @media (max-width: 768px) { 
    canvas {
-     transform: translateY(-40px);
+     transform: translateY(-40px); 
    } 
-  }
+  } */
 `
 
 const Wrapper = styled.div`
