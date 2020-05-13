@@ -67,6 +67,7 @@ module.exports = {
         shopName: process.env.SHOP_NAME,
         accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
         apiVersion: "2020-04",
+        includeCollections: ["shop", "content"],
         verbose: true,
       },
     },
