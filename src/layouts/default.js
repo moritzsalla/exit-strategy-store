@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Suisse";
   src: url("/fonts/SuisseIntl-Regular-WebXL.woff2") format("woff2"),
     url("/fonts/SuisseIntl-Regular-WebXL.woff") format("woff");
-  font-display: block;
+  font-display: swap;
   font-weight: 500;
 }
 
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Suisse";
   src: url("/fonts/SuisseIntl-Black-WebXL.woff2") format("woff2"),
     url("/fonts/SuisseIntl-Black-WebXL.woff") format("woff");
-  font-display: block;
+  font-display: swap;
   font-weight: bold;
 }
 
@@ -30,18 +30,18 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Suisse";
   src: url("/fonts/SuisseIntl-BlackItalic-WebXL.woff2") format("woff2"),
     url("/fonts/SuisseIntl-BlackItalic-WebXL.woff") format("woff");
-  font-display: block;
+  font-display: swap;
   font-weight: bold;
   font-style: italic, oblique;
 }
 
 ::selection {
-  background: ${Orange};
+  background: none;
   color: ${Black};
 }
 
 * {
-  user-select: none;
+  /* user-select: none; */
   box-sizing: border-box;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
@@ -82,6 +82,7 @@ const Layout = ({ children }) => {
         <Nav />
         <main>{children}</main>
       </Spacer>
+
       <Footer />
       <GlobalStyle />
     </>

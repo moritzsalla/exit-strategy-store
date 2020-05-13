@@ -9,7 +9,10 @@ import TextPannel from "../components/post/textPannel"
 
 const Wrapper = styled.section``
 
-const ImageWrapper = styled.div``
+const ImageWrapper = styled.div`
+  width: 50vw;
+  background: red;
+`
 
 export default function Template({ data }) {
   const product = data.shopifyProduct

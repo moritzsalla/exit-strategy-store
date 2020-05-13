@@ -19,12 +19,9 @@ const Wrapper = styled.div`
 `
 
 const Markup = styled.div`
-  h1,
-  h2,
-  h3,
-  h4,
-  p {
-    font-family: Suisse, sans-serif;
+  * {
+    font-family: Suisse, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.5rem;
     line-height: 1.25;
   }

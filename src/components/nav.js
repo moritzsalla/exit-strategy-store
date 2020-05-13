@@ -6,7 +6,7 @@ import { Black, White, Orange, StrokeWeight, BorderRadius } from "./variables"
 const Header = styled.header`
   z-index: 100;
   display: flex;
-  font-weight: 900;
+  font-weight: bold;
   text-transform: uppercase;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +61,7 @@ const TagLine = styled.span`
 const Nav = () => (
   <Wrapper>
     <Header>
-      <Logo as={StyledLink} to="/about/">
+      <Logo as={StyledLink} to="/">
         Exit Strategy
         <br />
         <span>How to Graduate in an Emergency</span>
@@ -76,7 +76,7 @@ const Nav = () => (
         <NavLink to="/contact/">Contact</NavLink>
       </NavBar>
 
-      <TagLine as={StyledLink} to="/">
+      <TagLine as={StyledLink} to="/about/">
         Online Print Sale
       </TagLine>
     </Header>
