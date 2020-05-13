@@ -1,23 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import {Title} from "../components/type"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { Paragraph } from "../components/type"
 
-const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-`
-
-const Large = styled(Paragraph)`
-  font-size: 4vw;
-  max-width: 30ch;
-  text-align: center;
-  line-height: 1;
+const Wrapper = styled.p`
+  padding: 0 4rem 4rem 4rem;
 `
 
 const About = () => {
@@ -25,12 +14,14 @@ const About = () => {
     <Layout>
       <SEO title="About" />
       <Wrapper>
-        <Large>
-          Forgetful Number presents EXIT STRATEGY! We are a creative collective
+        <Title>
+          Forgetful Number presents EXIT&nbsp;STRATEGY! We are a creative collective
           unforgettable 4th year photography students of the Royal Academy of
           The Hague. If you don't forget US, we don't forget YOU!
-        </Large>
-      </Wrapper>
+          <br /><br />
+          Support our graduation by purchasing a print or give us some love on Insta!
+        </Title>
+        </Wrapper>
     </Layout>
   )
 }

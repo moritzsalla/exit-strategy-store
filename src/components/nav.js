@@ -27,22 +27,43 @@ const Wrapper = styled.div`
   z-index: 100;
 `
 
-const NavBar = styled.nav``
+const NavBar = styled.nav`
+  display: flex;
+  align-items: center;
+`
 
 const NavLink = styled(StyledLink)`
   color: ${Orange};
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  border-bottom: 0.1rem solid ${Orange};
 `
 
 const Logo = styled.h1`
   color: ${Orange};
+  font-style: italic;
+  letter-spacing: 0.25rem;
+
+  span {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: flex-start;  
+    letter-spacing: 0.1rem;  
+  }
+`
+
+const TagLine = styled.span`
+  color: ${Orange};
+ font-style: italic;
+ letter-spacing: 0.25rem;
 `
 
 const Nav = () => (
   <Wrapper>
     <Header>
-      <Logo as={StyledLink} to="/">
-        Exit Strategy
+      <Logo as={StyledLink} to="/about/">
+        Exit Strategy<br />
+        <span>How to Graduate in an Emergency</span>
       </Logo>
 
       <NavBar>
@@ -53,6 +74,10 @@ const Nav = () => (
         <NavLink to="/shipping/">Shipping</NavLink>
         <NavLink to="/contact/">Contact</NavLink>
       </NavBar>
+
+      <TagLine as={StyledLink} to="/">
+        Online Print Sale
+      </TagLine>
     </Header>
   </Wrapper>
 )

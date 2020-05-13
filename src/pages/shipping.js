@@ -5,18 +5,21 @@ import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { Paragraph, Title, Subtitle } from "../components/type"
 
+const Wrapper = styled.section`
+  padding: 0 4rem 4rem 4rem;
+  max-width: 80ch;
+`
+
 const Shipping = () => {
   return (
     <Layout>
       <SEO title="Shipping" />
 
+      <Wrapper>
       <Title>Shipping Costs</Title>
-      <Subtitle>Find information about potential orders here.</Subtitle>
-      <Paragraph>
-        Shipping to The Netherlands: € 8.45
-        <br />
-        <br />
-        <ul>
+        <Paragraph>
+          <ul>
+          <li>Netherlands € 8.45</li>
           <li>Austria € 18.00</li>
           <li>Belgium € 18.00</li>
           <li>Germany € 18.00</li>
@@ -43,6 +46,7 @@ const Shipping = () => {
         and will be charged to you by the involved party at a later stage if
         applicable.
       </Paragraph>
+        </Wrapper>
     </Layout>
   )
 }

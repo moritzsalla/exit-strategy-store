@@ -17,9 +17,10 @@ const StyledFooter = styled.footer`
 const FooterElement = styled.span`
   font-family: Suisse, sans-serif;
   font-size: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   color: ${Orange};
   text-decoration: none;
+  font-weight: bold;
 
   span {
     font-family: Suisse, sans-serif;

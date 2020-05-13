@@ -3,41 +3,51 @@ import styled from "styled-components"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { Title, Subtitle, Paragraph, StyledLink } from "../components/type"
+
+import { Orange } from "../components/variables"
+import { Title } from "../components/type"
+
+const Link = styled.a`
+  color: ${Orange};
+  font-weight: bold;
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1;
+`
+
+const Wrapper = styled.section`
+ padding: 0 4rem 4rem 4rem;
+`
 
 const Contact = () => {
   return (
     <Layout>
       <SEO title="Contact" />
 
-      <Title>Contact</Title>
-      <Subtitle>Contact or follow us here</Subtitle>
-
-      <Paragraph>
+      <Wrapper>
+         <Title>Contact</Title>
         <ul>
           <li>
-            <StyledLink
+            <Link
               as="a"
               href="https://www.instagram.com/forgetfulnumber/"
             >
               Instagram
-            </StyledLink>
+            </Link>
           </li>
           <li>
-            <StyledLink as="a" href="https://www.facebook.com/forgetfulnumber/">
+            <Link as="a" href="https://www.facebook.com/forgetfulnumber/">
               Facebook
-            </StyledLink>
+            </Link>
           </li>
           <li>
-            <StyledLink as="a" href="mailto:info@forgetfulnumber.com">
+            <Link as="a" href="mailto:info@forgetfulnumber.com">
               E–Mail
-            </StyledLink>
+            </Link>
           </li>
         </ul>
-        <br />
-        Forgetful Number is a collective of photography graduates at the Royal
-        Academy of Art (KABK) The Hague.
-      </Paragraph>
+      
+        </Wrapper>
     </Layout>
   )
 }

@@ -9,10 +9,6 @@ import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import { Black, White, Orange } from "../components/variables"
 
-const FooterGoDown = styled.div`
-  min-height: 100vh;
-`
-
 const GlobalStyle = createGlobalStyle`
   @font-face {
   font-family: "Suisse";
@@ -27,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   src: url("/fonts/SuisseIntl-Black-WebXL.woff2") format("woff2"),
     url("/fonts/SuisseIntl-Black-WebXL.woff") format("woff");
   font-display: block;
-  font-weight: 900;
+  font-weight: bold;
 }
 
 @font-face {
@@ -35,8 +31,8 @@ const GlobalStyle = createGlobalStyle`
   src: url("/fonts/SuisseIntl-BlackItalic-WebXL.woff2") format("woff2"),
     url("/fonts/SuisseIntl-BlackItalic-WebXL.woff") format("woff");
   font-display: block;
-  font-weight: 900;
-  font-style: italic;
+  font-weight: bold;
+  font-style: italic, oblique;
 }
 
 ::selection {
@@ -50,9 +46,11 @@ const GlobalStyle = createGlobalStyle`
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern";
 }
 
 html {
+  font-family: Suisse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: ${Orange};
 }
 
@@ -61,10 +59,19 @@ body {
 }
 `
 
+const Spacer = styled.div`
+  height: 10rem;
+`
+
+const FooterGoDown = styled.div`
+  min-height: 100vh;
+`
+
 const Layout = ({ children }) => {
   return (
     <>
       <FooterGoDown>
+        <Spacer />
         <Nav />
         <main>{children}</main>
       </FooterGoDown>

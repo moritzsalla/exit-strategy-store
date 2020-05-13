@@ -9,7 +9,7 @@ import { StyledLink, Small, Subtitle } from "../components/type"
 const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 6rem 2rem;
+  padding: 0 2rem;
 `
 
 const Item = styled.li`

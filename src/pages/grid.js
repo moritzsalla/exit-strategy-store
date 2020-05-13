@@ -4,20 +4,25 @@ import styled from "styled-components"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { StyledLink, Small } from "../components/type"
+import { StyledLink, Paragraph } from "../components/type"
 import { White, Orange, StrokeWeight } from "../components/variables"
 
 const List = styled.ul`
   display: grid;
 `
 
-const Item = styled(Small)`
-  border-bottom: ${StrokeWeight} solid ${Orange};
+const Item = styled(Paragraph)`
+  border-top: ${StrokeWeight} solid ${Orange};
   padding: 0.5rem 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background: ${White};
   color: ${Orange};
+  font-weight: normal;
+
+  &:last-of-type {
+    border-bottom: ${StrokeWeight} solid ${Orange};
+  }
 
   &:hover {
     background: ${Orange};
