@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Image from "gatsby-image"
-import BuyButton from "../components/buyButton"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { StyledLink, Small, Subtitle } from "../components/type"
@@ -17,7 +16,7 @@ const Item = styled.li`
   text-align: center;
   display: flex;
   flex-flow: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   border: 1px solid grey;
   margin: 1rem 0;
 `
@@ -47,7 +46,6 @@ const Gallery = ({ data }) => {
               <Artist>{product.node.vendor}</Artist>
               <Small>€{product.node.priceRange.maxVariantPrice.amount}</Small>
             </StyledLink>
-            <BuyButton />
           </Item>
         ))}
       </List>
