@@ -7,17 +7,9 @@ import Layout from "../layouts/default"
 import Img from "gatsby-image"
 import TextPannel from "../components/post/textPannel"
 
-const Wrapper = styled.section`
-  width: 100%;
-  display: flex;
-`
+const Wrapper = styled.section``
 
-const ImageWrapper = styled.div`
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-`
+const ImageWrapper = styled.div``
 
 export default function Template({ data }) {
   const product = data.shopifyProduct
@@ -37,15 +29,7 @@ export default function Template({ data }) {
           ))}
         </ImageWrapper>
 
-        <TextPannel
-          product={product.title}
-          vendor={product.vendor}
-          markup={product.descriptionHtml}
-          price={product.priceRange.maxVariantPrice.amount}
-          sizes={product.variants}
-          printType={product.productType}
-          productId={product.variants[0].shopifyId}
-        />
+        <TextPannel product={product} />
       </Wrapper>
     </Layout>
   )
@@ -56,6 +40,7 @@ export const query = graphql`
     shopifyProduct(handle: { eq: $handle }) {
       title
       vendor
+      handle
       descriptionHtml
       productType
       variants {

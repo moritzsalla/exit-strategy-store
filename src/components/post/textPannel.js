@@ -34,19 +34,19 @@ const Markup = styled.div`
   }
 `
 
-const TextPannel = props => (
-  <Wrapper>
-    <Artist>{props.vendor}</Artist>
-    <Series>{props.product}</Series>
-    <Markup dangerouslySetInnerHTML={{ __html: props.markup }} />
+const TextPannel = props => {
+  const { product } = props
 
-    <Details
-      price={props.price}
-      sizes={props.sizes}
-      printType={props.printType}
-    />
-    <BuyButton productId={props.productId} />
-  </Wrapper>
-)
+  return (
+    <Wrapper>
+      <Artist>{product.vendor}</Artist>
+      <Series>{product.title}</Series>
+      <Markup dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
+
+      <Details product={product} />
+      <BuyButton product={product} />
+    </Wrapper>
+  )
+}
 
 export default TextPannel

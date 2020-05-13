@@ -25,32 +25,37 @@ export const Button = styled.button`
 class BuyButton extends React.Component {
   constructor(props) {
     super(props)
-    this.product = props.productId
-    this.client = Client.buildClient({
-      domain: "exit-strategy-print-sale.myshopify.com",
-      storefrontAccessToken: "2ec6c4ead91caa561ec8cb053c9941b5",
-    })
+    this.product = props.product
+    this.client = null
+    this.checkoutId = null
+  }
+
+  componentDidMount() {
+    this.client = Client.buildClient(
+      {
+        domain: "exit-strategy-print-sale.myshopify.com",
+        storefrontAccessToken: "2ec6c4ead91caa561ec8cb053c9941b5",
+      },
+      console.log("Created Client")
+    )
+
+    this.client.checkout
+      .create()
+      .then(checkout => {
+        this.checkoutId = checkout.attrs.webUrl.value
+      })
+      .then(console.log("Created Checkout"))
   }
 
   purchase() {
-    const lineItemsToAdd = [
-      {
-        variantId: this.product,
-        quantity: 1,
-      },
-    ]
+    this.client.product
+      .fetch(this.product.variants[0].shopifyId)
+      .then(product => {
+        console.log(product)
+      })
 
-    this.client.checkout.create().then(checkout => {
-      console.log("Checkout created")
-
-      this.client.checkout
-        .addLineItems(checkout, lineItemsToAdd, console.log("Added line items"))
-        .then(checkout => {
-          console.log(checkout.lineItems)
-        })
-    })
-
-    // window.location.href = '...';
+    // console.log("Redirecting to Shopify…")
+    // window.location.href = this.checkoutId
   }
 
   render() {

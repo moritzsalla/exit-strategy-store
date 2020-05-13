@@ -9,19 +9,20 @@ const Wrapper = styled.div`
   margin: 2rem 0;
 `
 
-const Details = props => (
-  <Wrapper>
-    <Small>Price: €{props.price || `Not Specified`}</Small>
+const Details = props => {
+  const { product } = props
 
-    <Small>
-      Size:
-      {props.sizes.map((size, i) => (
-        <span key={i}>{size.title || `Not Specified`}</span>
-      ))}
-    </Small>
+  return (
+    <Wrapper>
+      <Small>
+        Price: €{product.priceRange.maxVariantPrice.amount || `Not Specified`}
+      </Small>
 
-    <Small>Type: {props.printType || `Not Specified`}</Small>
-  </Wrapper>
-)
+      <Small>Size: {product.variants[0].title || `Not Specified`}</Small>
+
+      <Small>Type: {product.productType || `Not Specified`}</Small>
+    </Wrapper>
+  )
+}
 
 export default Details
