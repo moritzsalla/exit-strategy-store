@@ -8,6 +8,7 @@ import styled from "styled-components"
 
 import { createGlobalStyle } from "styled-components"
 import { Black, White, Orange } from "../components/variables"
+import { ShopifyProvider } from "../components/shopifyProvider"
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -78,15 +79,14 @@ const Spacer = styled.div`
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <ShopifyProvider>
       <Spacer>
         <Nav />
         <main>{children}</main>
-
         <Footer />
       </Spacer>
       <GlobalStyle />
-    </>
+    </ShopifyProvider>
   )
 }
 

@@ -74,6 +74,7 @@ const Nav = () => (
         <NavLink to="/grid/">Departure Board</NavLink>
         <NavLink to="/shipping/">Shipping</NavLink>
         <NavLink to="/contact/">Contact</NavLink>
+        <NavLink to="/cart/">Cart</NavLink>
       </NavBar>
 
       <TagLine as={StyledLink} to="/about/">

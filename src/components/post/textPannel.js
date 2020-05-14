@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useContext, useState } from "react"
 import styled from "styled-components"
 
 import BuyButton from "../buyButton"
 import { Title, Subtitle } from "../type"
 import Details from "./details"
+import { ShopifyContext } from "../shopifyProvider"
+
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
 
 const Series = styled(Title)`
   margin-bottom: 2rem;
@@ -31,17 +34,55 @@ const Markup = styled.div`
   }
 `
 
-const TextPannel = props => {
-  const { product } = props
+const TextPannel = ({ product }) => {
+  const {
+    store: { adding },
+    addVariantToCart,
+  } = useContext(ShopifyContext)
+  // const shopifyId = product.variants[0].shopifyId
+  const [variant, setVariant] = useState(product.variants[0].shopifyId)
+  const [quantity, setQuantity] = useState(1)
+
+  const purchase = () => {
+    addVariantToCart(variant, quantity)
+  }
+
+  const handleQuantityChange = e => {
+    const value = +e.target.value
+    setQuantity(clamp(value, 0, 10))
+  }
+
+  const handleVariantChange = e => {
+    const value = e.target.value
+    setVariant(value)
+  }
 
   return (
     <Wrapper>
       <Artist>{product.vendor}</Artist>
       <Series>{product.title}</Series>
       <Markup dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
-
       <Details product={product} />
-      <BuyButton product={product} />
+      <div>
+        <label>quantity</label>
+        <input
+          type="number"
+          min="1"
+          max="10"
+          value={quantity}
+          onChange={handleQuantityChange}
+        />
+      </div>
+      <div>
+        <select value={variant} onChange={handleVariantChange}>
+          {product.variants.map(({ title, shopifyId }) => (
+            <option key={shopifyId} value={shopifyId}>
+              {title}
+            </option>
+          ))}
+        </select>
+      </div>
+      <BuyButton onClick={purchase} disabled={adding} />
     </Wrapper>
   )
 }

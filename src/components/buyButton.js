@@ -21,18 +21,6 @@ export const Button = styled.button`
   }
 `
 
-class BuyButton extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
-  purchase() {
-    console.log("buying stuff")
-  }
-
-  render() {
-    return <Button onClick={() => this.purchase()}>Buy</Button>
-  }
-}
+const BuyButton = props => <Button {...props}>add to cart</Button>
 
 export default BuyButton
