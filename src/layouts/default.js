@@ -9,32 +9,9 @@ import styled from "styled-components"
 import { createGlobalStyle } from "styled-components"
 import { Black, White, Orange } from "../components/variables"
 
+import "./default.css"
+
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-  font-family: "Suisse";
-  src: url("/fonts/SuisseIntl-Regular-WebXL.woff2") format("woff2"),
-    url("/fonts/SuisseIntl-Regular-WebXL.woff") format("woff");
-  font-display: swap;
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Suisse";
-  src: url("/fonts/SuisseIntl-Black-WebXL.woff2") format("woff2"),
-    url("/fonts/SuisseIntl-Black-WebXL.woff") format("woff");
-  font-display: swap;
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Suisse";
-  src: url("/fonts/SuisseIntl-BlackItalic-WebXL.woff2") format("woff2"),
-    url("/fonts/SuisseIntl-BlackItalic-WebXL.woff") format("woff");
-  font-display: swap;
-  font-weight: bold;
-  font-style: italic, oblique;
-}
-
 ::selection {
   background: ${Orange};
   color: ${Black};

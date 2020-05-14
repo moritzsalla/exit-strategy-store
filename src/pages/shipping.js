@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { Paragraph, Title, Subtitle } from "../components/type"
+import { Paragraph, Title } from "../components/type"
 
 const Wrapper = styled.section`
   padding: 4rem;
