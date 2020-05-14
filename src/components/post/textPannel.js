@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import BuyButton from "../buyButton"
 import { Title, Subtitle } from "../type"
-import Details from "./details"
 import { ShopifyContext } from "../shopifyProvider"
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
@@ -62,7 +61,6 @@ const TextPannel = ({ product }) => {
       <Artist>{product.vendor}</Artist>
       <Series>{product.title}</Series>
       <Markup dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
-      <Details product={product} />
       <div>
         <label>quantity</label>
         <input
