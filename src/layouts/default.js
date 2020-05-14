@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 ::selection {
-  background: none;
+  background: ${Orange};
   color: ${Black};
 }
 
@@ -71,6 +71,7 @@ td {
 `
 
 const Spacer = styled.div`
+  position: relative;
   padding-top: 6rem;
   min-height: 100vh;
 `
@@ -81,9 +82,9 @@ const Layout = ({ children }) => {
       <Spacer>
         <Nav />
         <main>{children}</main>
-      </Spacer>
 
-      <Footer />
+        <Footer />
+      </Spacer>
       <GlobalStyle />
     </>
   )
