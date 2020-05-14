@@ -7,31 +7,35 @@ import Layout from "../layouts/default"
 import Img from "gatsby-image"
 import TextPannel from "../components/post/textPannel"
 
-const Wrapper = styled.section``
+const Wrapper = styled.section`
+  display: flex;
+`
 
 const ImageWrapper = styled.div`
-  width: 50vw;
-  background: red;
+  max-width: 40vw;
+  padding: 4rem;
 `
 
 export default function Template({ data }) {
   const product = data.shopifyProduct
+
+  const style = {
+    maxWidth: "100%",
+  }
 
   return (
     <Layout>
       <SEO title={product.vendor} />
       <Wrapper>
         <ImageWrapper>
-          {product.images.map((image, i) => (
-            <Img
-              fixed={image.localFile.childImageSharp.fixed}
-              key={i}
-              alt={product.title}
-              draggable={false}
-            />
-          ))}
+          <Img
+            fixed={product.images[0].localFile.childImageSharp.fixed}
+            alt={product.title}
+            draggable={false}
+            objectFit="contain"
+            style={style}
+          />
         </ImageWrapper>
-
         <TextPannel product={product} />
       </Wrapper>
     </Layout>

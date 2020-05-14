@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
   useEffect(() => {
     const gallery = document.getElementById("gallery")
 
-    TweenLite.to(gallery, 150, {
+    TweenLite.to(gallery, 200, {
       scrollTo: {
         x: gallery.scrollWidth,
         autoKill: true,

@@ -14,8 +14,8 @@ const Artist = styled(Subtitle)`
 `
 
 const Wrapper = styled.div`
-  margin: 2rem 1rem;
-  width: 50%;
+  max-width: 60vw;
+  padding: 4rem;
 `
 
 const Markup = styled.div`

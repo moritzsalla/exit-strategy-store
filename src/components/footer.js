@@ -76,7 +76,7 @@ class Footer extends React.Component {
           Mail
         </FooterElement>
 
-        <Top onClick={() => this.scrollTop()}>Top&uarr;</Top>
+        {/* <Top onClick={() => this.scrollTop()}>Top&uarr;</Top> */}
       </StyledFooter>
     )
   }
