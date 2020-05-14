@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 import BuyButton from "../buyButton"
 import { Title, Subtitle } from "../type"
-import Details from "./details"
 
 const Series = styled(Title)`
   margin-bottom: 2rem;
@@ -40,7 +39,6 @@ const TextPannel = props => {
       <Series>{product.title}</Series>
       <Markup dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
 
-      <Details product={product} />
       <BuyButton product={product} />
     </Wrapper>
   )

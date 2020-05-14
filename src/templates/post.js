@@ -14,6 +14,7 @@ const Wrapper = styled.section`
 const ImageWrapper = styled.div`
   max-width: 50vw;
   padding: 4rem;
+  background: grey;
 `
 
 export default function Template({ data }) {
@@ -32,7 +33,6 @@ export default function Template({ data }) {
             fixed={product.images[0].localFile.childImageSharp.fixed}
             alt={product.title}
             draggable={false}
-            objectFit="contain"
             style={style}
           />
         </ImageWrapper>
