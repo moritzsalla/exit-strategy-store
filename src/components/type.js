@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { offsetBlack, Black, White, Orange } from "./variables"
+import { Grey, Black, White, Orange } from "./variables"
 
 export const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
-  color: ${Black};
+  color: ${Orange};
 
   &:hover {
     text-decoration: none;
@@ -25,8 +25,9 @@ export const Subtitle = styled.h2`
   font-size: 2rem;
   line-height: 1.25;
   font-weight: bold;
-  color: ${Black};
+  color: ${Orange};
   text-transform: uppercase;
+  font-style: italic;
 `
 
 export const Paragraph = styled.p`
@@ -40,6 +41,6 @@ export const Small = styled.span`
   font-weight: bold;
   text-transform: uppercase;
   font-size: 1rem;
-  color: ${Black};
+  color: ${Orange};
   font-feature-settings: "kern";
 `

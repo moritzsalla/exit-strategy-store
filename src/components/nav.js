@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { StyledLink } from "./type"
-import { Black, White, Orange, StrokeWeight, BorderRadius } from "./variables"
+import { White, Orange, StrokeWeight, BorderRadius } from "./variables"
 
 const Header = styled.header`
   z-index: 100;

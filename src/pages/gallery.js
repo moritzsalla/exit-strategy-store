@@ -5,7 +5,6 @@ import Image from "gatsby-image"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { StyledLink, Paragraph } from "../components/type"
-import { Orange } from "../components/variables"
 
 const List = styled.ul`
   display: grid;
@@ -27,7 +26,6 @@ const Artist = styled.h3`
   font-size: 2rem;
   font-weight: bold;
   line-height: 1;
-  color: ${Orange};
   padding: 1rem 0 0;
 `
 

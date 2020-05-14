@@ -12,9 +12,8 @@ const Wrapper = styled.section`
 `
 
 const ImageWrapper = styled.div`
-  max-width: 50vw;
+  max-width: 40vw;
   padding: 4rem;
-  background: grey;
 `
 
 export default function Template({ data }) {
@@ -34,6 +33,7 @@ export default function Template({ data }) {
             alt={product.title}
             draggable={false}
             style={style}
+            imgStyle={{ height: "auto" }}
           />
         </ImageWrapper>
         <TextPannel product={product} />

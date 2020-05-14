@@ -48,22 +48,6 @@ class Footer extends React.Component {
           {new Date().getFullYear()} Forgetful Number
         </FooterElement>
 
-        {/* <FooterElement as={StyledLink} to="/">
-          Home
-        </FooterElement>
-        <FooterElement as={StyledLink} to="/about/">
-          About
-        </FooterElement>
-        <FooterElement as={StyledLink} to="/gallery/">
-          Gallery
-        </FooterElement>
-        <FooterElement as={StyledLink} to="/shipping/">
-          Shipping
-        </FooterElement>
-        <FooterElement as={StyledLink} to="/contact/">
-          Contact
-        </FooterElement> */}
-
         <FooterElement as="a" href="https://www.instagram.com/forgetfulnumber/">
           Instagram
         </FooterElement>
