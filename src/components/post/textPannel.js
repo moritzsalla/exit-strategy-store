@@ -14,7 +14,7 @@ const Artist = styled(Subtitle)`
 `
 
 const Wrapper = styled.div`
-  max-width: 60vw;
+  max-width: 50vw;
   padding: 4rem;
 `
 

@@ -12,7 +12,7 @@ const Wrapper = styled.section`
 `
 
 const ImageWrapper = styled.div`
-  max-width: 40vw;
+  max-width: 50vw;
   padding: 4rem;
 `
 
