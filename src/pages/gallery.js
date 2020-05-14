@@ -4,9 +4,8 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { StyledLink, Small, Paragraph } from "../components/type"
+import { StyledLink, Paragraph } from "../components/type"
 import { Orange } from "../components/variables"
-import BuyButton from "../components/buyButton"
 
 const List = styled.ul`
   display: grid;
