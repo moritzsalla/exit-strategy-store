@@ -5,10 +5,19 @@ import Image from "gatsby-image"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { StyledLink, Paragraph } from "../components/type"
+import { Tablet, Mobile } from "../components/variables"
 
 const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: ${Tablet}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: ${Mobile}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `
 
 const Item = styled.li`
@@ -17,7 +26,11 @@ const Item = styled.li`
   flex-flow: column;
   align-items: center;
   justify-content: flex-end;
-  margin: 1.5rem;
+  margin: 2vw;
+
+  @media (max-width: ${Mobile}) {
+    margin: 1vw;
+  }
 `
 
 const Large = styled.h3`
@@ -25,7 +38,16 @@ const Large = styled.h3`
   font-weight: bold;
   letter-spacing: -0.025rem;
   line-height: 1;
-  padding: 1rem 0 0;
+  padding-top: 1rem;
+
+  @media (max-width: ${Tablet}) {
+    font-size: 1.75rem;
+    padding-top: 0.5rem;
+  }
+
+  @media (max-width: ${Mobile}) {
+    font-size: 1rem;
+  }
 `
 
 const Gallery = ({ data }) => {

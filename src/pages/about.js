@@ -4,18 +4,25 @@ import Layout from "../layouts/default"
 import SEO from "../components/seo"
 
 import { Paragraph, Title, Subtitle } from "../components/type"
+import { Mobile } from "../components/variables"
+import styled from "styled-components"
+
+const Large = styled(Title)`
+  @media (max-width: ${Mobile}) {
+    font-size: 1.5rem;
+  }
+`
 
 const About = () => {
   return (
     <Layout>
       <SEO title="About" />
 
-      <Title>
-        We are EXIT&nbsp;STRATEGY
-        <br />→ A collective of 40 graduating BA photography students, who are
-        preparing their EXIT STRATEGIES to depart from the Royal Academy of Art
-        in The Hague
-      </Title>
+      <Large>
+        We are EXIT STRATEGY → A collective of 40 graduating BA photography
+        students, who are preparing their EXIT STRATEGIES to depart from the
+        Royal Academy of Art in The Hague
+      </Large>
 
       <Subtitle>Shipping Costs</Subtitle>
 

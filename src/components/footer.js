@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Small } from "./type"
-import { Grey } from "./variables"
+import { Grey, Mobile } from "./variables"
 
 const StyledFooter = styled.footer`
   position: absolute;
@@ -14,6 +14,10 @@ const StyledFooter = styled.footer`
   a::after {
     content: "↗";
   }
+
+  @media (max-width: ${Mobile}) {
+    flex-direction: column-reverse;
+  }
 `
 
 const Element = styled(Small)`
@@ -22,6 +26,10 @@ const Element = styled(Small)`
 
   &:hover {
     color: ${Grey};
+  }
+
+  @media (max-width: ${Mobile}) {
+    padding: 0.5rem;
   }
 `
 

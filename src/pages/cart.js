@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 import { Title, Paragraph } from "../components/type"
-import { StrokeWeight, Orange } from "../components/variables"
+import { StrokeWeight, Orange, Mobile } from "../components/variables"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
@@ -22,6 +22,14 @@ const Column = styled.div`
 
   &:last-of-type {
     border-bottom: ${StrokeWeight} solid ${Orange};
+  }
+
+  @media (max-width: ${Mobile}) {
+    padding: 0.2rem 0rem;
+
+    img {
+      max-height: 40px;
+    }
   }
 `
 

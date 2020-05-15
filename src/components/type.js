@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Orange, Grey } from "./variables"
+import { Orange, Grey, Mobile, Tablet } from "./variables"
 
 export const Title = styled.h1`
   font-feature-settings: "kern";
@@ -11,15 +11,31 @@ export const Title = styled.h1`
   font-weight: bold;
   padding-bottom: 2rem;
   letter-spacing: -0.2rem;
+
+  @media (max-width: ${Tablet}) {
+    font-size: 3rem;
+    letter-spacing: -0.05rem;
+    line-height: 1.15;
+  }
+
+  @media (max-width: ${Mobile}) {
+    font-size: 2.5rem;
+    letter-spacing: -0.05rem;
+    line-height: 1.25;
+  }
 `
 
 export const Subtitle = styled.h2`
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.25;
   font-weight: bold;
   color: ${Orange};
   text-transform: uppercase;
   font-style: normal;
+
+  @media (max-width: ${Mobile}) {
+    font-size: 1rem;
+  }
 `
 
 export const StyledLink = styled(Link)`
@@ -39,6 +55,14 @@ export const Paragraph = styled.p`
   font-size: 1.5rem;
   line-height: 1.25;
   max-width: 50ch;
+
+  @media (max-width: ${Tablet}) {
+    max-width: 40ch;
+  }
+
+  @media (max-width: ${Mobile}) {
+    font-size: 1rem;
+  }
 `
 
 export const Small = styled.span`
@@ -49,4 +73,8 @@ export const Small = styled.span`
   font-style: italic;
   font-size: 1rem;
   color: ${Orange};
+
+  @media (max-width: ${Mobile}) {
+    font-size: 0.75rem;
+  }
 `

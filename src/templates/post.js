@@ -6,14 +6,28 @@ import SEO from "../components/seo"
 import Layout from "../layouts/default"
 import Img from "gatsby-image"
 import TextPannel from "../components/post/textPannel"
+import { Mobile, Tablet } from "../components/variables"
 
 const Wrapper = styled.section`
   display: flex;
+
+  @media (max-width: ${Mobile}) {
+    flex-direction: column;
+  }
 `
 
 const ImageWrapper = styled.div`
-  max-width: 40vw;
+  max-width: 40%;
   padding: 4rem;
+
+  @media (max-width: ${Tablet}) {
+    padding: 0 0.75rem 0 0;
+  }
+
+  @media (max-width: ${Mobile}) {
+    max-width: 100%;
+    padding: 0;
+  }
 `
 
 export default function Template({ data }) {

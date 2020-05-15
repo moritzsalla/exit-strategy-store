@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { White, Orange, BorderRadius, StrokeWeight } from "./variables"
+import { White, Orange, BorderRadius, StrokeWeight, Mobile } from "./variables"
 
 export const Button = styled.button`
   color: ${Orange};
@@ -17,6 +17,10 @@ export const Button = styled.button`
   &:hover {
     color: ${White};
     background: ${Orange};
+  }
+
+  @media (max-width: ${Mobile}) {
+    padding: 0.25rem 0.5rem;
   }
 `
 

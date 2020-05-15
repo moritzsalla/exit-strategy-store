@@ -5,6 +5,7 @@ import "reset-css"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
 import styled from "styled-components"
+import { Mobile } from "../components/variables"
 
 import { createGlobalStyle } from "styled-components"
 import {
@@ -70,7 +71,11 @@ const Wrapper = styled.div`
 `
 
 const Padding = styled.div`
-  padding: 10rem 4rem;
+  padding: 10rem 4vw;
+
+  @media (max-width: ${Mobile}) {
+    padding: 10rem 1rem;
+  }
 `
 
 const Layout = ({ children }) => {

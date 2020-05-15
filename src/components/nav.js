@@ -1,7 +1,14 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 import { StyledLink, Small } from "./type"
-import { White, Orange, StrokeWeight, BorderRadius } from "./variables"
+import {
+  White,
+  Orange,
+  StrokeWeight,
+  BorderRadius,
+  Mobile,
+  Tablet,
+} from "./variables"
 import { ShopifyContext } from "./shopifyProvider"
 
 const Header = styled.header`
@@ -15,6 +22,11 @@ const Header = styled.header`
   margin: 1rem;
   border: ${StrokeWeight} solid ${Orange};
   border-radius: ${BorderRadius};
+
+  @media (max-width: ${Mobile}) {
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem;
+  }
 `
 
 const Wrapper = styled.div`
@@ -33,13 +45,21 @@ const NavBar = styled.nav`
 
 const NavLink = styled(Small)`
   font-size: 3rem;
-  letter-spacing: 0.2rem;
-  margin-left: 3.5rem;
+  letter-spacing: 0.15rem;
+  margin-left: 1.5vw;
 
   span {
     -webkit-text-stroke-width: ${StrokeWeight};
     color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-color: ${Orange};
+  }
+
+  @media (max-width: ${Tablet}) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: ${Mobile}) {
+    font-size: 1rem;
   }
 `
 
@@ -66,7 +86,7 @@ const Nav = () => {
     <Wrapper>
       <Header>
         <Logo as={StyledLink} to="/">
-          Exit Strategies
+          Exit&nbsp;Strategies
           <br />
           <span>How to Graduate in an Emergency</span>
         </Logo>

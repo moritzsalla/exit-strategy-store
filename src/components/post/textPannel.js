@@ -3,7 +3,7 @@ import styled from "styled-components"
 import BuyButton from "../buttons"
 import { Title, Subtitle, StyledLink } from "../type"
 import { ShopifyContext } from "../shopifyProvider"
-import { Orange } from "../variables"
+import { Orange, Mobile, Tablet } from "../variables"
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
 
@@ -12,8 +12,17 @@ const Artist = styled(Subtitle)`
 `
 
 const Wrapper = styled.div`
-  max-width: 60vw;
+  max-width: 60%;
   padding: 4rem;
+
+  @media (max-width: ${Tablet}) {
+    padding: 0 0 0 0.75rem;
+  }
+
+  @media (max-width: ${Mobile}) {
+    max-width: 100%;
+    padding: 0;
+  }
 `
 
 const Markup = styled.div`
