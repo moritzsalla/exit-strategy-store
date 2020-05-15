@@ -37,7 +37,8 @@ const NavLink = styled(StyledLink)`
 
   margin-right: 1.5rem;
   font-size: 1rem;
-  border-bottom: 0.1rem solid ${Orange};
+
+  /* border-bottom: 0.1rem solid ${Orange}; */
 `
 
 const Logo = styled.h1`
