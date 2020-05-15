@@ -42,32 +42,48 @@ function SEO({ description, lang, meta, title }) {
           content: `noindex`,
         },
         {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
+          name: `author`,
+          content: `moritzsalla`,
         },
         {
           property: `og:type`,
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: `og:url`,
+          content: `https://exitstrategies.store/`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          property: `og:title`,
+          content: `Exit Strategies – Print Sale`,
         },
         {
-          name: `twitter:title`,
-          content: title,
+          property: `og:description`,
+          content: site.siteMetadata.title,
         },
         {
-          name: `twitter:description`,
+          property: `og:image`,
+          content: `https://exitstrategies.store/images/social-media.jpg`,
+        },
+        {
+          property: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          property: `twitter:url`,
+          content: `https://exitstrategies.store/`,
+        },
+        {
+          property: `twitter:title`,
+          content: site.siteMetadata.title,
+        },
+        {
+          property: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          property: `twitter:image`,
+          content: `https://exitstrategies.store/images/social-media.jpg`,
         },
       ].concat(meta)}
     />
