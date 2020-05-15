@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "styled-components"
 import { StyledLink, Small } from "./type"
 import { White, Orange, StrokeWeight, BorderRadius } from "./variables"
+import { ShopifyContext } from "./shopifyProvider"
 
 const Header = styled.header`
   z-index: 100;
@@ -34,6 +35,12 @@ const NavLink = styled(Small)`
   font-size: 3rem;
   letter-spacing: 0.2rem;
   margin-left: 3.5rem;
+
+  span {
+    -webkit-text-stroke-width: ${StrokeWeight};
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke-color: ${Orange};
+  }
 `
 
 const Logo = styled.h1`
@@ -51,28 +58,33 @@ const Logo = styled.h1`
   }
 `
 
-const Nav = () => (
-  <Wrapper>
-    <Header>
-      <Logo as={StyledLink} to="/">
-        Exit Strategies
-        <br />
-        <span>How to Graduate in an Emergency</span>
-      </Logo>
+const Nav = () => {
+  const data = useContext(ShopifyContext)
+  console.log(data.store.products.length)
 
-      <NavBar>
-        <NavLink as={StyledLink} to="/about/">
-          About
-        </NavLink>
-        <NavLink as={StyledLink} to="/gallery/">
-          Gallery
-        </NavLink>
-        <NavLink as={StyledLink} to="/cart/">
-          Cart
-        </NavLink>
-      </NavBar>
-    </Header>
-  </Wrapper>
-)
+  return (
+    <Wrapper>
+      <Header>
+        <Logo as={StyledLink} to="/">
+          Exit Strategies
+          <br />
+          <span>How to Graduate in an Emergency</span>
+        </Logo>
+
+        <NavBar>
+          <NavLink as={StyledLink} to="/about/">
+            About
+          </NavLink>
+          <NavLink as={StyledLink} to="/gallery/">
+            Gallery
+          </NavLink>
+          <NavLink as={StyledLink} to="/cart/">
+            Cart<span>{data.updateLineItem.length}</span>
+          </NavLink>
+        </NavBar>
+      </Header>
+    </Wrapper>
+  )
+}
 
 export default Nav
