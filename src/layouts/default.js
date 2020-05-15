@@ -57,11 +57,12 @@ const Wrapper = styled.div`
 const Layout = ({ children }) => {
   return (
     <ShopifyProvider>
-      <Spacer>
+      <GlobalStyle />
+      <Wrapper>
         <Nav />
         <main>{children}</main>
-        <Footer />
-      </Spacer>
+      </Wrapper>
+      <Footer />
     </ShopifyProvider>
   )
 }
