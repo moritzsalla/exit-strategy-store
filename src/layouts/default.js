@@ -40,12 +40,6 @@ html {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-body {
-   position: relative;
-   min-height: 100vh;
-  background: ${White};
-}
-
 th {
   text-align: left;
   text-transform: uppercase;
@@ -70,20 +64,28 @@ input {
 `
 
 const Wrapper = styled.div`
+  min-height: 100vh;
+  position: relative;
+  background: ${White};
+`
+
+const Padding = styled.div`
   padding: 10rem 4rem;
 `
 
 const Layout = ({ children }) => {
   return (
     <>
-      <ShopifyProvider>
-        <Nav />
-        <Wrapper>
-          <main>{children}</main>
-        </Wrapper>
-        <Footer />
-      </ShopifyProvider>
-      <GlobalStyle />
+      <Wrapper>
+        <ShopifyProvider>
+          <Nav />
+          <Padding>
+            <main>{children}</main>
+          </Padding>
+          <Footer />
+        </ShopifyProvider>
+        <GlobalStyle />
+      </Wrapper>
     </>
   )
 }
