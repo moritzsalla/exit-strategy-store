@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { StyledLink } from "./type"
-import { Black, White, Orange, StrokeWeight, BorderRadius } from "./variables"
+import { White, Orange, StrokeWeight, BorderRadius } from "./variables"
 
 const Header = styled.header`
   z-index: 100;
@@ -34,6 +34,7 @@ const NavBar = styled.nav`
 
 const NavLink = styled(StyledLink)`
   color: ${Orange};
+
   margin-right: 1.5rem;
   font-size: 1rem;
   border-bottom: 0.1rem solid ${Orange};

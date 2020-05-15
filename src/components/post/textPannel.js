@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react"
 import styled from "styled-components"
-
 import BuyButton from "../buyButton"
 import { Title, Subtitle } from "../type"
 import { ShopifyContext } from "../shopifyProvider"
+import { Orange } from "../variables"
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
 
@@ -16,7 +16,7 @@ const Artist = styled(Subtitle)`
 `
 
 const Wrapper = styled.div`
-  max-width: 50vw;
+  max-width: 60vw;
   padding: 4rem;
 `
 
@@ -24,12 +24,14 @@ const Markup = styled.div`
   * {
     font-family: Suisse, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    max-width: 50ch;
     line-height: 1.25;
+    color: ${Orange};
   }
 
   iframe {
-    margin-top: 1rem;
+    margin: 3rem 0;
   }
 `
 
@@ -59,7 +61,7 @@ const TextPannel = ({ product }) => {
   return (
     <Wrapper>
       <Artist>{product.vendor}</Artist>
-      <Series>{product.title}</Series>
+      <Title>{product.title}</Title>
       <Markup dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
       <div>
         <label>quantity</label>

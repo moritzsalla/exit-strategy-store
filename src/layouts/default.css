@@ -18,7 +18,7 @@
   font-family: "Suisse";
   src: url("/fonts/SuisseIntl-BlackItalic-WebXL.woff2") format("woff2"),
     url("/fonts/SuisseIntl-BlackItalic-WebXL.woff") format("woff");
-  font-display: swap;
+  font-display: block;
   font-weight: bold;
   font-style: italic, oblique;
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import Image from "gatsby-image"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../layouts/default"
+import Layout from "../layouts/index"
 import SEO from "../components/seo"
 import styled from "styled-components"
 
@@ -19,6 +19,10 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
 `
 
 const IndexPage = ({ data }) => {
@@ -48,6 +52,7 @@ const IndexPage = ({ data }) => {
                 fixed={image.localFile.childImageSharp.fixed}
                 style={{ height: "100vh" }}
                 draggable={false}
+                loading="eager"
               />
             ))}
           </Link>
