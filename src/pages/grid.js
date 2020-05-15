@@ -34,6 +34,14 @@ const Left = styled.span`
   text-align: left;
 `
 
+// const Center = styled.span`
+//   text-align: center;
+// `
+
+const Right = styled.span`
+  text-align: right;
+`
+
 const Grid = ({ data }) => {
   const products = data.allShopifyProduct.edges
 
@@ -50,7 +58,7 @@ const Grid = ({ data }) => {
             <Left>{product.node.vendor}</Left>
             <Left>{product.node.title}</Left>
             <Left>{product.node.productType}</Left>
-            <Left>€{product.node.priceRange.maxVariantPrice.amount}</Left>
+            <Right>€{product.node.priceRange.maxVariantPrice.amount}</Right>
           </Item>
         ))}
       </List>

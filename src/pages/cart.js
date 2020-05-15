@@ -6,13 +6,18 @@ import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { ShopifyContext } from "../components/shopifyProvider"
 
+const Wrapper = styled.div`
+  padding: 4rem;
+`
+
 const Cart = () => {
   return (
     <Layout>
       <SEO title="Cart" />
-
-      <Title>Shopping Cart</Title>
-      <Checkout />
+      <Wrapper>
+        <Title>Shopping Cart</Title>
+        <Checkout />
+      </Wrapper>
     </Layout>
   )
 }

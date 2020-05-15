@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react"
 import styled from "styled-components"
 import BuyButton from "../buyButton"
-import { Title, Subtitle } from "../type"
+import { Title, Subtitle, Small, StyledLink } from "../type"
 import { ShopifyContext } from "../shopifyProvider"
 import { Orange } from "../variables"
 
@@ -44,8 +44,9 @@ const TextPannel = ({ product }) => {
   const [variant, setVariant] = useState(product.variants[0].shopifyId)
   const [quantity, setQuantity] = useState(1)
 
-  const purchase = () => {
+  const purchase = event => {
     addVariantToCart(variant, quantity)
+    event.target.innerHTML = "Added &check;"
   }
 
   const handleQuantityChange = e => {
@@ -64,7 +65,7 @@ const TextPannel = ({ product }) => {
       <Title>{product.title}</Title>
       <Markup dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
       <div>
-        <label>quantity</label>
+        <Small>Quantity</Small>
         <input
           type="number"
           min="1"
@@ -75,14 +76,15 @@ const TextPannel = ({ product }) => {
       </div>
       <div>
         <select value={variant} onChange={handleVariantChange}>
-          {product.variants.map(({ title, shopifyId }) => (
+          {product.variants.map(({ title, shopifyId, priceV2 }) => (
             <option key={shopifyId} value={shopifyId}>
-              {title}
+              {title} &euro;{priceV2.amount}
             </option>
           ))}
         </select>
       </div>
       <BuyButton onClick={purchase} disabled={adding} />
+      <StyledLink to="/cart/">View Cart</StyledLink>
     </Wrapper>
   )
 }

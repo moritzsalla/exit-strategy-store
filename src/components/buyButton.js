@@ -13,6 +13,7 @@ export const Button = styled.button`
   background: none;
   border: ${StrokeWeight} solid ${Orange};
   cursor: pointer;
+  transition: 0.5s all ease;
 
   &:hover {
     color: ${White};
@@ -20,6 +21,6 @@ export const Button = styled.button`
   }
 `
 
-const BuyButton = props => <Button {...props}>add to cart</Button>
+const BuyButton = props => <Button {...props}>Add to Cart</Button>
 
 export default BuyButton
