@@ -6,8 +6,7 @@ import SEO from "../components/seo"
 import { Paragraph, Title } from "../components/type"
 
 const Wrapper = styled.section`
-  padding: 4rem;
-  max-width: 80ch;
+  max-width: 70ch;
 `
 
 const Shipping = () => {

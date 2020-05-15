@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import Image from "gatsby-image"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../layouts/default"
+import Layout from "../layouts/index"
 import SEO from "../components/seo"
 import styled from "styled-components"
 

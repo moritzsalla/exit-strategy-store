@@ -9,7 +9,6 @@ import { StyledLink, Paragraph } from "../components/type"
 const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 4rem;
 `
 
 const Item = styled.li`

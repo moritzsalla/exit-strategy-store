@@ -20,35 +20,29 @@ const Link = styled.a`
   }
 `
 
-const Wrapper = styled.section`
-  padding: 4rem;
-`
-
 const Contact = () => {
   return (
     <Layout>
       <SEO title="Contact" />
 
-      <Wrapper>
-        <Title>Contact</Title>
-        <ul>
-          <li>
-            <Link as="a" href="https://www.instagram.com/forgetfulnumber/">
-              Instagram
-            </Link>
-          </li>
-          <li>
-            <Link as="a" href="https://www.facebook.com/forgetfulnumber/">
-              Facebook
-            </Link>
-          </li>
-          <li>
-            <Link as="a" href="mailto:info@forgetfulnumber.com">
-              E–Mail
-            </Link>
-          </li>
-        </ul>
-      </Wrapper>
+      <Title>Contact</Title>
+      <ul>
+        <li>
+          <Link as="a" href="https://www.instagram.com/forgetfulnumber/">
+            Instagram
+          </Link>
+        </li>
+        <li>
+          <Link as="a" href="https://www.facebook.com/forgetfulnumber/">
+            Facebook
+          </Link>
+        </li>
+        <li>
+          <Link as="a" href="mailto:info@forgetfulnumber.com">
+            E–Mail
+          </Link>
+        </li>
+      </ul>
     </Layout>
   )
 }

@@ -34,6 +34,7 @@ const NavBar = styled.nav`
 
 const NavLink = styled(StyledLink)`
   color: ${Orange};
+
   margin-right: 1.5rem;
   font-size: 1rem;
   border-bottom: 0.1rem solid ${Orange};

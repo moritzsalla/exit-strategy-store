@@ -50,7 +50,7 @@ td {
 `
 
 const Wrapper = styled.div`
-  padding: 10rem 4rem;
+  padding: 8rem 4rem;
 `
 
 const Layout = ({ children }) => {
@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
       <Wrapper>
         <main>{children}</main>
       </Wrapper>
-      <Footer />
+      <Footer white />
       <GlobalStyle />
     </>
   )
