@@ -8,6 +8,9 @@ import { Mobile } from "../components/variables"
 import styled from "styled-components"
 
 const Large = styled(Title)`
+  font-size: 5vw;
+  letter-spacing: -0.2vw;
+
   @media (max-width: ${Mobile}) {
     font-size: 1.5rem;
   }
@@ -23,9 +26,9 @@ const About = () => {
         students, who are preparing their EXIT STRATEGIES to depart from the
         Royal Academy of Art in The Hague
       </Large>
+      <hr />
 
       <Subtitle>Shipping Costs</Subtitle>
-
       <br />
       <Paragraph as="table">
         <tbody>
@@ -47,7 +50,6 @@ const About = () => {
           </tr>
         </tbody>
       </Paragraph>
-
       <br />
       <Paragraph>
         Due to social distancing measures it is not possible to collect your
@@ -58,6 +60,33 @@ const About = () => {
         clearance and handling may also apply during the shipment of your lot
         and will be charged to you by the involved party at a later stage if
         applicable.
+      </Paragraph>
+
+      <hr />
+      <Subtitle>Return Policy</Subtitle>
+      <br />
+      <Paragraph>We do not offer returns</Paragraph>
+
+      <hr />
+      <Subtitle>Privacy Policy</Subtitle>
+      <br />
+      <Paragraph>We keep your things private</Paragraph>
+
+      <hr />
+      <Subtitle>Terms & Conditions</Subtitle>
+      <br />
+      <Paragraph>…</Paragraph>
+
+      <hr />
+      <Subtitle>Imprint</Subtitle>
+      <br />
+      <Paragraph>…</Paragraph>
+
+      <hr />
+      <Paragraph>
+        Design: Rudi van Delden, Jan Egberts & Moritz Salla
+        <br />
+        Code: Moritz Salla
       </Paragraph>
     </Layout>
   )

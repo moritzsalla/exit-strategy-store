@@ -6,7 +6,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Exit Strategies – Print Sale`,
+    title: `Exit Strategies`,
     siteUrl: `https://exitstrategies.store`,
     description: `We are Forgetful Number, a collective of 38 photography students of the Royal Academy of Art, The Hague.`,
     author: `@forgetfulnumber`,

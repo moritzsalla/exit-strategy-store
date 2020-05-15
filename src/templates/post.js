@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 
 const ImageWrapper = styled.div`
   max-width: 40%;
-  padding: 4rem;
+  padding: 2vw;
 
   @media (max-width: ${Tablet}) {
     padding: 0 0.75rem 0 0;

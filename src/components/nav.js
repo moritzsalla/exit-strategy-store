@@ -10,6 +10,7 @@ import {
   Tablet,
 } from "./variables"
 import { ShopifyContext } from "./shopifyProvider"
+import { Grey } from "./variables"
 
 const Header = styled.header`
   z-index: 100;
@@ -44,14 +45,15 @@ const NavBar = styled.nav`
 `
 
 const NavLink = styled(Small)`
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.15rem;
   margin-left: 1.5vw;
 
   span {
-    -webkit-text-stroke-width: ${StrokeWeight};
+    /* -webkit-text-stroke-width: ${StrokeWeight};
     color: rgba(0, 0, 0, 0);
-    -webkit-text-stroke-color: ${Orange};
+    -webkit-text-stroke-color: ${Orange}; */
+    color: ${Grey};
   }
 
   @media (max-width: ${Tablet}) {

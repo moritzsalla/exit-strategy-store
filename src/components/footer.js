@@ -16,20 +16,24 @@ const StyledFooter = styled.footer`
   }
 
   @media (max-width: ${Mobile}) {
+    display: none;
     flex-direction: column-reverse;
   }
 `
 
-const Element = styled(Small)`
+const FooterElement = styled(Small)`
   padding: 1rem;
+
+  @media (max-width: ${Mobile}) {
+    padding: 0.5rem;
+  }
+`
+
+const FooterLink = styled(FooterElement)`
   text-decoration: none;
 
   &:hover {
     color: ${Grey};
-  }
-
-  @media (max-width: ${Mobile}) {
-    padding: 0.5rem;
   }
 `
 
@@ -41,22 +45,22 @@ class Footer extends React.Component {
   render() {
     return (
       <StyledFooter>
-        <Element>
+        <FooterElement>
           <span>&copy;&nbsp;</span>
           {new Date().getFullYear()} Forgetful Number
-        </Element>
+        </FooterElement>
 
-        <Element as="a" href="https://www.instagram.com/forgetfulnumber/">
+        <FooterLink as="a" href="https://www.instagram.com/forgetfulnumber/">
           Instagram
-        </Element>
+        </FooterLink>
 
-        <Element as="a" href="https://www.facebook.com/forgetfulnumber/">
+        <FooterLink as="a" href="https://www.facebook.com/forgetfulnumber/">
           Facebook
-        </Element>
+        </FooterLink>
 
-        <Element as="a" href="mailto:info@forgetfulnumber.com">
+        <FooterLink as="a" href="mailto:info@forgetfulnumber.com">
           Mail
-        </Element>
+        </FooterLink>
       </StyledFooter>
     )
   }

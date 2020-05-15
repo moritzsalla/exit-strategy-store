@@ -5,7 +5,6 @@ import "reset-css"
 import Nav from "../components/nav"
 import Footer from "../components/footer"
 import styled from "styled-components"
-import { Mobile } from "../components/variables"
 
 import { createGlobalStyle } from "styled-components"
 import {
@@ -13,6 +12,7 @@ import {
   White,
   Orange,
   StrokeWeight,
+  Mobile,
   BorderRadius,
 } from "../components/variables"
 
@@ -50,6 +50,10 @@ td {
   padding-right: 2rem;
 }
 
+hr {
+  margin: 1.5rem 0;
+  border-top: ${StrokeWeight} solid ${Orange};
+}
 
 input {
   color: ${Orange};
@@ -61,6 +65,12 @@ input {
   font-size: 1rem;
   background: none;
   font-weight: bold;
+}
+
+@media (max-width: ${Mobile}) {
+  hr {
+    margin: 0.5rem 0;
+  }
 }
 `
 
