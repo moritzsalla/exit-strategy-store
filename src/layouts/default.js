@@ -20,6 +20,15 @@ import { ShopifyProvider } from "../components/shopifyProvider"
 import "./default.css"
 
 const GlobalStyle = createGlobalStyle`
+* {
+  /* user-select: none; */
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern";
+}
+
 ::selection {
   background: ${Orange};
   color: ${Black};
@@ -27,11 +36,25 @@ const GlobalStyle = createGlobalStyle`
 
 html {
   background: ${Orange};
+    font-family: Suisse, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
+   position: relative;
+   min-height: 100vh;
   background: ${White};
 }
+
+th {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+td {
+  padding-right: 2rem;
+}
+
 
 input {
   color: ${Orange};
