@@ -1,21 +1,19 @@
 import React from "react"
 import styled from "styled-components"
-import { StyledLink } from "./type"
+import { StyledLink, Small } from "./type"
 import { White, Orange, StrokeWeight, BorderRadius } from "./variables"
 
 const Header = styled.header`
   z-index: 100;
   display: flex;
-  font-weight: bold;
   text-transform: uppercase;
   justify-content: space-between;
   align-items: center;
   background: ${White};
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   margin: 1rem;
   border: ${StrokeWeight} solid ${Orange};
   border-radius: ${BorderRadius};
-  font-size: 2rem;
 `
 
 const Wrapper = styled.div`
@@ -32,56 +30,47 @@ const NavBar = styled.nav`
   align-items: center;
 `
 
-const NavLink = styled(StyledLink)`
-  color: ${Orange};
-
-  margin-right: 1.5rem;
-  font-size: 1rem;
-
-  /* border-bottom: 0.1rem solid ${Orange}; */
+const NavLink = styled(Small)`
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  margin-left: 3.5rem;
 `
 
 const Logo = styled.h1`
+  font-weight: bold;
   color: ${Orange};
   font-style: italic;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
 
   span {
     font-size: 0.8rem;
     display: flex;
     justify-content: flex-start;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.16rem;
   }
-`
-
-const TagLine = styled.span`
-  color: ${Orange};
-  font-style: italic;
-  letter-spacing: 0.25rem;
 `
 
 const Nav = () => (
   <Wrapper>
     <Header>
       <Logo as={StyledLink} to="/">
-        Exit Strategy
+        Exit Strategies
         <br />
         <span>How to Graduate in an Emergency</span>
       </Logo>
 
       <NavBar>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about/">About</NavLink>
-        <NavLink to="/gallery/">Gallery</NavLink>
-        <NavLink to="/grid/">Departure Board</NavLink>
-        <NavLink to="/shipping/">Shipping</NavLink>
-        <NavLink to="/contact/">Contact</NavLink>
-        <NavLink to="/cart/">Cart</NavLink>
+        <NavLink as={StyledLink} to="/about/">
+          About
+        </NavLink>
+        <NavLink as={StyledLink} to="/gallery/">
+          Gallery
+        </NavLink>
+        <NavLink as={StyledLink} to="/cart/">
+          Cart
+        </NavLink>
       </NavBar>
-
-      <TagLine as={StyledLink} to="/about/">
-        Online Print Sale
-      </TagLine>
     </Header>
   </Wrapper>
 )

@@ -7,7 +7,14 @@ import Footer from "../components/footer"
 import styled from "styled-components"
 
 import { createGlobalStyle } from "styled-components"
-import { Black, White, Orange } from "../components/variables"
+import {
+  Black,
+  White,
+  Orange,
+  StrokeWeight,
+  BorderRadius,
+} from "../components/variables"
+
 import { ShopifyProvider } from "../components/shopifyProvider"
 
 import "./default.css"
@@ -18,35 +25,24 @@ const GlobalStyle = createGlobalStyle`
   color: ${Black};
 }
 
-* {
-  /* user-select: none; */
-  box-sizing: border-box;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "kern";
-}
-
 html {
-  font-family: Suisse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: ${Orange};
 }
 
 body {
-  min-height: 100vh;
   background: ${White};
-  position: relative;
 }
 
-th {
-  text-align: left;
-  text-transform: uppercase;
+input {
+  color: ${Orange};
+  border: ${StrokeWeight} solid ${Orange};
+  border-radius: ${BorderRadius};
+  padding: 0.5rem;
+  text-align: center;
+  outline: none;
+  font-size: 1rem;
+  background: none;
   font-weight: bold;
-  font-style: italic;
-}
-
-td {
-  padding-right: 2rem;
 }
 `
 
@@ -56,14 +52,16 @@ const Wrapper = styled.div`
 
 const Layout = ({ children }) => {
   return (
-    <ShopifyProvider>
-      <GlobalStyle />
-      <Wrapper>
+    <>
+      <ShopifyProvider>
         <Nav />
-        <main>{children}</main>
-      </Wrapper>
-      <Footer />
-    </ShopifyProvider>
+        <Wrapper>
+          <main>{children}</main>
+        </Wrapper>
+        <Footer />
+      </ShopifyProvider>
+      <GlobalStyle />
+    </>
   )
 }
 

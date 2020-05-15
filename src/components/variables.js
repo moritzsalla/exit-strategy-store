@@ -1,5 +1,5 @@
 export const Black = "rgb(25,25,25)"
-export const Grey = "rgb(50,50,50)"
+export const Grey = "#E99774"
 export const White = "#F5F6F7"
 export const Orange = "#e86228"
 

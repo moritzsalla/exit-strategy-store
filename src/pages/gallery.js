@@ -16,14 +16,14 @@ const Item = styled.li`
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin: 1.5rem;
-  /* border: 1px solid black; */
 `
 
-const Artist = styled.h3`
+const Large = styled.h3`
   font-size: 2rem;
   font-weight: bold;
+  letter-spacing: -0.025rem;
   line-height: 1;
   padding: 1rem 0 0;
 `
@@ -46,7 +46,7 @@ const Gallery = ({ data }) => {
                   draggable={false}
                 />
               ))}
-              <Artist>{product.node.vendor}</Artist>
+              <Large>{product.node.vendor}</Large>
               <Paragraph>{product.node.title}</Paragraph>
             </StyledLink>
           </Item>

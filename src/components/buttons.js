@@ -5,7 +5,6 @@ import { White, Orange, BorderRadius, StrokeWeight } from "./variables"
 export const Button = styled.button`
   color: ${Orange};
   text-transform: uppercase;
-  font-weight: bold;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: ${BorderRadius};
@@ -13,7 +12,7 @@ export const Button = styled.button`
   background: none;
   border: ${StrokeWeight} solid ${Orange};
   cursor: pointer;
-  transition: 0.5s all ease;
+  font-weight: bold;
 
   &:hover {
     color: ${White};

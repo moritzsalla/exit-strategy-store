@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { Orange, White, StrokeWeight } from "./variables"
+import { Small } from "./type"
+import { Grey } from "./variables"
 
 const StyledFooter = styled.footer`
   position: absolute;
@@ -9,23 +10,18 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-top: ${StrokeWeight} solid ${Orange}; */
 
   a::after {
     content: "↗";
   }
 `
 
-const FooterElement = styled.span`
-  font-family: Suisse, sans-serif;
-  font-size: 1rem;
+const Element = styled(Small)`
   padding: 1rem;
-  color: ${props => (props.white ? White : Orange)};
   text-decoration: none;
-  font-weight: bold;
 
-  span {
-    font-family: Suisse, sans-serif;
+  &:hover {
+    color: ${Grey};
   }
 `
 
@@ -37,24 +33,22 @@ class Footer extends React.Component {
   render() {
     return (
       <StyledFooter>
-        <FooterElement>
+        <Element>
           <span>&copy;&nbsp;</span>
           {new Date().getFullYear()} Forgetful Number
-        </FooterElement>
+        </Element>
 
-        <FooterElement as="a" href="https://www.instagram.com/forgetfulnumber/">
+        <Element as="a" href="https://www.instagram.com/forgetfulnumber/">
           Instagram
-        </FooterElement>
+        </Element>
 
-        <FooterElement as="a" href="https://www.facebook.com/forgetfulnumber/">
+        <Element as="a" href="https://www.facebook.com/forgetfulnumber/">
           Facebook
-        </FooterElement>
+        </Element>
 
-        <FooterElement as="a" href="mailto:info@forgetfulnumber.com">
+        <Element as="a" href="mailto:info@forgetfulnumber.com">
           Mail
-        </FooterElement>
-
-        {/* <Top onClick={() => this.scrollTop()}>Top&uarr;</Top> */}
+        </Element>
       </StyledFooter>
     )
   }
