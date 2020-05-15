@@ -52,6 +52,7 @@ const IndexPage = ({ data }) => {
                 fixed={image.localFile.childImageSharp.fixed}
                 style={{ height: "100vh" }}
                 draggable={false}
+                loading="eager"
               />
             ))}
           </Link>

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Grey, Black, White, Orange } from "./variables"
+import { Orange } from "./variables"
 
 export const StyledLink = styled(Link)`
   color: black;

@@ -34,14 +34,6 @@ const Left = styled.span`
   text-align: left;
 `
 
-const Center = styled.span`
-  text-align: center;
-`
-
-const Right = styled.span`
-  text-align: right;
-`
-
 const Grid = ({ data }) => {
   const products = data.allShopifyProduct.edges
 

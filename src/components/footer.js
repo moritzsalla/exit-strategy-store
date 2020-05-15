@@ -29,12 +29,6 @@ const FooterElement = styled.span`
   }
 `
 
-const Top = styled(FooterElement)`
-  &:hover {
-    cursor: pointer;
-  }
-`
-
 class Footer extends React.Component {
   scrollTop() {
     window.scrollTo({ top: 0, behavior: "smooth" })

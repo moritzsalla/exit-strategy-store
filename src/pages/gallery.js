@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Image from "gatsby-image"

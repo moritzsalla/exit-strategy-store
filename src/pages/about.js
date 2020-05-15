@@ -1,6 +1,5 @@
 import React from "react"
-import styled from "styled-components"
-import { Title, Paragraph } from "../components/type"
+import { Title } from "../components/type"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"

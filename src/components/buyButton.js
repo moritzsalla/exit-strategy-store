@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Client from "shopify-buy"
-import { Black, White, Orange, BorderRadius, StrokeWeight } from "./variables"
+import { White, Orange, BorderRadius, StrokeWeight } from "./variables"
 
 export const Button = styled.button`
   color: ${Orange};
@@ -22,10 +21,6 @@ export const Button = styled.button`
 `
 
 class BuyButton extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   purchase() {
     console.log("buying stuff")
   }
