@@ -33,7 +33,7 @@ const Wrapper = styled.div`
 
 const JumboImg = styled(Image)`
   height: 100vh;
-  width: 400px;
+  width: 700px;
 `
 
 const IndexPage = ({ data }) => {
@@ -78,7 +78,7 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allShopifyProduct {
+    allShopifyProduct(sort: { order: DESC, fields: title }) {
       edges {
         node {
           handle
