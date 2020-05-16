@@ -22,7 +22,6 @@ const List = styled.ul`
 `
 
 const Item = styled.li`
-outline: 1px solid red;
   text-align: center;
   display: flex;
   flex-flow: column;
@@ -55,6 +54,8 @@ const Large = styled.h3`
 const Small = styled(Paragraph)`
   line-height: 1;
   padding-top: 0.2rem;
+  max-width: 20ch;
+  margin: 0 auto;
 
   @media (max-width: ${Tablet}) {
     font-size: 1.25rem;
@@ -75,7 +76,7 @@ const Gallery = ({ data }) => {
       <List>
         {products.map((product, i) => (
           <Item key={i}>
-            <StyledLink to={`/${product.node.handle}`}>
+            <StyledLink css="width: 100%;" to={`/${product.node.handle}`}>
               {product.node.images[0] ? (
                 <Image
                   css="width: 100%;"
@@ -115,7 +116,6 @@ export const query = graphql`
               childImageSharp {
                 fluid(maxHeight: 800, quality: 50) {
                   ...GatsbyImageSharpFluid_withWebp
-                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
