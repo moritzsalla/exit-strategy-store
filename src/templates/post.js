@@ -33,21 +33,15 @@ const ImageWrapper = styled.div`
 export default function Template({ data }) {
   const product = data.shopifyProduct
 
-  const style = {
-    maxWidth: "100%",
-  }
-
   return (
     <Layout>
       <SEO title={product.vendor} />
       <Wrapper>
         <ImageWrapper>
           <Img
-            fixed={product.images[0].localFile.childImageSharp.fixed}
+            fluid={product.images[0].localFile.childImageSharp.fluid}
             alt={product.title}
             draggable={false}
-            style={style}
-            imgStyle={{ height: "auto" }}
           />
         </ImageWrapper>
         <TextPannel product={product} />
@@ -80,8 +74,9 @@ export const query = graphql`
       images {
         localFile {
           childImageSharp {
-            fixed(width: 1000) {
-              ...GatsbyImageSharpFixed_withWebp
+            fluid(maxWidth: 1000, quality: 100) {
+              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }

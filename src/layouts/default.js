@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html {
-  background: ${Orange};
+  background: ${White};
     font-family: Suisse, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }

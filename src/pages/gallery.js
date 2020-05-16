@@ -29,7 +29,7 @@ const Item = styled.li`
   margin: 2vw;
 
   @media (max-width: ${Mobile}) {
-    margin: 1vw;
+    margin: 2vw;
   }
 `
 
@@ -41,12 +41,22 @@ const Large = styled.h3`
   padding-top: 1rem;
 
   @media (max-width: ${Tablet}) {
-    font-size: 1.75rem;
-    padding-top: 0.5rem;
+    font-size: 1.5rem;
+    padding-top: 1rem;
   }
 
   @media (max-width: ${Mobile}) {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+`
+
+const Small = styled(Paragraph)`
+  @media (max-width: ${Tablet}) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: ${Mobile}) {
+    font-size: 0.85rem;
   }
 `
 
@@ -64,12 +74,12 @@ const Gallery = ({ data }) => {
               {product.node.images.map((image, j) => (
                 <Image
                   key={j}
-                  fixed={image.localFile.childImageSharp.fixed}
+                  fluid={image.localFile.childImageSharp.fluid}
                   draggable={false}
                 />
               ))}
               <Large>{product.node.vendor}</Large>
-              <Paragraph>{product.node.title}</Paragraph>
+              <Small>{product.node.title}</Small>
             </StyledLink>
           </Item>
         ))}
@@ -97,8 +107,9 @@ export const query = graphql`
           images {
             localFile {
               childImageSharp {
-                fixed(width: 200) {
-                  ...GatsbyImageSharpFixed_withWebp
+                fluid(maxWidth: 400, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                  ...GatsbyImageSharpFluidLimitPresentationSize
                 }
               }
             }
