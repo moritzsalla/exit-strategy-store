@@ -1,6 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import { White, Orange, BorderRadius, StrokeWeight, Mobile } from "./variables"
+import {
+  White,
+  Orange,
+  Grey,
+  BorderRadius,
+  StrokeWeight,
+  Mobile,
+} from "./variables"
 
 export const Button = styled.button`
   color: ${Orange};
@@ -11,10 +18,15 @@ export const Button = styled.button`
   outline: none;
   background: none;
   border: ${StrokeWeight} solid ${Orange};
-  cursor: pointer;
   font-weight: bold;
 
-  &:hover {
+  &:disabled {
+    color: ${Grey};
+    border-color: ${Grey};
+  }
+
+  &:hover:not([disabled]) {
+    cursor: pointer;
     color: ${White};
     background: ${Orange};
   }
@@ -24,6 +36,6 @@ export const Button = styled.button`
   }
 `
 
-const BuyButton = props => <Button {...props}>Add to Cart</Button>
+const BuyButton = props => <Button {...props} />
 
 export default BuyButton

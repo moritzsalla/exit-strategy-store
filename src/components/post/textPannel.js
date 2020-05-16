@@ -43,16 +43,15 @@ const Markup = styled.div`
 
 const TextPannel = ({ product }) => {
   const {
-    store: { adding },
+    store: { adding, checkout },
     addVariantToCart,
   } = useContext(ShopifyContext)
   // const shopifyId = product.variants[0].shopifyId
   const [variant, setVariant] = useState(product.variants[0].shopifyId)
   const [quantity, setQuantity] = useState(1)
 
-  const purchase = event => {
+  const purchase = () => {
     addVariantToCart(variant, quantity)
-    event.target.innerHTML = "Added &check;"
   }
 
   const handleQuantityChange = e => {
@@ -64,6 +63,8 @@ const TextPannel = ({ product }) => {
     const value = e.target.value
     setVariant(value)
   }
+
+  const isInCart = checkout.lineItems.some(item => item.variant.id === variant)
 
   return (
     <Wrapper>
@@ -91,8 +92,18 @@ const TextPannel = ({ product }) => {
         <br />
         <br />
       </div>
-      <BuyButton onClick={purchase} disabled={adding} />
-      <StyledLink to="/cart/">View Cart</StyledLink>
+      <BuyButton onClick={purchase} disabled={adding | isInCart}>
+        {isInCart ? "added \u2713" : "add to cart"}
+      </BuyButton>
+      <StyledLink
+        to="/cart/"
+        css={`
+          margin-left: 15px;
+          display: ${isInCart ? "inline" : "none"};
+        `}
+      >
+        View Cart
+      </StyledLink>
     </Wrapper>
   )
 }
