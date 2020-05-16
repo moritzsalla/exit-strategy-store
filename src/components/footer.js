@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Small } from "./type"
-import { Grey, Mobile } from "./variables"
+import { Grey, Mobile, Orange, White } from "./variables"
 
 const StyledFooter = styled.footer`
   position: absolute;
@@ -23,6 +23,7 @@ const StyledFooter = styled.footer`
 
 const FooterElement = styled(Small)`
   padding: 1rem;
+  color: ${props => (props.white ? White : Orange)};
 
   @media (max-width: ${Mobile}) {
     padding: 0.5rem;

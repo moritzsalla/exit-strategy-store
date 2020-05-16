@@ -68,6 +68,19 @@ input {
   font-weight: bold;
 }
 
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: ${Mobile}) {
   hr {
     margin: 0.5rem 0;
@@ -89,7 +102,7 @@ const Padding = styled.div`
   }
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, footerProps }) => {
   return (
     <>
       <Wrapper>
@@ -97,7 +110,7 @@ const Layout = ({ children }) => {
         <Padding>
           <main>{children}</main>
         </Padding>
-        <Footer />
+        <Footer {...footerProps} />
         <GlobalStyle />
       </Wrapper>
     </>

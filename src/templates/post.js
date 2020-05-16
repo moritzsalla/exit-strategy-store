@@ -76,7 +76,7 @@ export const query = graphql`
         localFile {
           childImageSharp {
             fluid(maxHeight: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }

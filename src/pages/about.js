@@ -86,7 +86,7 @@ const About = () => {
       <Paragraph>
         Design: Rudi van Delden, Jan Egberts & Moritz Salla
         <br />
-        Code: Moritz Salla
+        Code: Moritz Salla & Mark Kvetny
       </Paragraph>
     </Layout>
   )

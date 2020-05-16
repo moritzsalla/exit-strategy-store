@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <Layout>
+    <Layout footerProps={{ white: true }}>
       <SEO title="Home" />
 
       <Wrapper id="gallery">
