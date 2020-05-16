@@ -81,8 +81,9 @@ const Logo = styled.h1`
 `
 
 const Nav = () => {
-  const data = useContext(ShopifyContext)
-  console.log(data.store.products.length)
+  const {
+    store: { checkout },
+  } = useContext(ShopifyContext)
 
   return (
     <Wrapper>
@@ -101,7 +102,8 @@ const Nav = () => {
             Gallery
           </NavLink>
           <NavLink as={StyledLink} to="/cart/">
-            Cart<span>{data.updateLineItem.length}</span>
+            Cart
+            <span>{checkout.lineItems.length || null}</span>
           </NavLink>
         </NavBar>
       </Header>
