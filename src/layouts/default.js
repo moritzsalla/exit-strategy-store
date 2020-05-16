@@ -51,6 +51,9 @@ td {
 hr {
   margin: 1.5rem 0;
   border-top: ${StrokeWeight} solid ${Orange};
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 }
 
 input {

@@ -12,8 +12,8 @@ const Artist = styled(Subtitle)`
 `
 
 const Wrapper = styled.div`
-  max-width: 60%;
-  padding: 2vw;
+  width: 70%;
+  padding-left: 6rem;
 
   @media (max-width: ${Tablet}) {
     padding: 0 0 0 0.75rem;

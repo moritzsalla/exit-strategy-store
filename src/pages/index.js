@@ -5,7 +5,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import { Mobile, Tablet } from "../components/variables"
+import { Mobile } from "../components/variables"
 import gsap, { TweenLite } from "gsap"
 import scrollTo from "gsap/ScrollToPlugin"
 
@@ -31,13 +31,18 @@ const Wrapper = styled.div`
   }
 `
 
+const JumboImg = styled(Image)`
+  height: 100vh;
+  width: 400px;
+`
+
 const IndexPage = ({ data }) => {
   const products = data.allShopifyProduct.edges
 
   useEffect(() => {
     const gallery = document.getElementById("gallery")
 
-    TweenLite.to(gallery, 200, {
+    TweenLite.to(gallery, 150, {
       scrollTo: {
         x: gallery.scrollWidth,
         autoKill: true,
@@ -53,10 +58,9 @@ const IndexPage = ({ data }) => {
         {products.map((product, j) => (
           <Link key={j} to={`/${product.node.handle}`}>
             {product.node.images.map((image, i) => (
-              <Image
+              <JumboImg
                 key={i}
-                fixed={image.localFile.childImageSharp.fixed}
-                style={{ height: "100vh" }}
+                fluid={image.localFile.childImageSharp.fluid}
                 draggable={false}
                 loading="eager"
               />
@@ -80,8 +84,8 @@ export const query = graphql`
             localFile {
               id
               childImageSharp {
-                fixed(height: 1000) {
-                  ...GatsbyImageSharpFixed_withWebp
+                fluid(maxHeight: 1000, quality: 100, cropFocus: WEST) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -91,3 +95,5 @@ export const query = graphql`
     }
   }
 `
+
+// ENTROPY ATTENTION

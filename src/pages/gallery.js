@@ -71,13 +71,13 @@ const Gallery = ({ data }) => {
         {products.map((product, i) => (
           <Item key={i}>
             <StyledLink to={`/${product.node.handle}`}>
-              {product.node.images.map((image, j) => (
+              {product.node.images[0] ? (
                 <Image
-                  key={j}
-                  fluid={image.localFile.childImageSharp.fluid}
+                  fluid={product.node.images[0].localFile.childImageSharp.fluid}
                   draggable={false}
                 />
-              ))}
+              ) : null}
+
               <Large>{product.node.vendor}</Large>
               <Small>{product.node.title}</Small>
             </StyledLink>
