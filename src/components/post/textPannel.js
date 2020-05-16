@@ -37,8 +37,8 @@ const Markup = styled.div`
     color: ${Orange};
   }
 
-  iframe {
-    margin: 3rem 0;
+  p:not(:last-of-type) {
+    padding-bottom: 1rem;
   }
 `
 
@@ -83,7 +83,6 @@ const TextPannel = ({ product }) => {
           onChange={handleQuantityChange}
         />
       </div>
-      <br />
       <div>
         <select value={variant} onChange={handleVariantChange}>
           {product.variants.map(({ title, shopifyId, priceV2 }) => (
@@ -92,8 +91,6 @@ const TextPannel = ({ product }) => {
             </option>
           ))}
         </select>
-        <br />
-        <br />
       </div>
       <BuyButton onClick={purchase} disabled={adding | isInCart}>
         {isInCart ? "added \u2713" : "add to cart"}
