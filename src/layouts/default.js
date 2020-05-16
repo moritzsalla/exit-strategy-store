@@ -16,8 +16,6 @@ import {
   BorderRadius,
 } from "../components/variables"
 
-import { ShopifyProvider } from "../components/shopifyProvider"
-
 import "./default.css"
 
 const GlobalStyle = createGlobalStyle`
@@ -92,13 +90,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <Wrapper>
-        <ShopifyProvider>
-          <Nav />
-          <Padding>
-            <main>{children}</main>
-          </Padding>
-          <Footer />
-        </ShopifyProvider>
+        <Nav />
+        <Padding>
+          <main>{children}</main>
+        </Padding>
+        <Footer />
         <GlobalStyle />
       </Wrapper>
     </>

@@ -1,7 +1,7 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+const React = require("react")
 
-// You can delete this file if you're not using it
+const { ShopifyProvider } = require("./src/components/shopifyProvider")
+
+exports.wrapRootElement = ({ element }) => {
+  return <ShopifyProvider>{element}</ShopifyProvider>
+}
