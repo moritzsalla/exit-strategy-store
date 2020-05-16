@@ -53,6 +53,7 @@ const NavLink = styled(Small)`
     /* -webkit-text-stroke-width: ${StrokeWeight};
     color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-color: ${Orange}; */
+    font-size: 1.5rem;
     color: ${Grey};
   }
 
@@ -93,11 +94,11 @@ const Nav = () => {
         </Logo>
 
         <NavBar>
-          <NavLink as={StyledLink} to="/about/">
-            About
-          </NavLink>
           <NavLink as={StyledLink} to="/gallery/">
             Gallery
+          </NavLink>
+          <NavLink as={StyledLink} to="/about/">
+            About
           </NavLink>
           <NavLink as={StyledLink} to="/cart/">
             Cart

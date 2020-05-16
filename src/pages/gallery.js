@@ -6,6 +6,7 @@ import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { StyledLink, Paragraph } from "../components/type"
 import { Tablet, Mobile } from "../components/variables"
+import macro from "styled-components/macro"
 
 const List = styled.ul`
   display: grid;
@@ -21,6 +22,7 @@ const List = styled.ul`
 `
 
 const Item = styled.li`
+outline: 1px solid red;
   text-align: center;
   display: flex;
   flex-flow: column;
@@ -28,9 +30,9 @@ const Item = styled.li`
   justify-content: flex-end;
   margin: 2vw;
 
-  @media (max-width: ${Mobile}) {
-    margin: 2vw;
-  }
+  /* @media (max-width: ${Mobile}) {
+    margin: 1rem;
+  } */
 `
 
 const Large = styled.h3`
@@ -51,6 +53,9 @@ const Large = styled.h3`
 `
 
 const Small = styled(Paragraph)`
+  line-height: 1;
+  padding-top: 0.2rem;
+
   @media (max-width: ${Tablet}) {
     font-size: 1.25rem;
   }
@@ -73,6 +78,7 @@ const Gallery = ({ data }) => {
             <StyledLink to={`/${product.node.handle}`}>
               {product.node.images[0] ? (
                 <Image
+                  css="width: 100%;"
                   fluid={product.node.images[0].localFile.childImageSharp.fluid}
                   draggable={false}
                 />
@@ -107,7 +113,7 @@ export const query = graphql`
           images {
             localFile {
               childImageSharp {
-                fluid(maxWidth: 400, quality: 100) {
+                fluid(maxHeight: 800, quality: 50) {
                   ...GatsbyImageSharpFluid_withWebp
                   ...GatsbyImageSharpFluidLimitPresentationSize
                 }
