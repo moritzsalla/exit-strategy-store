@@ -57,14 +57,16 @@ const IndexPage = ({ data }) => {
       <Wrapper id="gallery">
         {products.map((product, j) => (
           <Link key={j} to={`/${product.node.handle}`}>
-            {product.node.images.map((image, i) => (
-              <JumboImg
-                key={i}
-                fluid={image.localFile.childImageSharp.fluid}
-                draggable={false}
-                loading="eager"
-              />
-            ))}
+            {product.node.images
+              ? product.node.images.map((image, i) => (
+                  <JumboImg
+                    key={i}
+                    fluid={image.localFile.childImageSharp.fluid}
+                    draggable={false}
+                    loading="eager"
+                  />
+                ))
+              : null}
           </Link>
         ))}
       </Wrapper>
