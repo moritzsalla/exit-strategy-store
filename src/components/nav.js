@@ -81,9 +81,7 @@ const Logo = styled.h1`
 `
 
 const Nav = () => {
-  const {
-    store: { checkout },
-  } = useContext(ShopifyContext)
+  const context = useContext(ShopifyContext)
 
   return (
     <Wrapper>
@@ -102,7 +100,10 @@ const Nav = () => {
             Gallery
           </NavLink>
           <NavLink as={StyledLink} to="/cart/">
-            Cart<span>{checkout.lineItems.length || null}</span>
+            Cart
+            <span>
+              {(context && context.store.checkout.lineItems.length) || null}
+            </span>
           </NavLink>
         </NavBar>
       </Header>

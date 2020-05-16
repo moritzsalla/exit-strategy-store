@@ -42,13 +42,15 @@ const Markup = styled.div`
 `
 
 const TextPannel = ({ product }) => {
+  const context = useContext(ShopifyContext)
+  const [variant, setVariant] = useState(product.variants[0].shopifyId)
+  const [quantity, setQuantity] = useState(1)
+
+  if (!context) return null
   const {
     store: { adding, checkout },
     addVariantToCart,
-  } = useContext(ShopifyContext)
-  // const shopifyId = product.variants[0].shopifyId
-  const [variant, setVariant] = useState(product.variants[0].shopifyId)
-  const [quantity, setQuantity] = useState(1)
+  } = context
 
   const purchase = () => {
     addVariantToCart(variant, quantity)

@@ -111,9 +111,12 @@ const RedirectButton = styled(Button)`
 `
 
 const Checkout = () => {
+  const context = useContext(ShopifyContext)
+  if (!context) return null
+
   const {
     store: { checkout },
-  } = useContext(ShopifyContext)
+  } = context
 
   const handleCheckout = () => {
     window.open(checkout.webUrl)

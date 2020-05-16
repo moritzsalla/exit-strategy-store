@@ -38,15 +38,15 @@ export default function Template({ data }) {
       <SEO title={product.vendor} />
       <Wrapper>
         <ImageWrapper>
-          {product.images[0] ? (
-            <SimpleReactLightbox>
-              <Img
-                fluid={product.images[0].localFile.childImageSharp.fluid}
-                alt={product.title}
-                draggable={false}
-              />
-            </SimpleReactLightbox>
-          ) : null}
+          {product.images[0] && (
+            <Img
+              fixed={product.images[0].localFile.childImageSharp.fixed}
+              alt={product.title}
+              draggable={false}
+              style={style}
+              imgStyle={{ height: "auto" }}
+            />
+          )}
         </ImageWrapper>
         <TextPannel product={product} />
       </Wrapper>
