@@ -37,13 +37,15 @@ export default function Template({ data }) {
       <SEO title={product.vendor} />
       <Wrapper>
         <ImageWrapper>
-          {product.images[0] ? (
+          {product.images[0] && (
             <Img
-              fluid={product.images[0].localFile.childImageSharp.fluid}
+              fixed={product.images[0].localFile.childImageSharp.fixed}
               alt={product.title}
               draggable={false}
+              style={style}
+              imgStyle={{ height: "auto" }}
             />
-          ) : null}
+          )}
         </ImageWrapper>
         <TextPannel product={product} />
       </Wrapper>
