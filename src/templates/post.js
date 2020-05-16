@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import SimpleReactLightbox from "simple-react-lightbox"
 
 import SEO from "../components/seo"
 import Layout from "../layouts/default"
@@ -38,11 +39,13 @@ export default function Template({ data }) {
       <Wrapper>
         <ImageWrapper>
           {product.images[0] ? (
-            <Img
-              fluid={product.images[0].localFile.childImageSharp.fluid}
-              alt={product.title}
-              draggable={false}
-            />
+            <SimpleReactLightbox>
+              <Img
+                fluid={product.images[0].localFile.childImageSharp.fluid}
+                alt={product.title}
+                draggable={false}
+              />
+            </SimpleReactLightbox>
           ) : null}
         </ImageWrapper>
         <TextPannel product={product} />
