@@ -91,7 +91,7 @@ const IndexPage = ({ data }) => {
           21—28 May
         </Logo>
         <Countdown
-          date="2020-05-21"
+          date="2020-05-21T16:00:00"
           intervalDelay={0}
           precision={3}
           renderer={props => (

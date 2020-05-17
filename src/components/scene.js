@@ -11,7 +11,7 @@ const CameraController = () => {
   useEffect(() => {
     const controls = new OrbitControls(camera, gl.domElement)
 
-    controls.enableZoom = false
+    controls.enableZoom = true
     controls.enableKeys = false
 
     return () => {
