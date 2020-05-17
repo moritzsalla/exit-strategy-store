@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 `
 
 const ImageTile = styled.div`
-  width: 30%;
+  width: 40%;
 
   @media (max-width: ${Tablet}) {
     padding: 0 0.75rem 0 0;
@@ -79,7 +79,6 @@ export const query = graphql`
           childImageSharp {
             fluid(maxHeight: 800, quality: 60) {
               ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }

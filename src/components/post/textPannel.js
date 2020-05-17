@@ -9,8 +9,7 @@ const Artist = styled(Subtitle)`
 
 const Wrapper = styled.div`
   max-width: 80ch;
-  width: 70%;
-  padding-left: 6rem;
+  padding-left: 4rem;
 
   @media (max-width: ${Tablet}) {
     padding: 0 0 0 0.75rem;
