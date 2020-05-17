@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Layout from "../layouts/default"
 import Img from "gatsby-image"
 import TextPannel from "../components/post/textPannel"
+import BuySection from "../components/post/buySection"
 import { Mobile, Tablet } from "../components/variables"
 
 const Wrapper = styled.section`
@@ -16,7 +17,7 @@ const Wrapper = styled.section`
   }
 `
 
-const ImageWrapper = styled.div`
+const ImageTile = styled.div`
   width: 30%;
 
   @media (max-width: ${Tablet}) {
@@ -36,7 +37,7 @@ export default function Template({ data }) {
     <Layout>
       <SEO title={product.vendor} />
       <Wrapper>
-        <ImageWrapper>
+        <ImageTile>
           {product.images[0] && (
             <Img
               fluid={product.images[0].localFile.childImageSharp.fluid}
@@ -44,7 +45,8 @@ export default function Template({ data }) {
               draggable={false}
             />
           )}
-        </ImageWrapper>
+          <BuySection product={product} />
+        </ImageTile>
         <TextPannel product={product} />
       </Wrapper>
     </Layout>
@@ -75,7 +77,7 @@ export const query = graphql`
       images {
         localFile {
           childImageSharp {
-            fluid(maxHeight: 1000, quality: 60) {
+            fluid(maxHeight: 800, quality: 60) {
               ...GatsbyImageSharpFluid_withWebp
               ...GatsbyImageSharpFluidLimitPresentationSize
             }

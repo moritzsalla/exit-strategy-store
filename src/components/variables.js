@@ -4,7 +4,7 @@ export const White = "#F5F6F7"
 export const Orange = "#e86228"
 
 export const StrokeWeight = "0.1rem"
-export const BorderRadius = "1rem"
+export const BorderRadius = "0.5rem"
 
 export const Mobile = "766px"
 export const Tablet = "1100px"

@@ -10,25 +10,27 @@ import {
 } from "./variables"
 
 export const Button = styled.button`
-  color: ${Orange};
+  color: ${White};
+  background: ${Orange};
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: ${BorderRadius};
   outline: none;
-  background: none;
   border: ${StrokeWeight} solid ${Orange};
   font-weight: bold;
 
   &:disabled {
-    color: ${Grey};
-    border-color: ${Grey};
+    color: ${Orange};
+    border-color: ${Orange};
+    background: none;
   }
 
   &:hover:not([disabled]) {
     cursor: pointer;
     color: ${White};
-    background: ${Orange};
+    background: ${Grey};
+    border-color: ${Grey};
   }
 
   @media (max-width: ${Mobile}) {

@@ -48,14 +48,6 @@ td {
   padding-right: 2rem;
 }
 
-hr {
-  margin: 1.5rem 0;
-  border-top: ${StrokeWeight} solid ${Orange};
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-}
-
 input {
   color: ${Orange};
   border: ${StrokeWeight} solid ${Orange};
@@ -79,12 +71,6 @@ input {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-@media (max-width: ${Mobile}) {
-  hr {
-    margin: 0.5rem 0;
-  }
 }
 `
 

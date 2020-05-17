@@ -1,11 +1,7 @@
-import React, { useContext, useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import BuyButton from "../buttons"
-import { Title, Subtitle, StyledLink } from "../type"
-import { ShopifyContext } from "../shopifyProvider"
+import { Title, Subtitle } from "../type"
 import { Orange, Mobile, Tablet } from "../variables"
-
-const clamp = (num, min, max) => Math.min(Math.max(num, min), max)
 
 const Artist = styled(Subtitle)`
   margin-bottom: 0.5rem;
@@ -43,67 +39,11 @@ const Markup = styled.div`
 `
 
 const TextPannel = ({ product }) => {
-  const context = useContext(ShopifyContext)
-  const [variant, setVariant] = useState(product.variants[0].shopifyId)
-  const [quantity, setQuantity] = useState(1)
-
-  if (!context) return null
-  const {
-    store: { adding, checkout },
-    addVariantToCart,
-  } = context
-
-  const purchase = () => {
-    addVariantToCart(variant, quantity)
-  }
-
-  const handleQuantityChange = e => {
-    const value = +e.target.value
-    setQuantity(clamp(value, 0, 10))
-  }
-
-  const handleVariantChange = e => {
-    const value = e.target.value
-    setVariant(value)
-  }
-
-  const isInCart = checkout.lineItems.some(item => item.variant.id === variant)
-
   return (
     <Wrapper>
       <Artist>{product.vendor}</Artist>
       <Title>{product.title}</Title>
       <Markup dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
-      <div>
-        <input
-          type="number"
-          min="1"
-          max="10"
-          value={quantity}
-          onChange={handleQuantityChange}
-        />
-      </div>
-      <div>
-        <select value={variant} onChange={handleVariantChange}>
-          {product.variants.map(({ title, shopifyId, priceV2 }) => (
-            <option key={shopifyId} value={shopifyId}>
-              {title} &euro;{priceV2.amount}
-            </option>
-          ))}
-        </select>
-      </div>
-      <BuyButton onClick={purchase} disabled={adding | isInCart}>
-        {isInCart ? "added \u2713" : "add to cart"}
-      </BuyButton>
-      <StyledLink
-        to="/cart/"
-        css={`
-          margin-left: 15px;
-          display: ${isInCart ? "inline" : "none"};
-        `}
-      >
-        View Cart
-      </StyledLink>
     </Wrapper>
   )
 }
