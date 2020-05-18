@@ -28,10 +28,12 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   font-size: 1.5rem;
   line-height: 1.25;
+  padding-bottom: 0.25rem;
   font-weight: bold;
   color: ${Orange};
   text-transform: uppercase;
   font-style: normal;
+  letter-spacing: 0.05rem;
 
   @media (max-width: ${Mobile}) {
     font-size: 1rem;

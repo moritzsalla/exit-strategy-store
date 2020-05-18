@@ -97,8 +97,8 @@ const Nav = () => {
           <NavLink as={StyledLink} to="/gallery/">
             Gallery
           </NavLink>
-          <NavLink as={StyledLink} to="/about/">
-            About
+          <NavLink as={StyledLink} to="/info/">
+            Info
           </NavLink>
           <NavLink as={StyledLink} to="/cart/">
             Cart

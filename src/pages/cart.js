@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
-import { Title, Paragraph } from "../components/type"
+import { Title, Paragraph, StyledLink } from "../components/type"
 import { StrokeWeight, Orange, Mobile } from "../components/variables"
 
 import Layout from "../layouts/default"
@@ -99,7 +99,7 @@ const Item = props => {
           <Paragraph>{selectedOptions}</Paragraph>
         </Row>
         <Row>
-          <Button onClick={handleRemove}>&#10005;</Button>
+          <Button onClick={handleRemove}>Remove</Button>
         </Row>
       </Column>
     </>
@@ -124,9 +124,20 @@ const Checkout = () => {
 
   return (
     <>
-      {checkout.lineItems.map(item => (
-        <Item key={item.id} data={item} />
-      ))}
+      {checkout.lineItems.lengeth > 0 ? (
+        checkout.lineItems.map(item => <Item key={item.id} data={item} />)
+      ) : (
+        <Paragraph>
+          Your shopping cart is currently empty
+          <br />
+          <br />
+          If there is an issue with your order, please contact{" "}
+          <StyledLink as="a" href="mailto:info@forgetfulnumber.com">
+            info@forgetfulnumber.com
+          </StyledLink>
+        </Paragraph>
+      )}
+
       <RedirectButton onClick={handleCheckout}>Check Out ↗</RedirectButton>
     </>
   )

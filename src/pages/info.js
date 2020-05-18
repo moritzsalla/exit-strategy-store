@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 
-import { Paragraph, Title, Subtitle } from "../components/type"
+import { Paragraph, Title, Subtitle, StyledLink } from "../components/type"
 import { Mobile, StrokeWeight, Orange } from "../components/variables"
 import styled from "styled-components"
 import macro from "styled-components/macro"
@@ -27,12 +27,12 @@ const Large = styled(Title)`
   }
 `
 
-const About = ({ data }) => {
+const Info = ({ data }) => {
   const policies = data.allShopifyShopPolicy.edges
 
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="Info" />
 
       <Section>
         <Large>
@@ -44,7 +44,6 @@ const About = ({ data }) => {
 
       <Section>
         <Subtitle>Shipping Costs</Subtitle>
-        <br />
         <Paragraph as="table">
           <tbody>
             <tr>
@@ -90,7 +89,6 @@ const About = ({ data }) => {
 
       <Section>
         <Subtitle>Frame Options</Subtitle>
-        <br />
         <Paragraph>1. White Wood</Paragraph>
         {data.whiteFrame.edges.map(image => (
           <Img fixed={image.node.childImageSharp.fixed} />
@@ -106,10 +104,25 @@ const About = ({ data }) => {
         <Paragraph>3. No Frame</Paragraph>
       </Section>
 
+      <Section>
+        <Subtitle>Issues</Subtitle>
+        <Paragraph>
+          If there is an issue with your order, please contact{" "}
+          <StyledLink as="a" href="mailto:info@forgetfulnumber.com">
+            info@forgetfulnumber.com
+          </StyledLink>
+          . We will reach out to you as soon as possible. Alternatively, send us
+          a message on{" "}
+          <StyledLink as="a" href="https://www.facebook.com/forgetfulnumber/">
+            Facebook Messenger
+          </StyledLink>
+          .
+        </Paragraph>
+      </Section>
+
       {policies.map(policy => (
         <Section id={policy.node.id}>
           <Subtitle>{policy.node.title}</Subtitle>
-          <br />
           <Paragraph>{policy.node.body}</Paragraph>
         </Section>
       ))}
@@ -125,7 +138,7 @@ const About = ({ data }) => {
   )
 }
 
-export default About
+export default Info
 
 export const query = graphql`
   query {
