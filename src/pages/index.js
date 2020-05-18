@@ -64,6 +64,7 @@ const IndexPage = ({ data }) => {
                     fluid={image.localFile.childImageSharp.fluid}
                     draggable={false}
                     loading="eager"
+                    fadeIn={false}
                   />
                 ))
               : null}
