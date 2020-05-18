@@ -51,7 +51,7 @@ const BuySection = ({ product }) => {
 
   return (
     <Wrapper>
-      <StyledLink to="/about/#frames">See Frame Options</StyledLink>
+      <StyledLink to="/info/#frames">See Frame Options</StyledLink>
 
       <select
         value={variant}
