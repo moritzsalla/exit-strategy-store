@@ -127,9 +127,7 @@ const Checkout = () => {
       {checkout.lineItems.map(item => (
         <Item key={item.id} data={item} />
       ))}
-      <RedirectButton onClick={handleCheckout}>
-        check out &#8599;
-      </RedirectButton>
+      <RedirectButton onClick={handleCheckout}>Check Out ↗</RedirectButton>
     </>
   )
 }
