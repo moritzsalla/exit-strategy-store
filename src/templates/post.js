@@ -20,7 +20,6 @@ const Wrapper = styled.section`
 
 const ImageTile = styled.div`
   width: 40%;
-  cursor: pointer;
 
   @media (max-width: ${Tablet}) {
     padding: 0 0.75rem 0 0;

@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import { Paragraph, Title, Subtitle } from "../components/type"
 import { Mobile, StrokeWeight, Orange } from "../components/variables"
 import styled from "styled-components"
+import macro from "styled-components/macro"
 
 const Section = styled.section`
   &:not(:last-child) {
@@ -77,7 +78,15 @@ const About = ({ data }) => {
         </Paragraph>
       </Section>
 
-      <a name="frames" />
+      <a
+        name="frames"
+        css={`
+          display: block;
+          position: relative;
+          top: -20vh;
+          visibility: hidden;
+        `}
+      />
 
       <Section>
         <Subtitle>Frame Options</Subtitle>

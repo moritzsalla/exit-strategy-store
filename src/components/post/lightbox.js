@@ -1,29 +1,24 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import macro from "styled-components/macro"
-
-const Box = styled.div``
 
 const Lightbox = ({ children }) => {
   const [active, setActive] = useState(0)
+  const Box = styled.div`
+    cursor: pointer;
+    ${active &&
+    `z-index:10;
+      display: block; 
+      height:100vw; 
+      width:100vw;
+      position:fixed;
+      top:0;
+      left:0;
+      overflow:scroll;`}
+  `
 
   return (
     <>
-      <Box
-        onClick={() => setActive(!active)}
-        css={`
-          border-color: ${active ? "block" : null};
-          height: ${active ? "100vh" : null};
-          width: ${active ? "100vw" : null};
-          position: ${active ? "fixed" : null};
-          top: ${active ? "0" : null};
-          left: ${active ? "0" : null};
-          display: ${active ? "block" : null};
-          overflow: ${active ? "scroll" : null};
-        `}
-      >
-        {children}
-      </Box>
+      <Box onClick={() => setActive(!active)}>{children}</Box>
     </>
   )
 }

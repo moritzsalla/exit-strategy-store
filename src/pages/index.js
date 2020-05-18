@@ -41,10 +41,11 @@ const IndexPage = ({ data }) => {
 
   useEffect(() => {
     const gallery = document.getElementById("gallery")
+    const frameWidth = gallery.scrollWidth
 
     TweenLite.to(gallery, 150, {
       scrollTo: {
-        x: gallery.scrollWidth,
+        x: frameWidth,
         autoKill: true,
       },
     })
