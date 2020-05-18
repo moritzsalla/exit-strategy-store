@@ -8,6 +8,7 @@ import Img from "gatsby-image"
 import TextPannel from "../components/post/textPannel"
 import BuySection from "../components/post/buySection"
 import { Mobile, Tablet } from "../components/variables"
+import Lightbox from "../components/post/lightbox"
 
 const Wrapper = styled.section`
   display: flex;
@@ -19,6 +20,7 @@ const Wrapper = styled.section`
 
 const ImageTile = styled.div`
   width: 40%;
+  cursor: pointer;
 
   @media (max-width: ${Tablet}) {
     padding: 0 0.75rem 0 0;
@@ -39,11 +41,13 @@ export default function Template({ data }) {
       <Wrapper>
         <ImageTile>
           {product.images[0] && (
-            <Img
-              fluid={product.images[0].localFile.childImageSharp.fluid}
-              alt={product.title}
-              draggable={false}
-            />
+            <Lightbox>
+              <Img
+                fluid={product.images[0].localFile.childImageSharp.fluid}
+                alt={product.title}
+                draggable={false}
+              />
+            </Lightbox>
           )}
           <BuySection product={product} />
         </ImageTile>
@@ -77,7 +81,7 @@ export const query = graphql`
       images {
         localFile {
           childImageSharp {
-            fluid(maxHeight: 800, quality: 60) {
+            fluid(maxHeight: 1000, quality: 60) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
