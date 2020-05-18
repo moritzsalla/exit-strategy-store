@@ -43,7 +43,7 @@ const IndexPage = ({ data }) => {
     const gallery = document.getElementById("gallery")
     const frameWidth = gallery.scrollWidth
 
-    TweenLite.to(gallery, 150, {
+    TweenLite.to(gallery, 200, {
       scrollTo: {
         x: frameWidth,
         autoKill: true,
@@ -52,7 +52,7 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <Layout footerProps={{ white: true }}>
+    <Layout footerProps={{ white: false }}>
       <SEO title="Home" />
 
       <Wrapper id="gallery">

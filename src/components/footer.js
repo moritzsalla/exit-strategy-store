@@ -38,33 +38,33 @@ const FooterLink = styled(FooterElement)`
   }
 `
 
-class Footer extends React.Component {
-  scrollTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+const Footer = props => (
+  <StyledFooter>
+    <FooterElement {...props}>
+      <span>&copy;&nbsp;</span>
+      {new Date().getFullYear()} Forgetful Number
+    </FooterElement>
 
-  render() {
-    return (
-      <StyledFooter>
-        <FooterElement>
-          <span>&copy;&nbsp;</span>
-          {new Date().getFullYear()} Forgetful Number
-        </FooterElement>
+    <FooterLink
+      {...props}
+      as="a"
+      href="https://www.instagram.com/forgetfulnumber/"
+    >
+      Instagram
+    </FooterLink>
 
-        <FooterLink as="a" href="https://www.instagram.com/forgetfulnumber/">
-          Instagram
-        </FooterLink>
+    <FooterLink
+      {...props}
+      as="a"
+      href="https://www.facebook.com/forgetfulnumber/"
+    >
+      Facebook
+    </FooterLink>
 
-        <FooterLink as="a" href="https://www.facebook.com/forgetfulnumber/">
-          Facebook
-        </FooterLink>
-
-        <FooterLink as="a" href="mailto:info@forgetfulnumber.com">
-          Mail
-        </FooterLink>
-      </StyledFooter>
-    )
-  }
-}
+    <FooterLink {...props} as="a" href="mailto:info@forgetfulnumber.com">
+      Mail
+    </FooterLink>
+  </StyledFooter>
+)
 
 export default Footer
