@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useLayoutEffect } from "react"
 import Image from "gatsby-image"
 import { Link, graphql } from "gatsby"
 
@@ -39,7 +39,7 @@ const JumboImg = styled(Image)`
 const IndexPage = ({ data }) => {
   const products = data.allShopifyProduct.edges
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const gallery = document.getElementById("gallery")
     const frameWidth = gallery.scrollWidth
 
