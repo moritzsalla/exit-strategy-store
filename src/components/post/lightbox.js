@@ -1,26 +1,38 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import { White } from "../variables"
+import macro from "styled-components/macro"
 
 const Lightbox = ({ children }) => {
   const [active, setActive] = useState(0)
-  const Box = styled.div`
-    cursor: pointer;
+
+  const Wrapper = styled.div`
     ${active &&
-    `z-index:10;
-      display: block; 
-      height:100vw; 
-      width:100vw;
-      position:fixed;
-      top:0;
-      left:0;
-      cursor: pointer;
-      overflow:scroll;`}
+    `position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: ${White};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    `}
+  `
+
+  const InnerWrapper = styled.div`
+    ${active &&
+    `
+      height: 100%;
+      width: 50%;
+    `}
   `
 
   return (
-    <>
-      <Box onClick={() => setActive(!active)}>{children}</Box>
-    </>
+    <Wrapper onClick={() => setActive(!active)} props={active}>
+      <InnerWrapper props={active}>{children}</InnerWrapper>
+    </Wrapper>
   )
 }
 

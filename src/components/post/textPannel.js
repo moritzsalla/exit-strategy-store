@@ -25,8 +25,8 @@ const Markup = styled.div`
   * {
     font-family: Suisse, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.5rem;
-    max-width: 50ch;
+    font-size: 1.25rem;
+    max-width: 55ch;
     line-height: 1.25;
     font-weight: normal;
     color: ${Orange};

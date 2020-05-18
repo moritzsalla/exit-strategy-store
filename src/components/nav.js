@@ -90,7 +90,7 @@ const Nav = () => {
         <Logo as={StyledLink} to="/">
           Exit&nbsp;Strategies
           <br />
-          <span>How to Graduate in an Emergency</span>
+          <span>How to Graduate in an Emergeny</span>
         </Logo>
 
         <NavBar>

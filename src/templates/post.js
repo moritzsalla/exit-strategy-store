@@ -39,12 +39,13 @@ export default function Template({ data }) {
       <SEO title={product.vendor} />
       <Wrapper>
         <ImageTile>
-          {product.images[0] && (
+          {product.images[1] && (
             <Lightbox>
               <Img
-                fluid={product.images[0].localFile.childImageSharp.fluid}
+                fluid={product.images[1].localFile.childImageSharp.fluid}
                 alt={product.title}
                 draggable={false}
+                objectFit="contain"
               />
             </Lightbox>
           )}
@@ -82,6 +83,7 @@ export const query = graphql`
           childImageSharp {
             fluid(maxHeight: 1000, quality: 60) {
               ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }

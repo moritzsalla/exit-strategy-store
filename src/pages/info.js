@@ -36,9 +36,11 @@ const Info = ({ data }) => {
 
       <Section>
         <Large>
-          We are EXIT STRATEGY → A collective of 40 graduating BA photography
-          students, who are preparing their EXIT STRATEGIES to depart from the
-          Royal Academy of Art in The Hague
+          We are FORGETFUL NUMBER, the collective of 39 (adjust) visual artists
+          who are graduating from the Photography department of the Royal
+          Academy of Art, The Hague (NL). To make sure we all arrive safely at
+          our final destinations, we would like to kindly ask for your support
+          by purchasing one of our exclusive prints.
         </Large>
       </Section>
 
@@ -129,7 +131,7 @@ const Info = ({ data }) => {
 
       <Section>
         <Paragraph>
-          Design: Rudi van Delden, Jan Egberts & Moritz Salla
+          Design: Rudi van Delden, Jan Egbers & Moritz Salla
           <br />
           Code: Moritz Salla & Mark Kvetny
         </Paragraph>

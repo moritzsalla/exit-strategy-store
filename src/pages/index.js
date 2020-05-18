@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react"
 import Image from "gatsby-image"
 import { Link, graphql } from "gatsby"
+import JumboText from "../components/jumboText"
 
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
 
 const JumboImg = styled(Image)`
   height: 100vh;
-  width: 700px;
+  width: 800px;
 `
 
 const IndexPage = ({ data }) => {
@@ -52,23 +53,20 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <Layout footerProps={{ white: false }}>
+    <Layout footerProps={{ white: true }}>
       <SEO title="Home" />
+
+      <JumboText />
 
       <Wrapper id="gallery">
         {products.map((product, j) => (
           <Link key={j} to={`/${product.node.handle}`}>
-            {product.node.images
-              ? product.node.images.map((image, i) => (
-                  <JumboImg
-                    key={i}
-                    fluid={image.localFile.childImageSharp.fluid}
-                    draggable={false}
-                    loading="eager"
-                    fadeIn={false}
-                  />
-                ))
-              : null}
+            <JumboImg
+              fluid={product.node.images[1].localFile.childImageSharp.fluid}
+              draggable={false}
+              // loading="eager"
+              // fadeIn={false}
+            />
           </Link>
         ))}
       </Wrapper>
@@ -89,7 +87,7 @@ export const query = graphql`
               id
               childImageSharp {
                 fluid(maxHeight: 500, quality: 60, cropFocus: ATTENTION) {
-                  ...GatsbyImageSharpFluid_noBase64
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -101,3 +99,4 @@ export const query = graphql`
 `
 
 // ENTROPY ATTENTION
+// ...GatsbyImageSharpFluid_noBase64
