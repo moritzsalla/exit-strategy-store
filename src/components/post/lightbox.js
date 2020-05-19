@@ -18,8 +18,10 @@ const Lightbox = ({ children }) => {
       justify-content: center;
       align-items: center;
       z-index: 100;
+      cursor: zoom-out;
 
        img {
+         outline: none;
          height: auto;
          width: auto;
          max-height: 90%;

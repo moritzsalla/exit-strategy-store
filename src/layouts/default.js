@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
 
 ::selection {
   background: ${Orange};
-  color: ${Black};
+  color: ${White};
 }
 
 html {

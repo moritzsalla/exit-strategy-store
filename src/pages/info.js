@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import { Paragraph, Title, Subtitle, StyledLink } from "../components/type"
 import { Mobile, StrokeWeight, Orange } from "../components/variables"
 import styled from "styled-components"
-import macro from "styled-components/macro"
+import Lightbox from "../components/post/lightbox"
 
 const Section = styled.section`
   &:not(:last-child) {
@@ -34,8 +34,11 @@ const Large = styled(Title)`
 `
 
 const FrameImg = styled(Img)`
+  height: auto;
+  width: 200px;
   margin: 0.5rem 0.5rem 0 0;
   outline: ${StrokeWeight} solid ${Orange};
+  cursor: zoom-in;
 `
 
 const Info = ({ data }) => {
@@ -89,6 +92,21 @@ const Info = ({ data }) => {
       </Section>
 
       <Section>
+        <Subtitle>Who is Forgetful Number?</Subtitle>
+        <Paragraph>
+          We are FORGETFUL NUMBER, the collective of 39 visual artists who are
+          graduating from the photography department of the Royal Academy of
+          Art, The Hague (NL) in the Summer of 2020.
+          <br />
+          What binds us as a collective is our common task of challenging the
+          medium of photography. We believe that art should be public and
+          accessible to a broad variety of communities. From this core value, as
+          a point of departure, we present a diverse approach to narration of
+          stories that we believe deserve to have a voice.  
+        </Paragraph>
+      </Section>
+
+      <Section>
         <Large>Further Information</Large>
         <Paragraph>
           The print sale will be open from the 21st to the 28th of May 2020
@@ -132,13 +150,17 @@ const Info = ({ data }) => {
         <br />
         <Paragraph>White Wood</Paragraph>
         {data.whiteFrame.edges.map(image => (
-          <FrameImg fixed={image.node.childImageSharp.fixed} />
+          <Lightbox>
+            <FrameImg as="img" src={image.node.childImageSharp.resize.src} />
+          </Lightbox>
         ))}
         <br />
         <br />
         <Paragraph>Black Wood</Paragraph>
         {data.blackFrame.edges.map(image => (
-          <FrameImg fixed={image.node.childImageSharp.fixed} />
+          <Lightbox>
+            <FrameImg as="img" src={image.node.childImageSharp.resize.src} />
+          </Lightbox>
         ))}
       </Section>
 
@@ -174,21 +196,6 @@ const Info = ({ data }) => {
           clearance and handling may also apply during the shipment of your lot
           and will be charged to you by the involved party at a later stage if
           applicable.
-        </Paragraph>
-      </Section>
-
-      <Section>
-        <Subtitle>Who is Forgetful Number?</Subtitle>
-        <Paragraph>
-          We are FORGETFUL NUMBER, the collective of 39 visual artists who are
-          graduating from the photography department of the Royal Academy of
-          Art, The Hague (NL) in the Summer of 2020.
-          <br />
-          What binds us as a collective is our common task of challenging the
-          medium of photography. We believe that art should be public and
-          accessible to a broad variety of communities. From this core value, as
-          a point of departure, we present a diverse approach to narration of
-          stories that we believe deserve to have a voice.  
         </Paragraph>
       </Section>
 
@@ -243,8 +250,8 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fixed(width: 125, height: 125) {
-              ...GatsbyImageSharpFixed
+            resize(height: 1000, quality: 60) {
+              src
             }
           }
         }
@@ -254,8 +261,8 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fixed(width: 125, height: 125) {
-              ...GatsbyImageSharpFixed
+            resize(height: 1000, quality: 60) {
+              src
             }
           }
         }

@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 `
 
 const Image = styled.img`
-  cursor: pointer;
+  cursor: zoom-in;
   width: 100%;
   height: auto;
 `
