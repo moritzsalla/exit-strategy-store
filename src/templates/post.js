@@ -7,7 +7,7 @@ import Layout from "../layouts/default"
 import Img from "gatsby-image"
 import TextPannel from "../components/post/textPannel"
 import BuySection from "../components/post/buySection"
-import { Mobile, Tablet } from "../components/variables"
+import { Mobile, Tablet, StrokeWeight, Orange } from "../components/variables"
 import Lightbox from "../components/post/lightbox"
 
 const Wrapper = styled.section`
@@ -26,8 +26,10 @@ const ImageTile = styled.div`
   }
 
   @media (max-width: ${Mobile}) {
-    max-width: 100%;
+    width: 100%;
     padding: 0;
+    border-bottom: ${StrokeWeight} solid ${Orange};
+    margin-bottom: 1rem;
   }
 `
 

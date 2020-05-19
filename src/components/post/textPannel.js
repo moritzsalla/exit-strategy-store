@@ -3,8 +3,22 @@ import styled from "styled-components"
 import { Title, Subtitle } from "../type"
 import { Orange, Mobile, Tablet } from "../variables"
 
-const Artist = styled(Subtitle)`
-  margin-bottom: 0.5rem;
+const Series = styled(Subtitle)`
+  margin-bottom: 0;
+  max-width: 30ch;
+
+  @media (max-width: ${Mobile}) {
+    margin-bottom: 0.5rem;
+    padding: 0;
+  }
+`
+
+const Artist = styled(Title)`
+  margin-bottom: 1.5rem;
+
+  @media (max-width: ${Mobile}) {
+    margin-bottom: 1.5rem;
+  }
 `
 
 const Wrapper = styled.div`
@@ -25,11 +39,17 @@ const Markup = styled.div`
   * {
     font-family: Suisse, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.25rem;
-    max-width: 55ch;
+    font-size: 1.15rem;
+    max-width: 50ch;
     line-height: 1.25;
     font-weight: normal;
     color: ${Orange};
+
+    @media (max-width: ${Mobile}) {
+      font-size: 1.2rem;
+      line-height: 1.35;
+      hyphens: auto;
+    }
   }
 
   p:not(:last-of-type) {
@@ -53,8 +73,8 @@ const Markup = styled.div`
 const TextPannel = ({ product }) => {
   return (
     <Wrapper>
+      <Series>{product.title}</Series>
       <Artist>{product.vendor}</Artist>
-      <Title>{product.title}</Title>
       <Markup dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
     </Wrapper>
   )

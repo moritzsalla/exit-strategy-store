@@ -45,7 +45,7 @@ th {
 }
 
 td {
-  padding-right: 2rem;
+  padding-right: 4rem;
 }
 
 input {
@@ -84,7 +84,7 @@ const Padding = styled.div`
   padding: 10rem 4vw;
 
   @media (max-width: ${Mobile}) {
-    padding: 10rem 1rem;
+    padding: 8rem 1.25rem;
   }
 `
 

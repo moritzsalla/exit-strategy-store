@@ -13,6 +13,7 @@ import { ShopifyContext } from "./shopifyProvider"
 import { Grey } from "./variables"
 
 const Header = styled.header`
+  box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.1);
   z-index: 100;
   display: flex;
   text-transform: uppercase;
@@ -27,6 +28,7 @@ const Header = styled.header`
   @media (max-width: ${Mobile}) {
     padding: 0.5rem 0.75rem;
     margin: 0.5rem;
+    flex-direction: column;
   }
 `
 
@@ -42,6 +44,14 @@ const Wrapper = styled.div`
 const NavBar = styled.nav`
   display: flex;
   align-items: center;
+
+  @media (max-width: ${Mobile}) {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: 100%;
+  }
 `
 
 const NavLink = styled(Small)`
@@ -55,6 +65,10 @@ const NavLink = styled(Small)`
     -webkit-text-stroke-color: ${Orange}; */
     font-size: 1.5rem;
     color: ${Grey};
+
+    @media (max-width: ${Mobile}) {
+    font-size: 4.5vw;
+  }
   }
 
   @media (max-width: ${Tablet}) {
@@ -62,7 +76,7 @@ const NavLink = styled(Small)`
   }
 
   @media (max-width: ${Mobile}) {
-    font-size: 1rem;
+    font-size: 4.5vw;
   }
 `
 
@@ -78,6 +92,10 @@ const Logo = styled.h1`
     display: flex;
     justify-content: flex-start;
     letter-spacing: 0.16rem;
+  }
+
+  &:hover {
+    color: ${Orange};
   }
 `
 

@@ -54,15 +54,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `exit-strategies-print-sale`,
+        short_name: `exitstrategies`,
         start_url: `/`,
-        background_color: `white`,
-        theme_color: `white`,
+        background_color: `#F5F6F7`,
+        theme_color: `#e86228`,
         display: `minimal-ui`,
         icon: `src/images/favicon.jpg`,
       },
     },
+    "gatsby-plugin-offline",
     {
       resolve: "gatsby-source-shopify",
       options: {

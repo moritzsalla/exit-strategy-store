@@ -6,29 +6,30 @@ import Layout from "../layouts/default"
 import SEO from "../components/seo"
 
 import { Paragraph, Title, Subtitle, StyledLink } from "../components/type"
-import {
-  Mobile,
-  StrokeWeight,
-  Orange,
-  BorderRadius,
-} from "../components/variables"
+import { Mobile, StrokeWeight, Orange } from "../components/variables"
 import styled from "styled-components"
 import macro from "styled-components/macro"
 
 const Section = styled.section`
   &:not(:last-child) {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    /* border-bottom: ${StrokeWeight} solid ${Orange}; */
+    margin-bottom: 3rem;
+
+    @media (max-width: ${Mobile}) {
+      margin-bottom: 1.5rem;
+    }
   }
 `
 
 const Large = styled(Title)`
   font-size: 5vw;
   letter-spacing: -0.2vw;
+  padding-bottom: 0;
 
   @media (max-width: ${Mobile}) {
-    font-size: 1.5rem;
+    letter-spacing: -0.1vw;
+    line-height: 1.2;
+    font-size: 1.75rem;
+    hyphens: auto;
   }
 `
 
@@ -140,10 +141,10 @@ const Info = ({ data }) => {
       ))}
 
       <Section>
-        <Paragraph>
-          Design: Rudi van Delden, Jan Egbers & Moritz Salla
+        <Paragraph small>
+          Design by Rudi van Delden, Jan Egbers & Moritz Salla.
           <br />
-          Code: Moritz Salla & Mark Kvetny
+          Code by Moritz Salla & Mark Kvetny
         </Paragraph>
       </Section>
     </Layout>

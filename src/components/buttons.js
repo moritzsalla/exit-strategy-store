@@ -27,6 +27,7 @@ export const Button = styled.button`
   }
 
   &:hover:not([disabled]) {
+    /* box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.1); */
     cursor: pointer;
     color: ${White};
     background: ${Grey};

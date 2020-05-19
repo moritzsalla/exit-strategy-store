@@ -8,10 +8,19 @@ import SEO from "../components/seo"
 import { ShopifyContext } from "../components/shopifyProvider"
 import { Button } from "../components/buttons"
 
+const StyledTitle = styled(Title)`
+  padding-bottom: 2rem;
+`
+
 const Table = styled.div`
-  font-variant-numeric: lining-nums;
   display: block;
   width: 100%;
+`
+
+const Entity = styled(Paragraph)`
+  @media (max-width: ${Mobile}) {
+    font-size: 1rem;
+  }
 `
 
 const Column = styled.div`
@@ -25,10 +34,14 @@ const Column = styled.div`
   }
 
   @media (max-width: ${Mobile}) {
-    padding: 0.2rem 0rem;
+    position: relative;
+    padding: 0.5rem 0rem;
+    display: flex;
+    flex-direction: column;
 
     img {
-      max-height: 40px;
+      height: 120px;
+      margin-bottom: 0.5rem;
     }
   }
 `
@@ -43,12 +56,36 @@ const Row = styled.div`
   }
 `
 
+const ProductQuantity = styled(Entity)`
+  font-variant-numeric: lining-nums;
+  @media (max-width: ${Mobile}) {
+    &::before {
+      content: "Quantity: ";
+    }
+  }
+`
+
+const ProductTitle = styled(Entity)`
+  font-weight: bold;
+`
+
+const ProductOptions = styled(Entity)``
+
+const ExitButton = styled(Button)`
+  @media (max-width: ${Mobile}) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5rem;
+  }
+`
+
 const Cart = () => {
   return (
     <Layout>
       <SEO title="Cart" />
 
-      <Title>Shopping Cart</Title>
+      <StyledTitle>Shopping Cart</StyledTitle>
       <Table>
         <Checkout />
       </Table>
@@ -87,19 +124,19 @@ const Item = props => {
       <Column>
         <Row>{variantImage}</Row>
         <Row>
-          <Paragraph>
+          <ProductTitle>
             {data.title}
             {data.variant.title === !"Default Title" ? data.variant.title : ""}
-          </Paragraph>
+          </ProductTitle>
         </Row>
         <Row>
-          <Paragraph>{data.quantity}</Paragraph>
+          <ProductQuantity>{data.quantity}</ProductQuantity>
         </Row>
         <Row>
-          <Paragraph>{selectedOptions}</Paragraph>
+          <ProductOptions>{selectedOptions}</ProductOptions>
         </Row>
         <Row>
-          <Button onClick={handleRemove}>Remove</Button>
+          <ExitButton onClick={handleRemove}>&times;</ExitButton>
         </Row>
       </Column>
     </>

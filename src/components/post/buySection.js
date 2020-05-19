@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 import BuyButton from "../buttons"
 import { StyledLink } from "../type"
 import { ShopifyContext } from "../shopifyProvider"
-import { White, StrokeWeight, Orange, BorderRadius } from "../variables"
+import { White, StrokeWeight, Orange, BorderRadius, Mobile } from "../variables"
 import styled from "styled-components"
 import macro from "styled-components/macro"
 
@@ -17,6 +17,10 @@ const Wrapper = styled.div`
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
+  }
+
+  @media (max-width: ${Mobile}) {
+    margin-top: 1rem;
   }
 `
 
