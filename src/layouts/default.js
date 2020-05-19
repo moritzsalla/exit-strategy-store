@@ -75,9 +75,12 @@ input {
 `
 
 const Wrapper = styled.div`
-  min-height: 100vh;
   position: relative;
   background: ${White};
+
+  @media (min-width: ${Mobile}) {
+    min-height: 100vh;
+  }
 `
 
 const Padding = styled.div`

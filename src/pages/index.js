@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { Mobile, Black } from "../components/variables"
 import gsap, { TweenLite } from "gsap"
 import scrollTo from "gsap/ScrollToPlugin"
+import macro from "styled-components/macro"
 
 gsap.registerPlugin(scrollTo)
 
@@ -42,7 +43,7 @@ const IndexPage = ({ data }) => {
     const gallery = document.getElementById("gallery")
     const frameWidth = gallery.scrollWidth
 
-    TweenLite.to(gallery, 200, {
+    TweenLite.to(gallery, 150, {
       scrollTo: {
         x: frameWidth,
         autoKill: true,
