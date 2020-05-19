@@ -40,13 +40,9 @@ const IndexPage = ({ data }) => {
   const products = data.allShopifyProduct.edges
 
   useEffect(() => {
-    const gallery = document.getElementById("gallery")
-
-    console.log(gallery.scrollWidth)
-
-    TweenLite.to(gallery, 150, {
+    TweenLite.to("#container", 100, {
       scrollTo: {
-        x: gallery.scrollWidth,
+        x: 22774,
         autoKill: true,
       },
     })
@@ -56,7 +52,7 @@ const IndexPage = ({ data }) => {
     <Layout footerProps={{ white: false }}>
       <SEO title="Home" />
 
-      <Wrapper id="gallery">
+      <Wrapper id="container">
         {products.map((product, j) => (
           <Link key={j} to={`/${product.node.handle}`}>
             <Img
