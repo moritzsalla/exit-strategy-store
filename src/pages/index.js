@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 `
 
 const Img = styled.img`
-  min-height: 100vh;
+  height: 100vh;
   width: auto;
 `
 
