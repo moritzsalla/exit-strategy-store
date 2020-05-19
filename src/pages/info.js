@@ -34,8 +34,8 @@ const Large = styled(Title)`
 `
 
 const FrameImg = styled(Img)`
-  height: auto;
-  width: 200px;
+  width: auto;
+  height: 200px;
   margin: 0.5rem 0.5rem 0 0;
   outline: ${StrokeWeight} solid ${Orange};
   cursor: zoom-in;

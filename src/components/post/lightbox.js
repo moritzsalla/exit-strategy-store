@@ -7,8 +7,11 @@ const Lightbox = ({ children }) => {
   const [active, setActive] = useState(0)
 
   const Wrapper = styled.div`
+    display: inline-block;
+
     ${active &&
-    `position: fixed;
+    `
+    position: fixed;
       top: 0;
       left: 0;
       height: 100vh;
