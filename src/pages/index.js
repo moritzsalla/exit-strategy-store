@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
   const products = data.allShopifyProduct.edges
 
   useEffect(() => {
-    TweenLite.to("#container", 100, {
+    TweenLite.to("#container", 200, {
       scrollTo: {
         x: 22774,
         autoKill: true,

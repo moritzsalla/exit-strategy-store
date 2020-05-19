@@ -224,7 +224,7 @@ const Info = ({ data }) => {
 
       <Section>
         <Paragraph small>
-          Design by Rudi van Delden, Jan Egbers & Moritz Salla.
+          Design by Rudi van Delden, Jan Egbers & Moritz Salla
           <br />
           Code by Moritz Salla & Mark Kvetny
         </Paragraph>

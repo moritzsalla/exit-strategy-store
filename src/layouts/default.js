@@ -92,7 +92,7 @@ const Padding = styled.div`
   padding: 10rem 4vw;
 
   @media (max-width: ${Mobile}) {
-    padding: 8rem 1.25rem;
+    padding: 35vw 4vw;
   }
 `
 

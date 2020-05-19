@@ -17,8 +17,8 @@ export const Title = styled.h1`
   }
 
   @media (max-width: ${Mobile}) {
-    font-size: 3rem;
-    letter-spacing: -0.1rem;
+    font-size: 10vw;
+    letter-spacing: -0.5vw;
   }
 `
 
@@ -33,7 +33,7 @@ export const Subtitle = styled.h2`
   letter-spacing: 0.05rem;
 
   @media (max-width: ${Mobile}) {
-    font-size: 1rem;
+    font-size: 4vw;
     letter-spacing: 0;
     padding-bottom: 0.5rem;
   }

@@ -46,7 +46,9 @@ const NavBar = styled.nav`
   align-items: center;
 
   @media (max-width: ${Mobile}) {
-    padding-top: 0.5rem;
+    border-top: ${StrokeWeight} solid ${Orange};
+    padding-top: 2vw;
+    margin-top: 2vw;
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
@@ -76,7 +78,7 @@ const NavLink = styled(Small)`
   }
 
   @media (max-width: ${Mobile}) {
-    font-size: 4.5vw;
+    font-size: 5vw;
   }
 `
 
@@ -96,6 +98,18 @@ const Logo = styled.h1`
 
   &:hover {
     color: ${Orange};
+  }
+
+  @media (max-width: ${Mobile}) {
+    font-size: 8vw;
+    text-align: center;
+
+    span {
+      font-size: 3.8vw;
+      text-align: center;
+      justify-content: center;
+      letter-spacing: 0.3vw;
+    }
   }
 `
 

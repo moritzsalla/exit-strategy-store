@@ -50,7 +50,7 @@ const Large = styled.h3`
   }
 
   @media (max-width: ${Mobile}) {
-    font-size: 1rem;
+    font-size: 4.5vw;
   }
 `
 
@@ -65,7 +65,8 @@ const Small = styled(Paragraph)`
   }
 
   @media (max-width: ${Mobile}) {
-    font-size: 0.85rem;
+    font-size: 4vw;
+    line-height: 1;
     max-width: 15ch;
     hyphens: none;
   }
