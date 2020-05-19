@@ -7,8 +7,6 @@ const Lightbox = ({ children }) => {
   const [active, setActive] = useState(0)
 
   const Wrapper = styled.div`
-    display: inline-block;
-
     ${active &&
     `
     position: fixed;
