@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../layouts/default"
@@ -39,13 +39,14 @@ const Img = styled.img`
 const IndexPage = ({ data }) => {
   const products = data.allShopifyProduct.edges
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const gallery = document.getElementById("gallery")
-    const frameWidth = gallery.scrollWidth
+
+    console.log(gallery.scrollWidth)
 
     TweenLite.to(gallery, 150, {
       scrollTo: {
-        x: frameWidth,
+        x: gallery.scrollWidth,
         autoKill: true,
       },
     })
