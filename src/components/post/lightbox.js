@@ -1,15 +1,17 @@
 import React, { useState } from "react"
+import { White, Mobile } from "../variables"
 import styled from "styled-components"
-import { White } from "../variables"
-import macro from "styled-components/macro"
 
 const Lightbox = ({ children }) => {
   const [active, setActive] = useState(0)
 
-  const Wrapper = styled.div`
-    ${active &&
-    `
-    position: fixed;
+  return (
+    <div
+      onClick={() => setActive(!active)}
+      css={
+        active
+          ? `
+         position: fixed;
       top: 0;
       left: 0;
       height: 100vh;
@@ -27,16 +29,23 @@ const Lightbox = ({ children }) => {
          width: auto;
          max-height: 90%;
          max-width: 90%;
-         box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.2);
+         box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.3);
           cursor: zoom-out;
         }
-    `}
-  `
 
-  return (
-    <Wrapper onClick={() => setActive(!active)} props={active}>
+         @media (max-width: ${Mobile}) {
+          align-items: flex-start;
+          img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      `
+          : null
+      }
+    >
       {children}
-    </Wrapper>
+    </div>
   )
 }
 
