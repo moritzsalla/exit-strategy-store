@@ -53,7 +53,7 @@ const IndexPage = ({ data }) => {
   })
 
   return (
-    <Layout footerProps={{ white: true }}>
+    <Layout footerProps={{ white: false }}>
       <SEO title="Home" />
 
       <JumboText />

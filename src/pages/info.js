@@ -6,7 +6,12 @@ import Layout from "../layouts/default"
 import SEO from "../components/seo"
 
 import { Paragraph, Title, Subtitle, StyledLink } from "../components/type"
-import { Mobile, StrokeWeight, Orange } from "../components/variables"
+import {
+  Mobile,
+  StrokeWeight,
+  Orange,
+  BorderRadius,
+} from "../components/variables"
 import styled from "styled-components"
 import macro from "styled-components/macro"
 
@@ -25,6 +30,11 @@ const Large = styled(Title)`
   @media (max-width: ${Mobile}) {
     font-size: 1.5rem;
   }
+`
+
+const FrameImg = styled(Img)`
+  margin: 0.5rem 0.5rem 0 0;
+  outline: ${StrokeWeight} solid ${Orange};
 `
 
 const Info = ({ data }) => {
@@ -93,13 +103,13 @@ const Info = ({ data }) => {
         <Subtitle>Frame Options</Subtitle>
         <Paragraph>1. White Wood</Paragraph>
         {data.whiteFrame.edges.map(image => (
-          <Img fixed={image.node.childImageSharp.fixed} />
+          <FrameImg fixed={image.node.childImageSharp.fixed} />
         ))}
         <br />
         <br />
         <Paragraph>2. Black Wood</Paragraph>
         {data.blackFrame.edges.map(image => (
-          <Img fixed={image.node.childImageSharp.fixed} />
+          <FrameImg fixed={image.node.childImageSharp.fixed} />
         ))}
         <br />
         <br />
