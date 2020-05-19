@@ -23,7 +23,7 @@ const Section = styled.section`
 const Large = styled(Title)`
   font-size: 5vw;
   letter-spacing: -0.2vw;
-  padding-bottom: 0;
+  padding-bottom: 2rem;
 
   @media (max-width: ${Mobile}) {
     letter-spacing: -0.1vw;
@@ -47,12 +47,88 @@ const Info = ({ data }) => {
 
       <Section>
         <Large>
-          We are FORGETFUL NUMBER, the collective of 39 (adjust) visual artists
-          who are graduating from the Photography department of the Royal
-          Academy of Art, The Hague (NL). To make sure we all arrive safely at
-          our final destinations, we would like to kindly ask for your support
-          by purchasing one of our exclusive prints.
+          Dear passenger, on behalf of the crew of Forgetful Number, we would
+          like to welcome you on board of our online Exit Strategy to graduate
+          from the Photography department of the Royal Academy of Art, The
+          Hague. 
         </Large>
+        <Paragraph>
+          We would like to take you on a virtual journey into the process of our
+          graduation projects. There was some unexpected turbulence during the
+          trip, but all members of our crew have found an exit strategy to
+          graduate in an emergency.
+          <br />
+          <br />
+          To make sure we all arrive safely at our final destinations, we would
+          like to kindly ask for your support by purchasing one of our exclusive
+          prints. For this event only we will offer them at a special,
+          affordable price and have them custom made, fitting your wishes. The
+          selection of prints is curated by Alessia Glaviano, Brand Visual
+          Director of Vogue Italia and L’Uomo Vogue. <br />
+          <br />
+          By purchasing a print, you will not only support our graduation
+          collective and our physical exhibition in the academy in
+          September 2020, you will also support kinder.world/, as 10% of the
+          profits will be donated to this good cause. <br />
+          <br />
+          Thank you for travelling with Forgetful Number and we wish you a
+          pleasant and safe journey. Please fasten your seat belts, sit back,
+          relax and enjoy the view! 
+        </Paragraph>
+      </Section>
+
+      <Section>
+        <Large>Further Information</Large>
+        <Paragraph>
+          The print sale will be open from the 21st to the 28th of May 2020
+        </Paragraph>
+      </Section>
+
+      <a
+        name="frames"
+        css={`
+          display: block;
+          position: relative;
+          top: -20vh;
+          visibility: hidden;
+        `}
+      />
+
+      <Section>
+        <Subtitle>Frame Options</Subtitle>
+        <Paragraph>All prints are available in A5 and A3.</Paragraph>
+        <br />
+
+        <Paragraph as="table">
+          <tbody>
+            <tr>
+              <th>Size</th>
+              <th>No Frame</th>
+              <th>Framed</th>
+            </tr>
+            <tr>
+              <td>A5</td>
+              <td>34.99</td>
+              <td>94.99</td>
+            </tr>
+            <tr>
+              <td>A3</td>
+              <td>49.99</td>
+              <td>119.99</td>
+            </tr>
+          </tbody>
+        </Paragraph>
+        <br />
+        <Paragraph>White Wood</Paragraph>
+        {data.whiteFrame.edges.map(image => (
+          <FrameImg fixed={image.node.childImageSharp.fixed} />
+        ))}
+        <br />
+        <br />
+        <Paragraph>Black Wood</Paragraph>
+        {data.blackFrame.edges.map(image => (
+          <FrameImg fixed={image.node.childImageSharp.fixed} />
+        ))}
       </Section>
 
       <Section>
@@ -90,31 +166,19 @@ const Info = ({ data }) => {
         </Paragraph>
       </Section>
 
-      <a
-        name="frames"
-        css={`
-          display: block;
-          position: relative;
-          top: -20vh;
-          visibility: hidden;
-        `}
-      />
-
       <Section>
-        <Subtitle>Frame Options</Subtitle>
-        <Paragraph>1. White Wood</Paragraph>
-        {data.whiteFrame.edges.map(image => (
-          <FrameImg fixed={image.node.childImageSharp.fixed} />
-        ))}
-        <br />
-        <br />
-        <Paragraph>2. Black Wood</Paragraph>
-        {data.blackFrame.edges.map(image => (
-          <FrameImg fixed={image.node.childImageSharp.fixed} />
-        ))}
-        <br />
-        <br />
-        <Paragraph>3. No Frame</Paragraph>
+        <Subtitle>Who is Forgetful Number?</Subtitle>
+        <Paragraph>
+          We are FORGETFUL NUMBER, the collective of 39 visual artists who are
+          graduating from the photography department of the Royal Academy of
+          Art, The Hague (NL) in the Summer of 2020.
+          <br />
+          What binds us as a collective is our common task of challenging the
+          medium of photography. We believe that art should be public and
+          accessible to a broad variety of communities. From this core value, as
+          a point of departure, we present a diverse approach to narration of
+          stories that we believe deserve to have a voice.  
+        </Paragraph>
       </Section>
 
       <Section>

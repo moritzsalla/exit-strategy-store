@@ -42,6 +42,7 @@ html {
 th {
   text-align: left;
   text-transform: uppercase;
+  padding-right: 4rem;
 }
 
 td {

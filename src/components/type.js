@@ -55,7 +55,7 @@ export const Paragraph = styled.p`
   font-weight: normal;
   line-height: 1.25;
   max-width: 50ch;
-  font-size: ${props => (props.small ? "1rem" : "1.5rem")};
+  font-size: ${props => (props.small ? "1rem" : "1.25rem")};
 
   @media (max-width: ${Tablet}) {
     max-width: 40ch;
