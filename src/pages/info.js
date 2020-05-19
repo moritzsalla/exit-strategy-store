@@ -62,14 +62,24 @@ const Info = ({ data }) => {
           To make sure we all arrive safely at our final destinations, we would
           like to kindly ask for your support by purchasing one of our exclusive
           prints. For this event only we will offer them at a special,
-          affordable price and have them custom made, fitting your wishes. The
-          selection of prints is curated by Alessia Glaviano, Brand Visual
-          Director of Vogue Italia and L’Uomo Vogue. <br />
+          affordable price and have them custom made, fitting your wishes.
+          <span css="font-weight: bold;">
+            The selection of prints is curated by Alessia Glaviano, Brand Visual
+            Director of Vogue Italia and L’Uomo Vogue.
+          </span>
+          <br />
           <br />
           By purchasing a print, you will not only support our graduation
           collective and our physical exhibition in the academy in
-          September 2020, you will also support kinder.world/, as 10% of the
-          profits will be donated to this good cause.
+          September 2020, you will also support the charity organization{" "}
+          <StyledLink
+            as="a"
+            href="https://kinder.world/"
+            css="font-weight: bold;"
+          >
+            Kinder
+          </StyledLink>
+          , as 10% of the profits will be donated to this good cause.
           <br />
           <br />
           Thank you for travelling with Forgetful Number and we wish you a

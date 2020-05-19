@@ -18,20 +18,20 @@ const Lightbox = ({ children }) => {
       justify-content: center;
       align-items: center;
       z-index: 100;
-    `}
-  `
 
-  const InnerWrapper = styled.div`
-    ${active &&
-    `
-      height: 100%;
-      width: 50%;
+       img {
+         height: auto;
+         width: auto;
+         max-height: 90%;
+         max-width: 90%;
+         box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.2);
+        }
     `}
   `
 
   return (
     <Wrapper onClick={() => setActive(!active)} props={active}>
-      <InnerWrapper props={active}>{children}</InnerWrapper>
+      {children}
     </Wrapper>
   )
 }

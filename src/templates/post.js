@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 import SEO from "../components/seo"
 import Layout from "../layouts/default"
-import Img from "gatsby-image"
 import TextPannel from "../components/post/textPannel"
 import BuySection from "../components/post/buySection"
 import { Mobile, Tablet, StrokeWeight, Orange } from "../components/variables"
@@ -16,6 +15,12 @@ const Wrapper = styled.section`
   @media (max-width: ${Mobile}) {
     flex-direction: column;
   }
+`
+
+const Image = styled.img`
+  cursor: pointer;
+  width: 100%;
+  height: auto;
 `
 
 const ImageTile = styled.div`
@@ -33,10 +38,6 @@ const ImageTile = styled.div`
   }
 `
 
-const Image = styled(Img)`
-  cursor: pointer;
-`
-
 export default function Template({ data }) {
   const product = data.shopifyProduct
 
@@ -48,10 +49,8 @@ export default function Template({ data }) {
           {product.images[0] && (
             <Lightbox>
               <Image
-                fluid={product.images[0].localFile.childImageSharp.fluid}
+                src={product.images[0].localFile.childImageSharp.resize.src}
                 alt={product.title}
-                draggable={false}
-                objectFit="contain"
               />
             </Lightbox>
           )}
@@ -87,9 +86,8 @@ export const query = graphql`
       images {
         localFile {
           childImageSharp {
-            fluid(maxHeight: 1000, quality: 60) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluidLimitPresentationSize
+            resize(height: 1000, quality: 60) {
+              src
             }
           }
         }
