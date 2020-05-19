@@ -28,6 +28,7 @@ const Lightbox = ({ children }) => {
          max-height: 90%;
          max-width: 90%;
          box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.2);
+          cursor: zoom-out;
         }
     `}
   `
