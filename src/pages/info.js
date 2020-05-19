@@ -68,8 +68,9 @@ const Info = ({ data }) => {
           <br />
           By purchasing a print, you will not only support our graduation
           collective and our physical exhibition in the academy in
-          September 2020, you will also support kinder.world/, as 10% of the
-          profits will be donated to this good cause. <br />
+          September 2020, you will also support kinder.world/, as 10% of the
+          profits will be donated to this good cause.
+          <br />
           <br />
           Thank you for travelling with Forgetful Number and we wish you a
           pleasant and safe journey. Please fasten your seat belts, sit back,
@@ -108,13 +109,13 @@ const Info = ({ data }) => {
             </tr>
             <tr>
               <td>A5</td>
-              <td>34.99</td>
-              <td>94.99</td>
+              <td>€ 34.99</td>
+              <td>€ 94.99</td>
             </tr>
             <tr>
               <td>A3</td>
-              <td>49.99</td>
-              <td>119.99</td>
+              <td>€ 49.99</td>
+              <td>€ 119.99</td>
             </tr>
           </tbody>
         </Paragraph>
@@ -137,19 +138,19 @@ const Info = ({ data }) => {
           <tbody>
             <tr>
               <th>Country</th>
-              <th>Price/€</th>
+              <th>Price</th>
             </tr>
             <tr>
               <td>Netherlands</td>
-              <td>8.45</td>
+              <td>€ 8.45</td>
             </tr>
             <tr>
               <td>Rest of EU</td>
-              <td>18.00</td>
+              <td>€ 18.00</td>
             </tr>
             <tr>
               <td>World Shipping</td>
-              <td>29.30</td>
+              <td>€ 29.30</td>
             </tr>
           </tbody>
         </Paragraph>

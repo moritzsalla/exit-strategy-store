@@ -39,14 +39,18 @@ html {
   Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
 }
 
+
 th {
   text-align: left;
-  text-transform: uppercase;
   padding-right: 4rem;
+  border: ${StrokeWeight} solid ${Orange};
+  padding: 0.25rem 0.5rem;
 }
 
 td {
-  padding-right: 4rem;
+  border: ${StrokeWeight} solid ${Orange};
+   padding: 0.25rem 0.5rem;
+   font-feature-settings: "tnum";
 }
 
 input {

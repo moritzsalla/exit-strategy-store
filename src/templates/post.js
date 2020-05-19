@@ -33,6 +33,10 @@ const ImageTile = styled.div`
   }
 `
 
+const Image = styled(Img)`
+  cursor: pointer;
+`
+
 export default function Template({ data }) {
   const product = data.shopifyProduct
 
@@ -43,7 +47,7 @@ export default function Template({ data }) {
         <ImageTile>
           {product.images[0] && (
             <Lightbox>
-              <Img
+              <Image
                 fluid={product.images[0].localFile.childImageSharp.fluid}
                 alt={product.title}
                 draggable={false}

@@ -8,9 +8,12 @@ import { StyledLink, Paragraph } from "../components/type"
 import { Tablet, Mobile } from "../components/variables"
 import macro from "styled-components/macro"
 
+const Margin = "3vw"
+
 const List = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  margin: -${Margin};
 
   @media (max-width: ${Tablet}) {
     grid-template-columns: repeat(3, 1fr);
@@ -27,7 +30,7 @@ const Item = styled.li`
   flex-flow: column;
   align-items: center;
   justify-content: flex-end;
-  margin: 2vw;
+  margin: ${Margin};
 
   /* @media (max-width: ${Mobile}) {
     margin: 1rem;
