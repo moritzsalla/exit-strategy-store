@@ -221,14 +221,6 @@ const Info = ({ data }) => {
       </Section>
 
       <Section>
-        <Subtitle>
-          <StyledLink to="/terms/">
-            Terms of Service, Refund Policy & Privacy Policy↗
-          </StyledLink>
-        </Subtitle>
-      </Section>
-
-      <Section>
         <Paragraph small>
           Design by{" "}
           <StyledLink as="a" href="http://www.rudivandelden.com/">
@@ -255,6 +247,14 @@ const Info = ({ data }) => {
             Mark Kvetny
           </StyledLink>
         </Paragraph>
+      </Section>
+
+      <Section>
+        <Subtitle>
+          <StyledLink to="/terms/">
+            Terms of Service, Refund Policy & Privacy Policy↗
+          </StyledLink>
+        </Subtitle>
       </Section>
     </Layout>
   )
