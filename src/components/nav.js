@@ -93,7 +93,7 @@ const Logo = styled.h1`
     font-size: 0.8rem;
     display: flex;
     justify-content: flex-start;
-    letter-spacing: 0.19rem;
+    letter-spacing: 0.17rem;
   }
 
   &:hover {
@@ -122,12 +122,12 @@ const Nav = () => {
         <Logo as={StyledLink} to="/">
           Exit&nbsp;Strategies
           <br />
-          <span>How to Graduate in an Emergeny</span>
+          <span>How to Graduate in an Emergency</span>
         </Logo>
 
         <NavBar>
           <NavLink as={StyledLink} to="/gallery/">
-            Gallery
+            Printsale
           </NavLink>
           <NavLink as={StyledLink} to="/info/">
             Info

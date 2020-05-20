@@ -24,7 +24,7 @@ const Image = styled.img`
 `
 
 const ImageTile = styled.div`
-  width: 40%;
+  max-width: 40%;
 
   @media (max-width: ${Tablet}) {
     padding: 0 0.75rem 0 0;

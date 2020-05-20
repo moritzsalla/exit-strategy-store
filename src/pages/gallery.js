@@ -77,7 +77,7 @@ const Gallery = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Gallery" />
+      <SEO title="Print Sale" />
 
       <List>
         {products.map((product, i) => (

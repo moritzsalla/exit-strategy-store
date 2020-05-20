@@ -55,6 +55,11 @@ const Info = ({ data }) => {
           from the Photography department of the Royal Academy of Art, The
           Hague. 
         </Large>
+        <Paragraph css="font-weight: bold;">
+          The print sale will be open from the 21st to the 28th of May 2020
+          <br />
+          <br />
+        </Paragraph>
         <Paragraph>
           We would like to take you on a virtual journey into the process of our
           graduation projects. There was some unexpected turbulence during the
@@ -86,31 +91,13 @@ const Info = ({ data }) => {
           <br />
           <br />
           Thank you for travelling with Forgetful Number and we wish you a
-          pleasant and safe journey. Please fasten your seat belts, sit back,
+          pleasant and safe journey. Please fasten your seat belts, sit back,
           relax and enjoy the view! 
         </Paragraph>
       </Section>
 
       <Section>
-        <Subtitle>Who is Forgetful Number?</Subtitle>
-        <Paragraph>
-          We are FORGETFUL NUMBER, the collective of 39 visual artists who are
-          graduating from the photography department of the Royal Academy of
-          Art, The Hague (NL) in the Summer of 2020.
-          <br />
-          What binds us as a collective is our common task of challenging the
-          medium of photography. We believe that art should be public and
-          accessible to a broad variety of communities. From this core value, as
-          a point of departure, we present a diverse approach to narration of
-          stories that we believe deserve to have a voice.  
-        </Paragraph>
-      </Section>
-
-      <Section>
         <Large>Further Information</Large>
-        <Paragraph>
-          The print sale will be open from the 21st to the 28th of May 2020
-        </Paragraph>
       </Section>
 
       <a

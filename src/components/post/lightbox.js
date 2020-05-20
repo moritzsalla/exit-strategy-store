@@ -29,7 +29,7 @@ const Lightbox = ({ children }) => {
          width: auto;
          max-height: 90%;
          max-width: 90%;
-         box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.3);
+         box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.7);
           cursor: zoom-out;
         }
 

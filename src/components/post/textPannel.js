@@ -40,7 +40,7 @@ const Markup = styled.div`
     font-family: Suisse, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 1.15rem;
-    max-width: 50ch;
+    max-width: auto;
     line-height: 1.25;
     font-weight: normal;
     color: ${Orange};
@@ -54,19 +54,6 @@ const Markup = styled.div`
 
   p:not(:last-of-type) {
     padding-bottom: 1rem;
-  }
-
-  .videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-  }
-  .videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
   }
 `
 
