@@ -97,7 +97,7 @@ const Info = ({ data }) => {
           core value, as a point of departure, we present a diverse approach to
           narration of stories that we believe deserve to have a voice. The
           videos that we show next to each print give you glimpses on every
-          graduation project."
+          graduation project.
         </Paragraph>
       </Section>
 
@@ -116,7 +116,7 @@ const Info = ({ data }) => {
       />
 
       <Section>
-        <Subtitle>Frame Options</Subtitle>
+        <Subtitle>Frame Prices & Options</Subtitle>
         <Paragraph>All prints are available in A5 and A3.</Paragraph>
         <br />
 
