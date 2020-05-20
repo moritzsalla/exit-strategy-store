@@ -61,6 +61,7 @@ const IndexPage = ({ data }) => {
                   product.node.images[1].localFile.childImageSharp.resize.src
                 }
                 loading="lazy"
+                alt={product.node.title}
               />
             )}
           </Link>
@@ -77,6 +78,7 @@ export const query = graphql`
     allShopifyProduct(sort: { order: ASC, fields: vendor }) {
       edges {
         node {
+          title
           handle
           images {
             localFile {

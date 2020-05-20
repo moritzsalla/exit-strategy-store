@@ -138,7 +138,11 @@ const Info = ({ data }) => {
         <Paragraph>White Wood</Paragraph>
         {data.whiteFrame.edges.map(image => (
           <Lightbox>
-            <FrameImg as="img" src={image.node.childImageSharp.resize.src} />
+            <FrameImg
+              as="img"
+              src={image.node.childImageSharp.resize.src}
+              alt="frame made of white wood"
+            />
           </Lightbox>
         ))}
         <br />
@@ -146,7 +150,11 @@ const Info = ({ data }) => {
         <Paragraph>Black Wood</Paragraph>
         {data.blackFrame.edges.map(image => (
           <Lightbox>
-            <FrameImg as="img" src={image.node.childImageSharp.resize.src} />
+            <FrameImg
+              as="img"
+              src={image.node.childImageSharp.resize.src}
+              alt="frame made of black wood"
+            />
           </Lightbox>
         ))}
       </Section>

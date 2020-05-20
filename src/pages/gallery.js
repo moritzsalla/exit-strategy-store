@@ -88,6 +88,7 @@ const Gallery = ({ data }) => {
                   css="width: 100%;"
                   fluid={product.node.images[0].localFile.childImageSharp.fluid}
                   draggable={false}
+                  alt={product.node.title}
                 />
               ) : null}
 
