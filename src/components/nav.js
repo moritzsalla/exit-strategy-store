@@ -59,18 +59,15 @@ const NavBar = styled.nav`
 const NavLink = styled(Small)`
   font-size: 2.5rem;
   letter-spacing: 0.15rem;
-  margin-left: 1.5vw;
+  margin-left: 2vw;
 
   span {
-    /* -webkit-text-stroke-width: ${StrokeWeight};
-    color: rgba(0, 0, 0, 0);
-    -webkit-text-stroke-color: ${Orange}; */
     font-size: 1.5rem;
     color: ${Grey};
 
     @media (max-width: ${Mobile}) {
-    font-size: 4.5vw;
-  }
+      font-size: 4.5vw;
+    }
   }
 
   @media (max-width: ${Tablet}) {
@@ -127,7 +124,7 @@ const Nav = () => {
 
         <NavBar>
           <NavLink as={StyledLink} to="/gallery/">
-            Printsale
+            Print&nbsp;Sale
           </NavLink>
           <NavLink as={StyledLink} to="/info/">
             Info

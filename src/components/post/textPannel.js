@@ -54,8 +54,8 @@ const Markup = styled.div`
     }
   }
 
-  p:not(:last-of-type) {
-    padding-bottom: 1rem;
+  p {
+    padding-bottom: 1.25rem;
   }
 `
 
