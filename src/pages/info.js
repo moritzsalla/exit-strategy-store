@@ -46,8 +46,6 @@ const Bold = styled.span`
 `
 
 const Info = ({ data }) => {
-  const policies = data.allShopifyShopPolicy.edges
-
   return (
     <Layout>
       <SEO title="Info" />
@@ -146,7 +144,7 @@ const Info = ({ data }) => {
         <Paragraph>White Wood</Paragraph>
         <div css="display: inline-flex">
           {data.whiteFrame.edges.map(image => (
-            <Lightbox>
+            <Lightbox key={image.node.id}>
               <FrameImg
                 as="img"
                 src={image.node.childImageSharp.resize.src}
@@ -160,7 +158,7 @@ const Info = ({ data }) => {
         <Paragraph>Black Wood</Paragraph>
         <div css="display: inline-flex">
           {data.blackFrame.edges.map(image => (
-            <Lightbox>
+            <Lightbox key={image.node.id}>
               <FrameImg
                 as="img"
                 src={image.node.childImageSharp.resize.src}
@@ -222,12 +220,13 @@ const Info = ({ data }) => {
         </Paragraph>
       </Section>
 
-      {policies.map(policy => (
-        <Section id={policy.node.id}>
-          <Subtitle>{policy.node.title}</Subtitle>
-          <Paragraph>{policy.node.body}</Paragraph>
-        </Section>
-      ))}
+      <Section>
+        <Subtitle>
+          <StyledLink to="/terms/">
+            Terms of Service, Refund Policy & Privacy Policy↗
+          </StyledLink>
+        </Subtitle>
+      </Section>
 
       <Section>
         <Paragraph small>
@@ -265,18 +264,10 @@ export default Info
 
 export const query = graphql`
   query {
-    allShopifyShopPolicy {
-      edges {
-        node {
-          title
-          body
-          id
-        }
-      }
-    }
     whiteFrame: allFile(filter: { relativeDirectory: { eq: "white-frame" } }) {
       edges {
         node {
+          id
           childImageSharp {
             resize(height: 1000, quality: 60) {
               src
@@ -288,6 +279,7 @@ export const query = graphql`
     blackFrame: allFile(filter: { relativeDirectory: { eq: "black-frame" } }) {
       edges {
         node {
+          id
           childImageSharp {
             resize(height: 1000, quality: 60) {
               src

@@ -6,7 +6,6 @@ import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { StyledLink, Paragraph } from "../components/type"
 import { Tablet, Mobile } from "../components/variables"
-import macro from "styled-components/macro"
 
 const Margin = "3vw"
 

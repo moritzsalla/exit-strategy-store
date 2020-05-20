@@ -90,7 +90,7 @@ const Logo = styled.h1`
     font-size: 0.8rem;
     display: flex;
     justify-content: flex-start;
-    letter-spacing: 0.17rem;
+    letter-spacing: 0.16rem;
   }
 
   &:hover {
