@@ -13,7 +13,7 @@ const NotFoundPage = () => (
       <br />
       Didn't Expect this?{" "}
       <StyledLink as="a" href="mailto:moritz.salla@hotmail.de">
-        Send us a message
+        Send us a Message
       </StyledLink>
       .
     </Paragraph>
