@@ -142,7 +142,7 @@ const Info = ({ data }) => {
         </Paragraph>
         <br />
         <Paragraph>White Wood</Paragraph>
-        <div css="display: inline-flex">
+        <div css="display: inline-flex; flex-wrap: wrap;">
           {data.whiteFrame.edges.map(image => (
             <Lightbox key={image.node.id}>
               <FrameImg
@@ -156,7 +156,7 @@ const Info = ({ data }) => {
         <br />
         <br />
         <Paragraph>Black Wood</Paragraph>
-        <div css="display: inline-flex">
+        <div css="display: inline-flex; flex-wrap: wrap;">
           {data.blackFrame.edges.map(image => (
             <Lightbox key={image.node.id}>
               <FrameImg
