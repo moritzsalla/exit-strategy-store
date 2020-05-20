@@ -73,8 +73,7 @@ const Info = ({ data }) => {
           <br />
           <br />
           By purchasing a print, you will not only support our physical
-          exhibition in the academy in September 2020, you will also support the
-          charity organization{" "}
+          exhibition in the academy in September 2020, you will also support{" "}
           <StyledLink
             as="a"
             href="https://kinder.world/"
@@ -82,7 +81,9 @@ const Info = ({ data }) => {
           >
             Kinder
           </StyledLink>
-          , as 10% of the profits are donated to this good cause.
+          , an organization that investigates the charities in the world that
+          are the most in need. 10% of our profits will be donated to a selected
+          group of charities in relation to COVID–19.
         </Paragraph>
       </Section>
 
@@ -116,8 +117,11 @@ const Info = ({ data }) => {
       />
 
       <Section>
-        <Subtitle>Frame Options & Prices</Subtitle>
-        <Paragraph>All prints are available in A5 and A3.</Paragraph>
+        <Subtitle>Frame Options, Prices & Editions</Subtitle>
+        <Paragraph>
+          All prints are available in A5 and A3 in an edition of 30 for each
+          format.
+        </Paragraph>
         <br />
 
         <Paragraph as="table">
