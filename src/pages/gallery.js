@@ -112,7 +112,6 @@ export const query = graphql`
           title
           vendor
           productType
-
           priceRange {
             maxVariantPrice {
               amount
@@ -121,7 +120,7 @@ export const query = graphql`
           images {
             localFile {
               childImageSharp {
-                fluid(maxHeight: 600, quality: 50) {
+                fluid(maxWidth: 300, quality: 50) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

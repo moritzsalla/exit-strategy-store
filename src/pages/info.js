@@ -41,6 +41,10 @@ const FrameImg = styled(Img)`
   cursor: zoom-in;
 `
 
+const Bold = styled.span`
+  font-weight: bold;
+`
+
 const Info = ({ data }) => {
   const policies = data.allShopifyShopPolicy.edges
 
@@ -50,36 +54,30 @@ const Info = ({ data }) => {
 
       <Section>
         <Large>
-          Dear passenger, on behalf of the crew of Forgetful Number, we would
-          like to welcome you on board of our online Exit Strategy to graduate
-          from the Photography department of the Royal Academy of Art, The
-          Hague. 
+          Welcome to the online print sale of the photography to-be graduates of
+          the Royal Academy of Art, The Hague!
         </Large>
+
         <Paragraph css="font-weight: bold;">
-          The print sale will be open from the 21st to the 28th of May 2020
+          The print sale is open from May 21 4PM — May 28 8PM
           <br />
           <br />
         </Paragraph>
+
         <Paragraph>
-          We would like to take you on a virtual journey into the process of our
-          graduation projects. There was some unexpected turbulence during the
-          trip, but all members of our crew have found an exit strategy to
-          graduate in an emergency.
+          For this event only we would like to give you a sneak peek into our
+          graduation projects with a special edition of prints, curated by{" "}
+          <Bold>
+            Alessia Glaviano, Brand Visual Director of Vogue Italia and L’Uomo
+            Vogue
+          </Bold>
+          . The prints are available for affordable prices and different print
+          sizes and frames. They will be custom made, fitting your wishes.
           <br />
           <br />
-          To make sure we all arrive safely at our final destinations, we would
-          like to kindly ask for your support by purchasing one of our exclusive
-          prints. For this event only we will offer them at a special,
-          affordable price and have them custom made, fitting your wishes.
-          <span css="font-weight: bold;">
-            The selection of prints is curated by Alessia Glaviano, Brand Visual
-            Director of Vogue Italia and L’Uomo Vogue.
-          </span>
-          <br />
-          <br />
-          By purchasing a print, you will not only support our graduation
-          collective and our physical exhibition in the academy in
-          September 2020, you will also support the charity organization{" "}
+          By purchasing a print, you will not only support our physical
+          exhibition in the academy in September 2020, you will also support the
+          charity organization{" "}
           <StyledLink
             as="a"
             href="https://kinder.world/"
@@ -87,12 +85,22 @@ const Info = ({ data }) => {
           >
             Kinder
           </StyledLink>
-          , as 10% of the profits will be donated to this good cause.
-          <br />
-          <br />
-          Thank you for travelling with Forgetful Number and we wish you a
-          pleasant and safe journey. Please fasten your seat belts, sit back,
-          relax and enjoy the view! 
+          , as 10% of the profits are donated to this good cause.
+        </Paragraph>
+      </Section>
+
+      <Section>
+        <Subtitle>Who Are We?</Subtitle>
+        <Paragraph>
+          We are FORGETFUL NUMBER, a collective of 39 visual artists who are
+          graduating from the Photography department of the Royal Academy of
+          Art, The Hague. What binds us as a collective is our common task of
+          challenging the medium of photography. We believe that art should be
+          public and accessible to a broad variety of communities. From this
+          core value, as a point of departure, we present a diverse approach to
+          narration of stories that we believe deserve to have a voice. The
+          videos that we show next to each print give you glimpses on every
+          graduation project."
         </Paragraph>
       </Section>
 

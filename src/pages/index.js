@@ -28,7 +28,7 @@ export const query = graphql`
             localFile {
               id
               childImageSharp {
-                resize(height: 900, quality: 50) {
+                resize(height: 1000, quality: 70) {
                   src
                 }
               }
