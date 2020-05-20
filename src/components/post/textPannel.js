@@ -22,7 +22,10 @@ const Artist = styled(Title)`
 `
 
 const Wrapper = styled.div`
-  max-width: 80ch;
+  * {
+    max-width: 60ch;
+    width: 100%;
+  }
   padding-left: 4rem;
 
   @media (max-width: ${Tablet}) {
@@ -30,7 +33,6 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: ${Mobile}) {
-    max-width: 100%;
     padding: 0;
   }
 `
