@@ -55,10 +55,14 @@ const IndexPage = ({ data }) => {
       <Wrapper id="container">
         {products.map((product, j) => (
           <Link key={j} to={`/${product.node.handle}`}>
-            <Img
-              src={product.node.images[1].localFile.childImageSharp.resize.src}
-              loading="lazy"
-            />
+            {product.node.images[1] && (
+              <Img
+                src={
+                  product.node.images[1].localFile.childImageSharp.resize.src
+                }
+                loading="lazy"
+              />
+            )}
           </Link>
         ))}
       </Wrapper>
