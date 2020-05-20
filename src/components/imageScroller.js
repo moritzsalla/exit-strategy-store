@@ -39,15 +39,12 @@ class ImageScroller extends React.Component {
   }
 
   componentDidMount() {
-    const container = document.getElementById("container")
-    console.log(container.scrollWidth)
-
-    TweenLite.to("#container", 30, {
+    TweenLite.to("#container", 100, {
       scrollTo: {
-        x: container.scrollWidth,
+        x: "max",
         autoKill: true,
       },
-      ease: "Linear.easeNone",
+      ease: "Power0.easeNone",
     })
   }
 
