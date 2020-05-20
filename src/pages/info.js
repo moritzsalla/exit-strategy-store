@@ -224,9 +224,30 @@ const Info = ({ data }) => {
 
       <Section>
         <Paragraph small>
-          Design by Rudi van Delden, Jan Egbers & Moritz Salla
+          Design by{" "}
+          <StyledLink as="a" href="http://www.rudivandelden.com/">
+            Rudi van Delden
+          </StyledLink>
+          ,{" "}
+          <StyledLink as="a" href="http://janegbers.info/">
+            Jan Egbers
+          </StyledLink>{" "}
+          &{" "}
+          <StyledLink as="a" href="https://moritzsalla.info/">
+            Moritz Salla
+          </StyledLink>
           <br />
-          Code by Moritz Salla & Mark Kvetny
+          Code by{" "}
+          <StyledLink as="a" href="https://moritzsalla.info/">
+            Moritz Salla
+          </StyledLink>{" "}
+          &{" "}
+          <StyledLink
+            as="a"
+            href="https://www.linkedin.com/in/mark-kvetny-54778013a/"
+          >
+            Mark Kvetny
+          </StyledLink>
         </Paragraph>
       </Section>
     </Layout>
