@@ -33,12 +33,7 @@ const Lightbox = ({ children }) => {
           cursor: zoom-out;
         }
 
-         @media (max-width: ${Mobile}) {
-          align-items: flex-start;
-          img {
-          max-width: 100%;
-          height: auto;
-        }
+       
       }
       `
           : null
