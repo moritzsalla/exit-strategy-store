@@ -43,6 +43,7 @@ class ImageScroller extends React.Component {
       scrollTo: {
         x: "max",
         autoKill: true,
+        ease: "Power0.easeNone",
       },
       ease: "Power0.easeNone",
     })
