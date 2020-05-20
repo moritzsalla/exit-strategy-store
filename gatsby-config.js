@@ -8,7 +8,8 @@ module.exports = {
   siteMetadata: {
     title: `Exit Strategies`,
     siteUrl: `https://exitstrategies.store`,
-    description: `We are Forgetful Number, a collective of 38 photography students of the Royal Academy of Art, The Hague.`,
+    description: `Welcome to the online print sale of the photography to-be graduates of
+          the Royal Academy of Art, The Hague`,
     author: `@forgetfulnumber`,
   },
   plugins: [
@@ -71,7 +72,7 @@ module.exports = {
         accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
         apiVersion: "2020-04",
         includeCollections: ["shop", "content"],
-        verbose: true,
+        verbose: false,
       },
     },
   ],
