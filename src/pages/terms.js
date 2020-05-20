@@ -10,6 +10,7 @@ import { Markdown } from "../components/MarkdownStyles"
 const StyledMarkdown = styled(Markdown)`
   color: ${Orange};
   hyphens: auto;
+  line-height: 1.25;
 
   h1,
   h2,
@@ -60,7 +61,6 @@ const StyledMarkdown = styled(Markdown)`
   }
   sub {
     font-size: 60%;
-    vertical-align: ;
   }
   small {
     font-size: 80%;
@@ -178,7 +178,7 @@ const StyledMarkdown = styled(Markdown)`
   }
 
   /* Mobile Styling */
-  @media screen and (max-width: 50rem) {
+  @media screen and (max-width: ${Mobile}) {
     table {
       table-layout: auto;
     }

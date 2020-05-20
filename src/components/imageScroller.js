@@ -34,10 +34,6 @@ const Img = styled.img`
 `
 
 class ImageScroller extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
     TweenLite.to("#container", 200, {
       scrollTo: {
