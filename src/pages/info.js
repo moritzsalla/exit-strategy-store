@@ -116,7 +116,7 @@ const Info = ({ data }) => {
       />
 
       <Section>
-        <Subtitle>Frame Prices & Options</Subtitle>
+        <Subtitle>Frame Options & Prices</Subtitle>
         <Paragraph>All prints are available in A5 and A3.</Paragraph>
         <br />
 
