@@ -1,72 +1,16 @@
-import React, { useEffect } from "react"
-import { Link, graphql } from "gatsby"
-
+import React from "react"
+import { graphql } from "gatsby"
+import ImageScroller from "../components/imageScroller"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import styled from "styled-components"
-import { Mobile, Black } from "../components/variables"
-import gsap, { TweenLite } from "gsap"
-import scrollTo from "gsap/ScrollToPlugin"
-import macro from "styled-components/macro"
-
-gsap.registerPlugin(scrollTo)
-
-const Wrapper = styled.div`
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  overflow-x: scroll;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow-y: hidden;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  -ms-overflow-style: none;
-
-  @media (max-width: ${Mobile}) {
-    z-index: 10;
-  }
-`
-
-const Img = styled.img`
-  height: 100vh;
-  width: auto;
-`
 
 const IndexPage = ({ data }) => {
   const products = data.allShopifyProduct.edges
 
-  useEffect(() => {
-    TweenLite.to("#container", 200, {
-      scrollTo: {
-        x: 22774,
-        autoKill: true,
-      },
-    })
-  })
-
   return (
     <Layout footerProps={{ white: false }}>
       <SEO title="Home" />
-
-      <Wrapper id="container">
-        {products.map((product, j) => (
-          <Link key={j} to={`/${product.node.handle}`}>
-            {product.node.images[1] && (
-              <Img
-                src={
-                  product.node.images[1].localFile.childImageSharp.resize.src
-                }
-                loading="lazy"
-                alt={product.node.title}
-              />
-            )}
-          </Link>
-        ))}
-      </Wrapper>
+      <ImageScroller products={products} />
     </Layout>
   )
 }
@@ -84,7 +28,7 @@ export const query = graphql`
             localFile {
               id
               childImageSharp {
-                resize(height: 1000, quality: 60) {
+                resize(height: 900, quality: 50) {
                   src
                 }
               }
@@ -95,5 +39,3 @@ export const query = graphql`
     }
   }
 `
-
-// ENTROPY ATTENTIONs
