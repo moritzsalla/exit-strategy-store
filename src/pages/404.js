@@ -6,7 +6,7 @@ const NotFoundPage = () => (
   <Layout>
     <h1>Exit Strategies</h1>
     <br />
-    <p>There's nothing here</p>
+    <p>There's nothing here :(</p>
   </Layout>
 )
 
