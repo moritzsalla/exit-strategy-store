@@ -178,7 +178,7 @@ const Info = ({ data }) => {
             </tr>
             <tr>
               <td>Netherlands</td>
-              <td>€ 8.45</td>
+              <td>Included</td>
             </tr>
             <tr>
               <td>Rest of EU</td>
