@@ -23,7 +23,6 @@ const Section = styled.section`
 const Large = styled(Title)`
   font-size: 5vw;
   letter-spacing: -0.2vw;
-  padding-bottom: 2rem;
 
   @media (max-width: ${Mobile}) {
     letter-spacing: -0.1vw;
@@ -51,7 +50,7 @@ const Info = ({ data }) => {
       <SEO title="Info" />
 
       <Section>
-        <Large>
+        <Large css="padding-bottom: 2rem;">
           Welcome to the online print sale of the photography to-be graduates of
           the Royal Academy of Art, The Hague!
         </Large>
