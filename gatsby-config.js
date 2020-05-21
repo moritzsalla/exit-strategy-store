@@ -26,7 +26,12 @@ module.exports = {
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/cart`],
+      },
+    },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
