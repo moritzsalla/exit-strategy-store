@@ -121,6 +121,9 @@ const Info = ({ data }) => {
         <Paragraph>
           All prints are available in A5 and A3 in an edition of 30 for each
           format.
+          <br />
+          <br />
+          Prints and frames by https://www.fotolabkiekie.com/
         </Paragraph>
         <br />
 
