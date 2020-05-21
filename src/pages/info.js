@@ -123,7 +123,11 @@ const Info = ({ data }) => {
           format.
           <br />
           <br />
-          Prints and frames by https://www.fotolabkiekie.com/
+          Prints and frames by{" "}
+          <StyledLink as="a" href="https://www.fotolabkiekie.com/">
+            Fotolab Kiekie
+          </StyledLink>
+          .
         </Paragraph>
         <br />
 
