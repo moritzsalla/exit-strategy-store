@@ -167,7 +167,19 @@ const Info = ({ data }) => {
           </tbody>
         </Paragraph>
         <br />
-        <Paragraph>White Wood</Paragraph>
+        {data.both.edges.map(image => (
+          <Lightbox key={image.node.id}>
+            <FrameImg
+              as="img"
+              src={image.node.childImageSharp.resize.src}
+              alt="frame details"
+            />
+          </Lightbox>
+        ))}
+        <br />
+        <Paragraph>
+          <Bold>White Wood</Bold>
+        </Paragraph>
         <div css="display: inline-flex; flex-wrap: wrap;">
           {data.whiteFrame.edges.map(image => (
             <Lightbox key={image.node.id}>
@@ -181,7 +193,9 @@ const Info = ({ data }) => {
         </div>
         <br />
         <br />
-        <Paragraph>Black Wood</Paragraph>
+        <Paragraph>
+          <Bold>Black Wood</Bold>
+        </Paragraph>
         <div css="display: inline-flex; flex-wrap: wrap;">
           {data.blackFrame.edges.map(image => (
             <Lightbox key={image.node.id}>
@@ -304,6 +318,18 @@ export const query = graphql`
       }
     }
     blackFrame: allFile(filter: { relativeDirectory: { eq: "black-frame" } }) {
+      edges {
+        node {
+          id
+          childImageSharp {
+            resize(height: 1000, quality: 60) {
+              src
+            }
+          }
+        }
+      }
+    }
+    both: allFile(filter: { relativeDirectory: { eq: "frame-both" } }) {
       edges {
         node {
           id
