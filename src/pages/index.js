@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout footerProps={{ white: false }}>
-      <SEO title="Home" />
+      <SEO title="Exit Strategies" />
       <ImageScroller products={products} />
     </Layout>
   )
