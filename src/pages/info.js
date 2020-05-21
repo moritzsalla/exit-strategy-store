@@ -120,11 +120,12 @@ const Info = ({ data }) => {
         <Subtitle>Frame Options, Prices & Editions</Subtitle>
         <Paragraph>
           All prints are available in A5 and A3 in an edition of 30 for each
-          format.
-          <br />
-          <br />
-          Prints and frames by{" "}
-          <StyledLink as="a" href="https://www.fotolabkiekie.com/">
+          format. Prints and frames by{" "}
+          <StyledLink
+            as="a"
+            href="https://www.fotolabkiekie.com/"
+            css="font-weight: bold;"
+          >
             Fotolab Kiekie
           </StyledLink>
           .
