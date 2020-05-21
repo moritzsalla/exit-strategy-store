@@ -145,9 +145,6 @@ const Item = props => {
 
 const RedirectButton = styled(Button)`
   margin-top: 2rem;
-  &::after {
-    content: " ↗";
-  }
 `
 
 const Checkout = () => {

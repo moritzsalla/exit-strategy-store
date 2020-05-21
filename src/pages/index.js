@@ -19,7 +19,7 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allShopifyProduct(sort: { order: ASC, fields: vendor }) {
+    allShopifyProduct(sort: { order: DESC, fields: title }) {
       edges {
         node {
           title

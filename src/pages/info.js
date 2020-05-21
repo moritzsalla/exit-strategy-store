@@ -20,6 +20,15 @@ const Section = styled.section`
   }
 `
 
+const Link = styled(StyledLink)`
+  text-decoration: underline;
+  font-weight: ${props => (props.plain ? "normal" : "bold")};
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
 const Large = styled(Title)`
   font-size: 5vw;
   letter-spacing: -0.2vw;
@@ -65,8 +74,14 @@ const Info = ({ data }) => {
           For this event only we would like to give you a sneak peek into our
           graduation projects with a special edition of prints, curated by{" "}
           <Bold>
-            Alessia Glaviano, Brand Visual Director of Vogue Italia and L’Uomo
-            Vogue
+            <Link
+              as="a"
+              href="https://www.worldpressphoto.org/person/detail/649/alessia-glaviano"
+              css="font-weight: bold; text-decoration: underline;"
+            >
+              Alessia Glaviano
+            </Link>
+            , Brand Visual Director of Vogue Italia and L’Uomo Vogue
           </Bold>
           . The prints are available for affordable prices and different print
           sizes and frames. They will be custom made, fitting your wishes.
@@ -74,13 +89,13 @@ const Info = ({ data }) => {
           <br />
           By purchasing a print, you will not only support our physical
           exhibition in the academy in September 2020, you will also support{" "}
-          <StyledLink
+          <Link
             as="a"
             href="https://kinder.world/"
-            css="font-weight: bold;"
+            css="font-weight: bold; text-decoration: underline;"
           >
             Kinder
-          </StyledLink>
+          </Link>
           , an organization that investigates the charities in the world that
           are the most in need. 10% of our profits will be donated to a selected
           group of charities in relation to COVID–19.
@@ -121,13 +136,13 @@ const Info = ({ data }) => {
         <Paragraph>
           All prints are available in A5 and A3 in an edition of 30 for each
           format. Prints and frames by{" "}
-          <StyledLink
+          <Link
             as="a"
             href="https://www.fotolabkiekie.com/"
-            css="font-weight: bold;"
+            css="font-weight: bold; text-decoration: underline;"
           >
             Fotolab Kiekie
-          </StyledLink>
+          </Link>
           .
         </Paragraph>
         <br />
@@ -219,14 +234,14 @@ const Info = ({ data }) => {
         <Subtitle>Issues</Subtitle>
         <Paragraph>
           If there is an issue with your order, please contact{" "}
-          <StyledLink as="a" href="mailto:info@forgetfulnumber.com">
+          <Link as="a" href="mailto:info@forgetfulnumber.com">
             info@forgetfulnumber.com
-          </StyledLink>
+          </Link>
           . We will reach out to you as soon as possible. Alternatively, send us
           a message on{" "}
-          <StyledLink as="a" href="https://www.facebook.com/forgetfulnumber/">
+          <Link as="a" href="https://www.facebook.com/forgetfulnumber/">
             Facebook Messenger
-          </StyledLink>
+          </Link>
           .
         </Paragraph>
       </Section>
@@ -234,37 +249,38 @@ const Info = ({ data }) => {
       <Section>
         <Paragraph small>
           Design by{" "}
-          <StyledLink as="a" href="http://www.rudivandelden.com/">
+          <Link plain as="a" href="http://www.rudivandelden.com/">
             Rudi van Delden
-          </StyledLink>
+          </Link>
           ,{" "}
-          <StyledLink as="a" href="http://janegbers.info/">
+          <Link plain as="a" href="http://janegbers.info/">
             Jan Egbers
-          </StyledLink>{" "}
+          </Link>{" "}
           &{" "}
-          <StyledLink as="a" href="https://moritzsalla.info/">
+          <Link plain as="a" href="https://moritzsalla.info/">
             Moritz Salla
-          </StyledLink>
+          </Link>
           <br />
           Code by{" "}
-          <StyledLink as="a" href="https://moritzsalla.info/">
+          <Link plain as="a" href="https://moritzsalla.info/">
             Moritz Salla
-          </StyledLink>{" "}
+          </Link>{" "}
           &{" "}
-          <StyledLink
+          <Link
+            plain
             as="a"
             href="https://www.linkedin.com/in/mark-kvetny-54778013a/"
           >
             Mark Kvetny
-          </StyledLink>
+          </Link>
         </Paragraph>
       </Section>
 
       <Section>
         <Subtitle>
-          <StyledLink to="/terms/">
-            Terms of Service, Refund Policy & Privacy Policy↗
-          </StyledLink>
+          <Link to="/terms/">
+            Terms of Service, Refund Policy & Privacy Policy
+          </Link>
         </Subtitle>
       </Section>
     </Layout>
