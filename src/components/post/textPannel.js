@@ -15,7 +15,7 @@ const Series = styled(Subtitle)`
 `
 
 const Artist = styled(Title)`
-  margin-bottom: 1.5rem;
+  margin-bottom: 2vw;
 
   @media (max-width: ${Mobile}) {
     margin-bottom: 1.5rem;
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
     max-width: 60ch;
     width: 100%;
   }
-  padding-left: 4rem;
+  padding-left: 4vw;
 
   @media (max-width: ${Tablet}) {
     padding: 0 0 0 0.75rem;

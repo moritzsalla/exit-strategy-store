@@ -71,7 +71,8 @@ const NavLink = styled(Small)`
   }
 
   @media (max-width: ${Tablet}) {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    margin-left: 1vw;
   }
 
   @media (max-width: ${Mobile}) {

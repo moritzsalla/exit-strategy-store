@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { White } from "../variables"
-import styled from "styled-components"
 
 const Lightbox = ({ children }) => {
   const [active, setActive] = useState(0)

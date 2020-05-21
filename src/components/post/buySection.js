@@ -67,6 +67,8 @@ const BuySection = ({ product }) => {
           color: ${Orange};
           border-radius: ${BorderRadius};
           padding: 0.5rem;
+          max-width: 100%;
+          width: auto;
         `}
       >
         {product.variants.map(({ title, shopifyId, priceV2 }) => (
