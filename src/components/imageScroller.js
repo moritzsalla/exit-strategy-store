@@ -34,7 +34,7 @@ const Img = styled.img`
 `
 
 class ImageScroller extends React.Component {
-  componentDidMount() {
+  triggerScroll() {
     TweenLite.to("#container", 200, {
       scrollTo: {
         x: "max",
@@ -43,6 +43,10 @@ class ImageScroller extends React.Component {
       },
       ease: "Power0.easeNone",
     })
+  }
+
+  triggerError() {
+    console.log("Error triggering image scroll")
   }
 
   render() {
@@ -56,6 +60,8 @@ class ImageScroller extends React.Component {
                   product.node.images[1].localFile.childImageSharp.resize.src
                 }
                 loading="lazy"
+                onLoad={this.triggerScroll}
+                onError={this.triggerError}
                 alt={product.node.title}
               />
             )}
