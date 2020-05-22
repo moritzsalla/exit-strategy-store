@@ -38,6 +38,14 @@ function SEO({ description, lang, meta, title }) {
           content: `moritzsalla`,
         },
         {
+          property: `robots`,
+          content: `noindex`,
+        },
+        {
+          property: `googlebot`,
+          content: `noindex`,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
