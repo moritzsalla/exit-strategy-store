@@ -26,12 +26,7 @@ module.exports = {
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        exclude: [`/cart`],
-      },
-    },
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
@@ -70,22 +65,5 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    {
-      resolve: "gatsby-source-shopify",
-      options: {
-        shopName: process.env.SHOP_NAME,
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-        apiVersion: "2020-04",
-        includeCollections: ["shop", "content"],
-        verbose: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-hotjar`,
-      options: {
-        id: process.env.HOTJAR_ID,
-        sv: process.env.HOTJAR_SNIPPET_VERSION,
-      },
-    },
   ],
 }
