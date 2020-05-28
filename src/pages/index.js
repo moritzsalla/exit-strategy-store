@@ -58,9 +58,20 @@ const IndexPage = () => {
               We have ramped up the production of your prints and will be
               shipping them shortly 📬
             </Bold>{" "}
-            In the mean time, follow us on <Link bold>Instagram</Link> and{" "}
-            <Link bold>Facebook</Link>, or come to our graduation show at the
-            Royal Academy of Art The Hague in September.
+            In the mean time, follow us on{" "}
+            <Link
+              bold
+              as="a"
+              href="https://www.instagram.com/forgetfulnumber/?hl=en"
+            >
+              Instagram
+            </Link>{" "}
+            and{" "}
+            <Link bold as="a" href="https://www.facebook.com/forgetfulnumber/">
+              Facebook
+            </Link>
+            , or come to our graduation show at the Royal Academy of Art The
+            Hague in September.
           </Paragraph>
         </InnerWrapper>
       </Wrapper>
