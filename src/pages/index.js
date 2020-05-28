@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
 import { Title, Paragraph, White, StyledLink } from "../components/type"
+import { Mobile } from "../components/variables"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -11,10 +12,21 @@ const Wrapper = styled.div`
   text-align: center;
   padding-top: 10vh;
   color: ${White};
+
+  @media (max-width: ${Mobile}) {
+    display: block;
+    margin: 1rem;
+    text-align: left;
+    padding-top: 0;
+  }
 `
 
 const InnerWrapper = styled.div`
   max-width: 70vw;
+
+  @media (max-width: ${Mobile}) {
+    max-width: 100vw;
+  }
 `
 
 const Bold = styled.span`
@@ -41,7 +53,7 @@ const IndexPage = () => {
             Our print sale has officially ended—thank you for your support
           </Title>
 
-          <Paragraph css="max-width: none; padding-top: 3rem; max-width: 70ch; margin: 0 auto;">
+          <Paragraph css="max-width: none; padding-top: 4vh; max-width: 70ch; margin: 0 auto;">
             <Bold>
               We have ramped up the production of your prints and will be
               shipping them shortly 📬
