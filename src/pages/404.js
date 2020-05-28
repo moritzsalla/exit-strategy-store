@@ -7,15 +7,7 @@ const NotFoundPage = () => (
   <Layout>
     <SEO title="404 Not Found" />
     <Title>There's Nothing Here</Title>
-    <Paragraph>
-      Woops, you have hit an empty page.
-      <br />
-      Didn't Expect this?{" "}
-      <StyledLink as="a" href="mailto:moritz.salla@hotmail.de">
-        Send us a Message
-      </StyledLink>
-      .
-    </Paragraph>
+    <Paragraph>Woops, you have hit an empty page.</Paragraph>
   </Layout>
 )
 
