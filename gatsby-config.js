@@ -26,15 +26,6 @@ module.exports = {
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-sitemap`,
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://exitstrategies.store",
-        sitemap: "https://exitstrategies.store/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-analytics`,
