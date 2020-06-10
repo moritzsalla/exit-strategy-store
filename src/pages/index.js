@@ -6,13 +6,6 @@ import Scene from "../components/scene"
 import Layout from "../layouts/default"
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: "Suisse";
-    src: url("./fonts/SuisseIntl-Black-WebXL.woff2") format("woff2"),
-        url("./fonts/SuisseIntl-Black-WebXL.woff") format("woff");
-    font-display: block;
-  }
-
   html, body {
     padding: 0;
     margin: 0;
