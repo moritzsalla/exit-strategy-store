@@ -71,3 +71,5 @@ yarn-error.log
 # Credentials
 domain.txt
 .now
+*.development
+*.production
