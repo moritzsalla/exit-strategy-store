@@ -1,82 +1,41 @@
 import React from "react"
+import { graphql } from "gatsby"
+import ImageScroller from "../components/imageScroller"
 import Layout from "../layouts/default"
 import SEO from "../components/seo"
-import { Title, Paragraph, White, StyledLink } from "../components/type"
-import { Mobile } from "../components/variables"
-import styled from "styled-components"
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-top: 10vh;
-  color: ${White};
+const IndexPage = ({ data }) => {
+  const products = data.allShopifyProduct.edges
 
-  @media (max-width: ${Mobile}) {
-    display: block;
-    margin: 1rem;
-    text-align: left;
-    padding-top: 0;
-  }
-`
-
-const InnerWrapper = styled.div`
-  max-width: 70vw;
-
-  @media (max-width: ${Mobile}) {
-    max-width: 100vw;
-  }
-`
-
-const Bold = styled.span`
-  font-weight: bold;
-`
-
-const Link = styled(StyledLink)`
-  text-decoration: underline;
-  font-weight: ${props => (props.plain ? "normal" : "bold")};
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
-const IndexPage = () => {
   return (
-    <Layout>
+    <Layout footerProps={{ white: false }}>
       <SEO title="Exit Strategies" />
-      <Wrapper>
-        <InnerWrapper>
-          <Title>
-            That was it!
-            <br />
-            Our print sale has officially ended—thank you for your support
-          </Title>
-
-          <Paragraph css="max-width: none; padding-top: 4vh; max-width: 70ch; margin: 0 auto;">
-            <Bold>
-              We have ramped up the production of your prints and will be
-              shipping them shortly 📬
-            </Bold>{" "}
-            In the mean time, follow us on{" "}
-            <Link
-              bold
-              as="a"
-              href="https://www.instagram.com/forgetfulnumber/?hl=en"
-            >
-              Instagram
-            </Link>{" "}
-            and{" "}
-            <Link bold as="a" href="https://www.facebook.com/forgetfulnumber/">
-              Facebook
-            </Link>
-            , or come to our graduation show at the Royal Academy of Art The
-            Hague in September.
-          </Paragraph>
-        </InnerWrapper>
-      </Wrapper>
+      <ImageScroller products={products} />
     </Layout>
   )
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    allShopifyProduct(sort: { order: DESC, fields: title }) {
+      edges {
+        node {
+          title
+          handle
+          images {
+            localFile {
+              id
+              childImageSharp {
+                resize(height: 1000, quality: 70) {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

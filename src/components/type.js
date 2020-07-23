@@ -1,13 +1,13 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { Orange, Grey, Mobile, Tablet, White } from "./variables"
+import { Orange, Grey, Mobile, Tablet } from "./variables"
 
 export const Title = styled.h1`
   font-feature-settings: "kern";
   font-size: 4.5rem;
   font-style: italic;
   line-height: 1;
-  color: ${props => (props.white ? White : Orange)};
+  color: ${Orange};
   font-weight: bold;
   letter-spacing: -0.2rem;
 
@@ -55,7 +55,7 @@ export const Paragraph = styled.p`
   font-weight: normal;
   line-height: 1.25;
   max-width: 50ch;
-  font-size: ${props => (props.small ? "1rem" : "1.35rem")};
+  font-size: ${props => (props.small ? "1rem" : "1.25rem")};
 
   @media (max-width: ${Tablet}) {
     max-width: 40ch;
