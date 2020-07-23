@@ -10,9 +10,9 @@ Experimental incremental build: `GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=
 
 Branches are deployed as subdomains
 
-| Branch  | Subomain | Description |
-| ------------- | ------------- | ------------- |
-| Master  |   | Live Store  |
-| Dev  | dev.*  | Staging  |
-| Temp  | temp.*  | Pre–Release |
-| Closed  | closed.*  | Post–Release |
+| Branch  | Subomain | Description | Active |
+| ------------- | ------------- | ------------- | ------------- |
+| Master  |   | Live Store  | Y |
+| Dev  | dev.*  | Staging  | N |
+| Temp  | temp.*  | Pre–Release | Y |
+| Closed  | closed.*  | Post–Release | Y |
