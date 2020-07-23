@@ -10,6 +10,6 @@ Experimental incremental build: `GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=
 
 Branches are deployed as subdomains
 
-`Master` — Store
-`Dev` — Staging
+`Master` — Store  
+`Dev` — Staging  
 `Temp` — Pre-release
