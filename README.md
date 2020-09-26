@@ -10,7 +10,7 @@ Branches are deployed as subdomains
 
 | Branch | Subomain  | Description  | Active |
 | ------ | --------- | ------------ | ------ |
-| master |           | Live         | Y      |
+| master |           | Live         | N      |
 | dev    | dev.\*    | Staging      | N      |
-| temp   | temp.\*   | Pre–Release  | Y      |
+| temp   | temp.\*   | Pre–Release  | N      |
 | closed | closed.\* | Post–Release | Y      |
